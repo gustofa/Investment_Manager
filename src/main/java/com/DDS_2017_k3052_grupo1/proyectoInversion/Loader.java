@@ -9,45 +9,50 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Loader {
-	
-	public void leerArchivo(String pathArchivo){
-		
-		List<Empresa> listaEmpresas = new ArrayList<Empresa>();
-        File f = null;
-        FileReader fr =null;
-        BufferedReader br = null;
-        
-        try {
-        	
-        f = new File (pathArchivo);
-        fr = new FileReader (f);
-        br = new BufferedReader (fr);
-        listaEmpresas = new ArrayList<Empresa> ();
-        String linea;
-        
-	        while ( (linea = br.readLine()) != null ) {
-	        	
-	            String[] partesDelString = linea.split(";");
-	            String s = partesDelString[0];
-	            String d = partesDelString[1];
-	            
-	            Empresa emp = new Empresa (0,s,d);
-	            listaEmpresas.add (emp);
-	        }
-        } catch (FileNotFoundException fnfe) {System.out.println("error1"); } catch (IOException ioe) {System.out.println("error2");}
-        
-        finally {
-            try{
-                if (fr != null)
-            fr.close();}
-            catch (IOException ioe) {System.out.println("error3");}
-            if (listaEmpresas != null)
-            for (Empresa empresa : listaEmpresas) {
-            System.out.println (" Nombre :   "+ empresa.getNombre() + "  Cuenta:   "+ empresa.getCuenta() );
-        }
-        }
-    
 
+	private List<Empresa> listaEmpresas = new ArrayList<Empresa>();
+
+	public void agregarEmpresas(String pathArchivo) {
+		File file = null;
+		FileReader fileReader = null;
+		BufferedReader bufferedReader = null;
+		
+		try {
+			file = new File(pathArchivo);
+			fileReader = new FileReader(file);
+			bufferedReader = new BufferedReader(fileReader);
+			String linea;
+
+			while ((linea = bufferedReader.readLine()) != null) {
+
+				String[] partesDelString = linea.split(";");
+				String s = partesDelString[0];
+				String d = partesDelString[1];
+
+				Empresa empresa = new Empresa(0, s, d);
+				listaEmpresas.add(empresa);
+			}
+		} catch (FileNotFoundException ex) {
+			System.out.println(ex.getMessage());
+		} catch (IOException ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			try {
+				if (fileReader != null)
+					fileReader.close();
+			} catch (IOException ex) {
+				System.out.println(ex.getMessage());
+			}
+		}
 	}
 
+	public void listarEmpresas() {
+		for (Empresa empresa : listaEmpresas) {
+			this.imprimirEmpresa(empresa);
+		}
+	}
+
+	private void imprimirEmpresa(Empresa empresa) {
+		System.out.println(" Nombre :   " + empresa.getNombre() + "  Cuenta:   " + empresa.getCuenta());
+	}
 }

@@ -1,9 +1,0 @@
-Facebook;EBITDA
-Facebook;FSD
-Facebook;FREE CASH FLOW
-Google;EBITDA
-Google;FSD
-Google;FREE CASH FLOW
-Sancor;EBITDA
-Sancor;FSD
-Sancor;FREE CASH FLOW

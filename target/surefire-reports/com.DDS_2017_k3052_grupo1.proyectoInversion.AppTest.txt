@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.DDS_2017_k3052_grupo1.proyectoInversion.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec

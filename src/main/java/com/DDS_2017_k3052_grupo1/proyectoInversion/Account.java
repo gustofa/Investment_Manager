@@ -1,13 +1,13 @@
 package com.DDS_2017_k3052_grupo1.proyectoInversion;
 
-public class Cuenta {
+public class Account {
 
 	private String nombre;
 	private String empresa;
 	private String anio;
 	private Double valor;
 	
-	public Cuenta(String nombre, String empresa, String anio, Double valor) {
+	public Account(String nombre, String empresa, String anio, Double valor) {
 		this.nombre = nombre;
 		this.empresa = empresa;
 		this.anio = anio;
@@ -45,5 +45,4 @@ public class Cuenta {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-
 }

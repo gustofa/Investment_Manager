@@ -1,58 +1,48 @@
 package com.DDS_2017_k3052_grupo1.proyectoInversion;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+
 public class Loader {
 
-	private List<Empresa> listaEmpresas = new ArrayList<Empresa>();
+	private List<Cuenta> listaCuentas = new ArrayList<Cuenta>();
 
-	public void agregarEmpresas(String pathArchivo) {
-		File file = null;
-		FileReader fileReader = null;
-		BufferedReader bufferedReader = null;
+	public void agregarCuentas(String pathArchivo) {
 		
 		try {
-			file = new File(pathArchivo);
-			fileReader = new FileReader(file);
-			bufferedReader = new BufferedReader(fileReader);
-			String linea;
+			JsonReader reader = new JsonReader(new FileReader(pathArchivo));
+			Type tipoListaCuentas = new TypeToken<List<Cuenta>>(){}.getType();
+			listaCuentas = new Gson().fromJson(reader, tipoListaCuentas);			
 
-			while ((linea = bufferedReader.readLine()) != null) {
-
-				String[] partesDelString = linea.split(";");
-				String s = partesDelString[0];
-				String d = partesDelString[1];
-
-				Empresa empresa = new Empresa(0, s, d);
-				listaEmpresas.add(empresa);
-			}
-		} catch (FileNotFoundException ex) {
-			System.out.println(ex.getMessage());
 		} catch (IOException ex) {
 			System.out.println(ex.getMessage());
-		} finally {
-			try {
-				if (fileReader != null)
-					fileReader.close();
-			} catch (IOException ex) {
-				System.out.println(ex.getMessage());
-			}
+		} 
+//		finally {
+//			try {
+//				if (reader != null)
+//					reader.close();
+//			} catch (IOException ex) {
+//				System.out.println(ex.getMessage());
+//			}
+//		}
+	
+	}
+
+	public void listarCuentas() {
+		for (Cuenta cuenta : listaCuentas) {
+			this.imprimirCuenta(cuenta);
 		}
 	}
 
-	public void listarEmpresas() {
-		for (Empresa empresa : listaEmpresas) {
-			this.imprimirEmpresa(empresa);
-		}
-	}
-
-	private void imprimirEmpresa(Empresa empresa) {
-		System.out.println(" Nombre :   " + empresa.getNombre() + "  Cuenta:   " + empresa.getCuenta());
+	private void imprimirCuenta(Cuenta cuenta) {
+		System.out.println(" Empresa: " + cuenta.getEmpresa() + " /  Cuenta: " + cuenta.getNombre() + " /  Año: " + cuenta.getAnio() + " /  Valor (en millones de US$): " + cuenta.getValor());
 	}
 }

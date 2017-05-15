@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AccountManagerTests" project="Investment-Manager" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.DDS_2017_k3052_grupo1.proyectoInversion.AccountManagerTests" time="4.796">
+    <testcase name="agregarCuentasThrowsInputOutputExceptionIfFileDoesNotExist" classname="com.DDS_2017_k3052_grupo1.proyectoInversion.AccountManagerTests" time="3.376"/>
+    <testcase name="agregarCuentasShouldKeepAccountsInMemory" classname="com.DDS_2017_k3052_grupo1.proyectoInversion.AccountManagerTests" time="1.42"/>
+  </testsuite>
+</testrun>

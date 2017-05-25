@@ -1,0 +1,11 @@
+
+public class IndicatorListener extends grammarDDSBaseListener {
+	@Override
+	public void enterIndicador(DemoCalcParser.IndicadorContext ctx) {
+
+		// reinicio la expresion actual
+		this.expresionActual = new ExpresionCompuesta();
+
+		this.iterateNodes(ctx);
+	}
+}

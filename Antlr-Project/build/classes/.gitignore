@@ -10,3 +10,12 @@
 /grammarDDSLexer.tokens
 /grammarDDSListener.java
 /grammarDDSParser.java
+/grammarDDSBaseListener.class
+/grammarDDSLexer.class
+/grammarDDSListener.class
+/grammarDDSParser$FactorContext.class
+/grammarDDSParser$IndicadorContext.class
+/grammarDDSParser$NumberContext.class
+/grammarDDSParser$TermContext.class
+/grammarDDSParser$VariableContext.class
+/grammarDDSParser.class

@@ -1,7 +1,12 @@
 /**
  * Define a grammar called grammarDDS
  */
-grammar grammarDDS;
+grammar IndicatorGrammar;
+
+@header{
+	
+	
+}
 
 indicador
    : term ((PLUS | MINUS) term)*

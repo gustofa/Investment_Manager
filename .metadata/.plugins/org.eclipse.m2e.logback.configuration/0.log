@@ -1097,3 +1097,10 @@ org.eclipse.core.runtime.CoreException: Launch configuration Antlr Launcher refe
 2017-05-27 01:45:49,842 [Worker-152] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
 2017-05-27 01:45:49,868 [Worker-152] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-05-27 01:45:49,871 [Worker-152] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 02:01:23,002 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 02:01:23,026 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 02:01:23,068 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 02:01:23,071 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 02:01:23,072 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 02:01:23,076 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 02:01:23,095 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

@@ -7,18 +7,14 @@ grammar IndicatorGrammar;
 package antlr.java;
 }
 
-indicador
-   : term ((PLUS | MINUS) term)*
+expression
+   : term (operator term)*
    ;
 
 term
-   : factor ((MULTI | DIV) factor)*
-   ;
-
-factor
    : variable
    | number
-   | LPAREN indicador RPAREN
+   | LPAREN expression RPAREN
    ;
 
 number
@@ -26,20 +22,32 @@ number
    ;
 
 variable
-   : LETTER (LETTER | DIGIT)*
+   : INDICATOR 
+   | VALUE
    ;
-
+   
+INDICATOR 
+	: '$' LETTER (LETTER | DIGIT)*
+   ;
+   
+VALUE
+	: 'value';
 
 LPAREN
    : '('
    ;
 
-
 RPAREN
    : ')'
    ;
 
-
+operator 
+	: PLUS
+	| MINUS
+	| MULTI
+	| DIV
+	;  
+	
 PLUS
    : '+'
    ;

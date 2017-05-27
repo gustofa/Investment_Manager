@@ -1104,3 +1104,590 @@ org.eclipse.core.runtime.CoreException: Launch configuration Antlr Launcher refe
 2017-05-27 02:01:23,072 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
 2017-05-27 02:01:23,076 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-05-27 02:01:23,095 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 15:39:34,373 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 15:41:30,915 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 15:41:30,916 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 15:41:38,679 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 15:41:40,742 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:41:40,743 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 15:41:40,752 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:41:40,761 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 15:51:19,203 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 15:51:20,288 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 15:51:22,829 [Worker-30] ERROR o.e.m.c.i.embedder.EclipseLogger - error(56): IndicatorGrammar.g4:21:12: reference to undefined rule: indicador
+2017-05-27 15:51:23,081 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 15:51:23,088 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:51:23,088 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 15:51:23,095 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:51:23,102 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 15:56:30,515 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 15:56:30,520 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 15:56:30,606 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 15:56:30,614 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:56:30,633 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 15:56:30,659 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:56:30,682 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 15:58:34,379 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 15:58:34,412 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 15:58:34,502 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 15:58:34,529 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:58:34,530 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 15:58:34,557 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:58:34,562 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 15:59:40,139 [Worker-34] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 15:59:43,317 [Worker-34] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 15:59:46,284 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 15:59:46,285 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 15:59:47,353 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 15:59:48,127 [Worker-34] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 15:59:48,189 [Worker-34] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 15:59:48,220 [Worker-34] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 15:59:48,277 [Worker-34] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 15:59:48,279 [Worker-34] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 15:59:52,030 [Worker-34] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 11 sec
+2017-05-27 16:00:13,777 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:00:13,778 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:00:13,823 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:00:13,918 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:00:13,919 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:00:13,926 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:00:13,929 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:00:22,084 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:00:22,084 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:00:22,148 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:00:22,179 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:00:22,199 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:00:22,204 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:00:22,211 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:00:32,367 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:00:32,490 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:00:32,574 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:00:32,618 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:00:32,619 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:00:32,652 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:00:32,653 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:01:27,679 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:01:27,680 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:01:27,754 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:01:27,778 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:01:27,800 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:01:27,806 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:01:27,842 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:02:31,164 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:02:31,164 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:02:31,203 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:02:31,308 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:02:31,309 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:02:31,347 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:02:31,349 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:04:49,947 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:04:49,948 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:04:50,015 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:04:50,021 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:04:50,066 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:04:50,097 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:04:50,122 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:05:31,418 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:05:33,867 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 16:05:35,993 [Worker-43] ERROR o.e.m.c.i.embedder.EclipseLogger - error(56): IndicatorGrammar.g4:21:12: reference to undefined rule: indicator
+2017-05-27 16:05:36,367 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:05:36,451 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:05:36,534 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:05:36,538 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:05:36,569 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:05:45,647 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:05:45,990 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 16:05:48,773 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:05:48,928 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:05:49,106 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:05:49,480 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:05:49,633 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:05:56,582 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:05:56,774 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:05:57,005 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:05:57,063 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:05:57,099 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:05:57,123 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:05:57,165 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:08:18,411 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:08:18,412 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:08:18,417 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:08:18,510 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:08:18,574 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:08:18,599 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:08:18,602 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:08:23,379 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:08:23,379 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:08:23,416 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:08:23,420 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:08:23,421 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:08:23,425 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:08:23,427 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:10:43,921 [Worker-41] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:10:55,481 [Worker-41] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:10:58,208 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:10:58,229 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:10:59,192 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:11:00,557 [Worker-41] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:11:00,729 [Worker-41] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:11:03,505 [Worker-41] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:11:03,661 [Worker-41] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:11:03,778 [Worker-41] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:11:09,778 [Worker-41] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 25 sec
+2017-05-27 16:11:33,966 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:11:34,089 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:11:34,144 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:11:34,248 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:11:34,268 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:11:34,277 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:11:34,301 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:12:20,392 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:12:20,393 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:12:20,403 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:12:20,482 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:20,509 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:12:20,532 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:20,541 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:12:37,358 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:12:37,359 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:12:37,365 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:12:37,369 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:37,370 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:12:37,374 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:37,375 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:12:44,667 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:12:44,692 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:12:44,727 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:12:44,749 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:44,750 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:12:44,771 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:44,773 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:12:49,433 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:12:49,433 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:12:49,500 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:12:49,504 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:49,528 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:12:49,532 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:49,554 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:12:56,749 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:12:56,749 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:12:56,792 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:12:56,812 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:56,813 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:12:56,835 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:12:56,837 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:13:01,116 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:13:01,117 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:13:01,159 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:13:01,164 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:13:01,186 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:13:01,190 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:13:01,217 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:13:04,916 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:13:05,679 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:13:06,070 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:13:06,286 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:13:06,397 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:13:06,429 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:13:06,452 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:14:00,496 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:14:00,497 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:14:00,586 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:14:00,612 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:14:00,631 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:14:00,634 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:14:00,653 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:16:21,712 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:16:22,935 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 16:16:25,803 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:16:25,809 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:16:25,809 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:16:25,813 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:16:25,814 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:16:39,149 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:16:39,347 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 16:16:39,821 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:16:39,847 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:16:39,877 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:16:39,880 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:16:39,903 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:16:56,453 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:16:56,518 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 16:16:57,859 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:16:57,910 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:16:57,932 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:16:57,981 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:16:57,982 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:17:41,175 [Worker-42] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:17:46,479 [Worker-42] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:17:50,643 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:17:50,663 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:17:53,808 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:17:54,614 [Worker-42] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:17:54,636 [Worker-42] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:17:54,657 [Worker-42] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:17:54,678 [Worker-42] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:17:54,679 [Worker-42] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:17:57,003 [Worker-42] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 15 sec
+2017-05-27 16:18:13,358 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:18:13,359 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:18:13,403 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:18:13,467 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:18:13,468 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:18:13,474 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:18:13,476 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:19:07,853 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:19:07,858 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:19:07,883 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:19:07,902 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:19:07,940 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:19:07,951 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:20:25,525 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:20:25,525 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:20:25,695 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:20:25,719 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:20:25,768 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:20:25,772 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:20:25,804 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:21:10,506 [Worker-37] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:21:12,145 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:21:17,454 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:21:17,472 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:21:18,235 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:21:18,632 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:21:18,635 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:21:18,656 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:21:18,658 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:21:18,686 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:21:20,824 [Worker-37] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 10 sec
+2017-05-27 16:21:34,994 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:21:35,031 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:21:35,105 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:21:35,175 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:21:35,198 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:21:35,205 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:21:35,240 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:22:20,982 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:22:21,092 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:22:21,181 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:22:21,382 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:22:21,383 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:22:21,530 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:22:21,537 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:23:11,739 [Worker-36] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:23:16,122 [Worker-36] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:23:20,749 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:23:20,771 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:23:21,593 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:23:22,238 [Worker-36] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:23:22,460 [Worker-36] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:23:22,482 [Worker-36] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:23:22,505 [Worker-36] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:23:22,506 [Worker-36] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:23:24,645 [Worker-36] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 12 sec
+2017-05-27 16:23:45,605 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:23:45,606 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:23:45,673 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:23:45,749 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:23:45,772 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:23:45,801 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:23:45,804 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:25:05,494 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:25:05,495 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:25:05,560 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:25:05,567 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:25:05,568 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:25:05,572 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:25:05,580 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:27:07,134 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:27:08,387 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 16:27:11,153 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:27:11,281 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:27:11,337 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:27:11,362 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:27:11,363 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:29:10,008 [Worker-38] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:29:16,728 [Worker-38] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:29:20,329 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:29:20,368 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:29:21,375 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:29:22,136 [Worker-38] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:29:22,158 [Worker-38] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:29:22,178 [Worker-38] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:29:22,200 [Worker-38] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:29:22,200 [Worker-38] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:29:24,977 [Worker-38] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 14 sec
+2017-05-27 16:29:42,168 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:29:42,169 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:29:42,205 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:29:42,311 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:29:42,312 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:29:42,323 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:29:42,327 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:29:47,067 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:29:47,067 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:29:47,091 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:29:47,115 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:29:47,137 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:29:47,141 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:29:47,156 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:30:08,781 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:30:08,799 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:30:08,855 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:30:08,879 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:08,880 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:30:08,902 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:08,905 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:30:15,135 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:30:15,135 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:30:15,160 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:30:15,164 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:15,194 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:30:15,198 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:15,223 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:30:30,085 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:30:30,085 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:30:30,088 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:30:30,114 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:30,114 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:30:30,135 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:30,138 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:30:39,851 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:30:39,852 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:30:39,855 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:30:39,859 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:39,882 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:30:39,886 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:39,910 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:30:53,799 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:30:53,821 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:30:53,843 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:30:53,875 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:53,876 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:30:53,905 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:30:53,908 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:31:13,113 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:31:13,114 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:31:13,117 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:31:13,120 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:31:13,121 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:31:13,127 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:31:13,148 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:32:29,945 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:32:29,966 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:32:30,042 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:32:30,077 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:32:30,078 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:32:30,082 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:32:30,083 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:32:35,558 [Worker-40] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:32:37,082 [Worker-40] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:32:38,642 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:32:38,642 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:32:39,343 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:32:39,651 [Worker-40] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:32:39,654 [Worker-40] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:32:39,655 [Worker-40] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:32:39,682 [Worker-40] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:32:39,683 [Worker-40] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:32:41,758 [Worker-40] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 6 sec
+2017-05-27 16:32:54,772 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:32:54,793 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:32:54,868 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:32:54,978 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:32:54,979 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:32:55,019 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:32:55,022 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:34:37,961 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:34:38,003 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:34:38,030 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:34:38,079 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:34:38,104 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:34:38,113 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:35:40,764 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:35:40,806 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:35:40,811 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:35:40,812 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:35:40,818 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:35:40,822 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:40:35,158 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:40:36,063 [Worker-39] ERROR o.e.m.c.i.embedder.EclipseLogger - error(50): IndicatorGrammar.g4:36:0: syntax error: unterminated rule (missing ';') detected at 'LPAREN :' while looking for lexer rule element
+2017-05-27 16:40:36,190 [Worker-39] ERROR o.e.m.c.i.embedder.EclipseLogger - error(50): IndicatorGrammar.g4:36:0: syntax error: unterminated rule (missing ';') detected at 'LPAREN :' while looking for lexer rule element
+2017-05-27 16:40:36,260 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:40:36,287 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:40:36,288 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:40:36,308 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:40:36,309 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:40:47,751 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:40:47,804 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 16:40:49,955 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:40:49,979 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:40:50,003 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:40:50,007 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:40:50,029 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:41:03,936 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:41:03,936 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:41:03,967 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:41:04,010 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:41:04,031 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:41:04,054 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:41:04,055 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:41:34,538 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:41:34,538 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:41:34,541 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:41:34,545 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:41:34,573 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:41:34,576 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:41:34,654 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:42:45,349 [Worker-37] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:42:49,981 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:42:53,605 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:42:53,626 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:42:54,466 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:42:55,192 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:42:55,273 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:42:55,296 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:42:55,297 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:42:55,318 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:42:57,713 [Worker-37] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 12 sec
+2017-05-27 16:43:14,174 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:43:14,174 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:43:14,236 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:43:14,332 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:43:14,355 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:43:14,360 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:43:14,385 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:43:46,463 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:43:46,464 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:43:46,467 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:43:46,492 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:43:46,492 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:43:46,517 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:43:46,526 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:43:53,330 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:43:53,330 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:43:53,361 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:43:53,361 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:43:53,383 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:43:53,383 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:43:53,414 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:44:35,789 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:44:35,815 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:44:35,903 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:44:35,931 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:44:35,932 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:44:35,963 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:44:35,964 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:46:00,035 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:46:00,035 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:46:00,077 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:46:00,084 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:46:00,085 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:46:00,093 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:46:00,117 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:46:52,498 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:46:52,514 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:46:52,573 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:46:52,641 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:46:52,641 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:46:52,650 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:46:52,652 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:47:40,995 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:47:40,996 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:47:41,033 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:47:41,037 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:47:41,037 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:47:41,040 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:47:41,042 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:47:53,673 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:47:53,704 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:47:53,740 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:47:53,769 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:47:53,770 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:47:53,807 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:47:53,808 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:48:10,764 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:48:10,765 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:48:10,839 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:48:10,843 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:48:10,865 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:48:10,869 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:48:10,907 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:48:53,728 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:48:53,728 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:48:53,764 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:48:53,795 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:48:53,796 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:48:53,823 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:48:53,829 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:50:44,771 [Worker-47] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:50:46,429 [Worker-47] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:50:50,103 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:50:50,103 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:50:50,945 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:50:51,367 [Worker-47] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:50:51,401 [Worker-47] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:50:51,510 [Worker-47] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:50:51,611 [Worker-47] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:50:51,612 [Worker-47] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:50:54,174 [Worker-47] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 9 sec
+2017-05-27 16:51:05,427 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:51:05,442 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:51:05,511 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:51:05,588 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:51:05,589 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:51:05,607 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:51:05,610 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:51:19,127 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:51:19,127 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:51:19,166 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:51:19,166 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:51:19,198 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:51:19,198 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:51:19,218 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:51:21,816 [Worker-30] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-27 16:51:23,248 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:proyectoInversion:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\pom.xml.
+2017-05-27 16:51:24,594 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:51:24,614 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:51:25,380 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:51:25,716 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/main/java
+2017-05-27 16:51:25,718 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/antlr4
+2017-05-27 16:51:25,737 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/target/generated-sources/wrappers
+2017-05-27 16:51:25,738 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Investment-Manager/src/test/java
+2017-05-27 16:51:25,760 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Investment-Manager/src/test/resources
+2017-05-27 16:51:27,885 [Worker-30] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 6 sec
+2017-05-27 16:51:54,888 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:51:54,928 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:51:54,991 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:51:55,040 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:51:55,066 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:51:55,071 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:51:55,102 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:53:00,368 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 16:53:00,588 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 16:53:00,651 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 16:53:00,673 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:53:00,673 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 16:53:00,688 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:53:00,751 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 17:00:47,694 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 17:00:49,774 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Processing grammar: IndicatorGrammar.g4
+2017-05-27 17:00:52,075 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 17:00:52,106 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 17:00:52,133 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 17:00:52,136 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 17:00:52,171 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 17:00:53,292 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 17:00:53,292 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 17:00:53,292 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 17:00:53,307 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 17:00:53,323 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 17:00:53,358 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 17:00:53,359 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 17:25:34,184 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-27 17:25:34,187 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\antlr4
+2017-05-27 17:25:34,230 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\target\generated-sources\wrappers added.
+2017-05-27 17:25:34,237 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 17:25:34,287 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Investment-Manager\src\main\resources
+2017-05-27 17:25:34,290 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 17:25:34,340 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource

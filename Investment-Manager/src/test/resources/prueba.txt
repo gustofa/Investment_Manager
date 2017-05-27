@@ -1,1 +1,1 @@
-44.88-14+indiXXXXcador
+44+50+$Indicador1+3+value*$Indicador3

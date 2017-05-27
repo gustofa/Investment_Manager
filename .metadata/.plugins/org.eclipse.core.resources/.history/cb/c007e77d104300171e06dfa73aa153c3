@@ -1,0 +1,23 @@
+package groupone.java.account;
+import antlr.java.*;
+
+public class IndicatorListener extends IndicatorGrammarBaseListener {
+	public IndicatorListener() {
+		super();
+	}
+	
+	@Override
+	public void enterExpression(IndicatorGrammarParser.ExpressionContext ctx) {
+		System.out.println("Expression");
+	}
+	
+	@Override
+	public void enterNumber(IndicatorGrammarParser.NumberContext ctx) {
+		System.out.println("Number");
+	}
+	
+	@Override
+	public void enterOperator(IndicatorGrammarParser.NumberContext ctx) {
+		System.out.println("Number");
+	}
+}

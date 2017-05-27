@@ -1,0 +1,35 @@
+package groupone.java.account;
+import antlr.java.*;
+
+public class IndicatorListener extends IndicatorGrammarBaseListener {
+	public IndicatorListener() {
+		super();
+	}
+	
+	@Override
+	public void enterExpression(IndicatorGrammarParser.ExpressionContext ctx) {
+		System.out.println("Expression");
+	}
+	
+	@Override
+	public void enterNumber(IndicatorGrammarParser.NumberContext ctx) {
+		System.out.println("Number");
+	}
+	
+	@Override
+	public void enterOperator(IndicatorGrammarParser.OperatorContext ctx) {
+		System.out.println("Operator");
+	}
+	
+	@Override
+	public void enterVariable(IndicatorGrammarParser.VariableContext ctx) {
+		String variable = ctx.getText();
+		if(variable.contains("$")){
+			System.out.println("Indicador detectado:" + ctx.getText());	
+		}
+		
+		if (variable == "value"){
+			System.out.println("Value:" + ctx.getText());	
+		}
+	}
+}

@@ -26,10 +26,10 @@ public class IndicatorListenerTest {
 	        IndicatorGrammarLexer lexer = new IndicatorGrammarLexer(new ANTLRFileStream(file));
 	        CommonTokenStream tokens = new CommonTokenStream(lexer);
 	        IndicatorGrammarParser parser = new IndicatorGrammarParser(tokens);
-	        IndicatorGrammarParser.IndicadorContext indicadorContext = parser.indicador();
+	        IndicatorGrammarParser.ExpressionContext expressionContext = parser.expression();
 	        ParseTreeWalker walker = new ParseTreeWalker();
 	        IndicatorListener listener = new IndicatorListener();
-	        walker.walk(listener, indicadorContext);
+	        walker.walk(listener, expressionContext);
 
 	        Assert.assertTrue(true);
 

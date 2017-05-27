@@ -1,0 +1,80 @@
+/**
+ * Define a grammar called grammarDDS
+ */
+grammar IndicatorGrammar;
+
+@header{
+package antlr.java;
+}
+
+expression
+   : term (OPERATOR term)*
+   ;
+
+term
+   : variable
+   | number
+   | LPAREN expression RPAREN
+   ;
+
+number
+   : MINUS? DIGIT + (POINT DIGIT +)?
+   ;
+
+variable
+   : LETTER (LETTER | DIGIT)*
+   ;
+
+
+LPAREN
+   : '('
+   ;
+
+RPAREN
+   : ')'
+   ;
+
+
+OPERATOR 
+	: PLUS
+	| MINUS
+	| MULTI
+	| DIV
+	;  
+	
+PLUS
+   : '+'
+   ;
+
+
+MINUS
+   : '-'
+   ;
+
+
+MULTI
+   : '*'
+   ;
+
+
+DIV
+   : '/'
+   ;
+
+
+POINT
+   : '.'
+   ;
+
+
+LETTER
+   : [a-zA-Z]+
+   ;
+
+
+DIGIT
+   :  [0-9]+
+   ;
+
+
+WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines

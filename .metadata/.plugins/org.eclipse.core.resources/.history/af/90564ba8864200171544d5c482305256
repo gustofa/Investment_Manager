@@ -1,0 +1,6 @@
+import antlr.java.*;
+
+public class IndicatorListener extends IndicatorGrammarBaseListener {
+
+}
+ 

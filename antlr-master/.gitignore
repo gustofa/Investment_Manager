@@ -1,0 +1,9 @@
+# project files
+.idea/
+*.iml
+
+# output
+target/
+
+# tmp stuff
+tmp/

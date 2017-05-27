@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="IndicatorListenerTest" project="Investment-Manager" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.DDS_2017_k3052_grupo1.proyectoInversion.IndicatorListenerTest" incomplete="true">
+    <testcase name="testGramatica" classname="com.DDS_2017_k3052_grupo1.proyectoInversion.IndicatorListenerTest" incomplete="true"/>
+  </testsuite>
+</testrun>

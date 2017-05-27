@@ -1,0 +1,19 @@
+package com.DDS_2017_k3052_grupo1.proyectoInversion
+
+import antlr.java.*;
+
+public class IndicatorListener extends IndicatorGrammarBaseListener {
+	public IndicatorListener() {
+		super();
+	}
+
+	@Override
+	public void enterIndicador(IndicatorGrammarParser.IndicadorContext ctx) {
+
+		// reinicio la expresion actual
+		this.expresionActual = new ExpresionCompuesta();
+
+		this.iterateNodes(ctx);
+	}
+
+}

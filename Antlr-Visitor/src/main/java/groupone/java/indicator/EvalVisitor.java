@@ -18,6 +18,16 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
     // store variables (there's only one global scope!)
     private Map<String, Double> memory = new HashMap<String, Double>();
 
+    // count
+    @Override
+    public Double visitCount(IndicatorGrammarParser.CountContext ctx) {
+        String count = ctx.getText();
+       //TODO aca habría que ir a buscar esta cuenta en las cuentas de la empresa
+        // y devolver su valor
+        System.out.println("se detectó la cuenta: "+count);
+        return 1.00;
+    }    
+    
     // assignment/id overrides
     @Override
     public Double visitAssign(IndicatorGrammarParser.AssignContext ctx) {

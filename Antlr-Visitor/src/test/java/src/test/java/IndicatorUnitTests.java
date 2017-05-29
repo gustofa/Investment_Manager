@@ -15,7 +15,7 @@ import groupone.java.indicator.IndicatorErrorListener;
 public class IndicatorUnitTests {
 	@Test
 	public void testGramatica() throws Exception {
-		String nuevoIndicador = "OtroIndicador=50\r\n(2dasljadsjkas*2)+OtroIndicador\r\n";
+		String nuevoIndicador = "OtroIndicador=50\r\n(2*2)+OtroIndicador+$9954\r\n";
 
 		System.out.println("parsing: " + nuevoIndicador);		
 		IndicatorErrorListener indicatorErrorListener = new IndicatorErrorListener(); 

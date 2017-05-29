@@ -28,6 +28,7 @@ expr
 atom
  : (INT | FLOAT)  #numberAtom
  | ID             #idAtom
+ | '$' INT		  #Count
  ;
 
 

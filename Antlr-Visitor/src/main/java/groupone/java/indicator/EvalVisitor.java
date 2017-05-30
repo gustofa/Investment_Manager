@@ -53,6 +53,8 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
         if(value == null) {
             throw new RuntimeException("no such variable: " + id);
         }
+        
+
 //        if(id.equals("Indicador")){
 //        	return new Value(Double.valueOf(100));
 //        } else {

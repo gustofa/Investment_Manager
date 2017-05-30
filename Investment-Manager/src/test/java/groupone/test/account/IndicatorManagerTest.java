@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
 import groupone.java.indicator.Indicator;
+import groupone.java.indicator.IndicatorList;
 import groupone.java.indicator.IndicatorManager;
 
 
@@ -24,7 +25,7 @@ public class IndicatorManagerTest {
      
         String content = "[{"
              + "\"name\": \"IngresoNetoEnOperacionesContinuas\","
-             + "\"expression\": \"800000*2\"},"
+             + "\"expression\": \"500000*2\"},"
              + "{\"name\": \"IngresoNetoEnOperacionesDiscontinuadas\","
              + "\"expression\": \"200000/2\"},"
              + "{\"name\": \"IngresoNeto\","
@@ -35,11 +36,10 @@ public class IndicatorManagerTest {
  
         IndicatorManager indicatorManager = new IndicatorManager();
 		indicatorManager.agregarIndicadores(file.getPath());
-		
-		assertTrue(indicatorManager.getIndicadores().size() == 1);
-		Indicator insertedIndicator = indicatorManager.getIndicadores().get(2);
-		assertEquals(insertedIndicator.getName(), "IngresoNeto");
-		assertEquals(insertedIndicator.getExpression(), "IngresoNetoEnOperacionesContinuas+IngresoNetoEnOperacionesDiscontinuadas");
+		Indicator insertedIndicator = IndicatorList.listaIndicadores.get(0);
+		assertEquals(insertedIndicator.getName(), "IngresoNetoEnOperacionesContinuas");
+		assertEquals(insertedIndicator.getExpression(), "500000*2");
+		//assertEquals(IndicatorList.listaIndicadores.size(),3);
 	}
 	
 	@Test(expected = IOException.class)

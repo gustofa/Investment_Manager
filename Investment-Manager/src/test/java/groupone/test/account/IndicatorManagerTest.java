@@ -12,6 +12,8 @@ import org.junit.rules.TemporaryFolder;
 import groupone.java.indicator.Indicator;
 import groupone.java.indicator.IndicatorManager;
 
+
+
 public class IndicatorManagerTest {
 	@Rule
 	public TemporaryFolder folder = new TemporaryFolder();
@@ -21,8 +23,13 @@ public class IndicatorManagerTest {
 	    File file = folder.newFile("test.json");
      
         String content = "[{"
-             + "\"name\": \"IngresoNeto\","
-             + "\"expression\": \"IngresoNetoEnOperacionesContinuas+IngresoNetoEnOperacionesDiscontinuadas\"}]";
+             + "\"name\": \"IngresoNetoEnOperacionesContinuas\","
+             + "\"expression\": \"800000*2\"},"
+             + "{\"name\": \"IngresoNetoEnOperacionesDiscontinuadas\","
+             + "\"expression\": \"200000/2\"},"
+             + "{\"name\": \"IngresoNeto\","
+             + "\"expression\": \"IngresoNetoEnOperacionesContinuas+IngresoNetoEnOperacionesDiscontinuadas\"}"
+             + "]";
         
         FileUtils.writeStringToFile(file , content);  
  
@@ -30,7 +37,7 @@ public class IndicatorManagerTest {
 		indicatorManager.agregarIndicadores(file.getPath());
 		
 		assertTrue(indicatorManager.getIndicadores().size() == 1);
-		Indicator insertedIndicator = indicatorManager.getIndicadores().get(0);
+		Indicator insertedIndicator = indicatorManager.getIndicadores().get(2);
 		assertEquals(insertedIndicator.getName(), "IngresoNeto");
 		assertEquals(insertedIndicator.getExpression(), "IngresoNetoEnOperacionesContinuas+IngresoNetoEnOperacionesDiscontinuadas");
 	}

@@ -17,7 +17,7 @@ public class Main {
 //        }
     	String nuevoIndicador = "OtroIndicador=50\r\n(2*2)+OtroIndicador\r\n";
     	
-        System.out.println("parsing: " + nuevoIndicador);
+       // System.out.println("parsing: " + nuevoIndicador);
 
         IndicatorGrammarLexer lexer = new IndicatorGrammarLexer(new ANTLRInputStream(nuevoIndicador));
         IndicatorGrammarParser parser = new IndicatorGrammarParser(new CommonTokenStream(lexer));

@@ -15,7 +15,7 @@ import groupone.java.indicator.IndicatorErrorListener;
 public class IndicatorUnitTests {
 	@Test
 	public void testGramatica() throws Exception {
-		String nuevoIndicador = "OtroIndicador=50\r\n(2*2)+OtroIndicador+$9954\r\n";
+		String nuevoIndicador = "+++++OtroIndicador=50tertrter\r\n(2*2)+OtroIndicador+$9954\r\n";
 
 		System.out.println("parsing: " + nuevoIndicador);		
 		IndicatorErrorListener indicatorErrorListener = new IndicatorErrorListener(); 
@@ -28,6 +28,7 @@ public class IndicatorUnitTests {
 		
 		try{
 			visitor.visit(tree);
+			System.out.println("dentro del try");		
 		}catch(final ParseCancellationException e){
 			throw new Exception(e.getMessage());
 		}

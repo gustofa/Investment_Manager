@@ -1,5 +1,4 @@
 package groupone.java.indicator;
-//package dds;
 
 import org.antlr.v4.runtime.misc.NotNull;
 
@@ -20,11 +19,11 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 
     // count
     @Override
-    public Double visitCount(IndicatorGrammarParser.CountContext ctx) {
-        String count = ctx.getText();
+    public Double visitAccount(IndicatorGrammarParser.AccountContext ctx) {
+        String account = ctx.getText();
        //TODO aca habría que ir a buscar esta cuenta en las cuentas de la empresa
-        // y devolver su valor
-        System.out.println("se detectó la cuenta: "+count);
+       // y devolver su valor
+       // System.out.println("se detectó la cuenta: "+account);
         return 1.00;
     }    
     

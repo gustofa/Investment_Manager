@@ -9,13 +9,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
-public class IndicatorManager {
-
-
-	public void addIndicators(String filePath) throws IOException {
+public class EntityJsonLoader {
+	public static <T> List<T> getEntities(String filePath) throws IOException {
 		JsonReader reader = new JsonReader(new FileReader(filePath));
-		Type indicatorsListType = new TypeToken<List<Indicator>>() {
+		Type entityType = new TypeToken<List<T>>() {
 		}.getType();
-		IndicatorList.indicatorsList = new Gson().fromJson(reader, indicatorsListType);
+		
+		return new Gson().fromJson(reader, entityType);
 	}
 }

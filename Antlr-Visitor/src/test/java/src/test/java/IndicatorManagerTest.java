@@ -35,8 +35,8 @@ public class IndicatorManagerTest {
         FileUtils.writeStringToFile(file , content);  
  
         IndicatorManager indicatorManager = new IndicatorManager();
-		indicatorManager.agregarIndicadores(file.getPath());
-		Indicator insertedIndicator = IndicatorList.listaIndicadores.get(0);
+		indicatorManager.addIndicators(file.getPath());
+		Indicator insertedIndicator = IndicatorList.indicatorsList.get(0);
 		assertEquals(insertedIndicator.getName(), "IngresoNetoEnOperacionesContinuas");
 		assertEquals(insertedIndicator.getExpression(), "500000*2");
 		//assertEquals(IndicatorList.listaIndicadores.size(),3);
@@ -45,6 +45,6 @@ public class IndicatorManagerTest {
 	@Test(expected = IOException.class)
 	public void agregarIndicadoresThrowsInputOutputExceptionIfFileDoesNotExist() throws IOException{
 		IndicatorManager indicatorManager = new IndicatorManager();
-		indicatorManager.agregarIndicadores("FooFolder/FooFile.Foo");
+		indicatorManager.addIndicators("FooFolder/FooFile.Foo");
 	}
 }

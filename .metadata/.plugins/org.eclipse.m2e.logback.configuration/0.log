@@ -2440,3 +2440,164 @@ org.eclipse.core.runtime.CoreException: Launch configuration IndicatorListenerTe
 2017-05-31 02:08:33,494 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
 2017-05-31 02:08:33,532 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-05-31 02:08:33,533 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 10:30:29,715 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:antlr-Project:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\pom.xml.
+2017-05-31 10:31:15,990 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 10:31:15,991 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 10:31:25,724 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:antlr-Project:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\pom.xml.
+2017-05-31 10:31:25,860 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 10:31:25,861 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 10:31:25,874 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 10:31:25,886 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 10:31:58,068 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 10:31:58,077 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 10:31:58,115 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 10:31:58,118 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 10:31:58,190 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 10:31:58,222 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 11:27:49,353 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 11:27:49,353 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 11:27:49,400 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:27:49,400 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 11:27:49,400 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:27:49,422 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 11:41:18,864 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 11:41:18,870 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 11:41:18,915 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:41:18,916 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 11:41:19,093 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:41:19,095 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 11:41:59,386 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 11:41:59,387 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 11:41:59,434 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:41:59,460 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 11:41:59,539 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:41:59,541 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 11:43:40,635 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 11:43:40,635 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 11:43:40,642 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:43:40,643 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 11:43:40,647 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:43:40,650 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 11:43:49,303 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 11:43:49,304 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 11:43:49,455 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:43:49,456 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 11:43:49,655 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:43:49,659 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 11:54:27,062 [Worker-49] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-31 11:54:36,946 [Worker-49] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.DDS-2017-k3052-grupo1:antlr-Project:0.0.1-SNAPSHOT @ C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\pom.xml.
+2017-05-31 11:54:43,155 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 11:54:43,402 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 11:54:46,558 [Worker-49] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Antlr-Visitor/src/main/java
+2017-05-31 11:54:46,595 [Worker-49] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Antlr-Visitor/target/generated-sources/antlr4
+2017-05-31 11:54:46,637 [Worker-49] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Antlr-Visitor/src/test/java
+2017-05-31 11:54:46,639 [Worker-49] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Antlr-Visitor/src/test/resources
+2017-05-31 11:54:51,166 [Worker-49] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 24 sec
+2017-05-31 11:54:56,594 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 11:54:56,594 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 11:54:56,743 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:54:56,971 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 11:54:57,019 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 11:54:57,136 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 12:04:44,671 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 12:04:44,678 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 12:04:44,716 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:04:44,753 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 12:04:44,761 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:04:44,797 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 12:14:03,078 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 12:14:03,083 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 12:14:03,093 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:14:03,094 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 12:14:03,123 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:14:03,126 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 12:17:10,066 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 12:17:10,127 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 12:17:10,155 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:17:10,211 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 12:17:10,216 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:17:10,273 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-31 12:19:19,140 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 12:19:19,141 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 12:19:19,154 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:19:19,201 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 12:19:19,205 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:19:19,296 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 12:20:47,759 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 12:20:47,803 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 12:20:47,837 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:20:47,873 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 12:20:47,880 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 12:20:47,916 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:12:08,745 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:12:08,771 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:12:08,781 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:12:08,781 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:12:08,781 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:12:08,791 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:18:23,369 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:18:23,422 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:18:23,438 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:18:23,462 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:18:23,462 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:18:23,583 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:22:21,774 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:22:21,775 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:22:21,781 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:22:21,880 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:22:21,886 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:22:21,963 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:23:18,583 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:23:18,675 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:23:18,722 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:23:18,765 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:23:18,770 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:23:18,868 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:23:30,450 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:23:30,451 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:23:30,459 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:23:30,460 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:23:30,467 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:23:30,479 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:30:06,155 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:30:06,211 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:30:06,221 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:30:06,241 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:30:06,241 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:30:06,261 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:35:44,779 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:35:44,780 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:35:44,785 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:35:44,827 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:35:44,831 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:35:44,862 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:41:05,904 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:41:05,953 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:41:05,965 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:05,985 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:41:05,995 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:06,015 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:41:16,455 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:41:16,455 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:41:16,490 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:16,490 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:41:16,494 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:16,498 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:41:23,746 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:41:23,853 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:41:23,861 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:23,911 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:41:23,916 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:23,944 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:41:28,452 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:41:28,452 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:41:28,457 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:28,515 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:41:28,547 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:28,572 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-31 13:41:33,855 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - No grammars to process
+2017-05-31 13:41:33,884 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - ANTLR 4: Processing source directory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\antlr4
+2017-05-31 13:41:33,919 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:33,954 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Matutetimossi\Desktop\DSS2\DDS\Antlr-Visitor\src\main\resources
+2017-05-31 13:41:33,958 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-31 13:41:33,984 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource

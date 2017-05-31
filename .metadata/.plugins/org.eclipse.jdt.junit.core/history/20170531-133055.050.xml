@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="IndicatorUnitTests" project="Antlr-Visitor" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="src.test.java.IndicatorUnitTests" incomplete="true">
+    <testcase name="evaluateIndicatorWithSyntacticalErrorsGeneratesErrorMessages" classname="src.test.java.IndicatorUnitTests" time="0.992"/>
+    <testcase name="evaluateIndicatorRespectOperatorsPriority" classname="src.test.java.IndicatorUnitTests" incomplete="true"/>
+  </testsuite>
+</testrun>

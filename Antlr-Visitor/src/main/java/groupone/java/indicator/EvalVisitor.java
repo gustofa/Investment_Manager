@@ -3,11 +3,12 @@ package groupone.java.indicator;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.lang.Double;
 
 import grammar.*;
+import groupone.java.account.Account;
+import groupone.java.account.AccountList;
 
 public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 
@@ -15,16 +16,23 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
     public static final double SMALL_VALUE = 0.00000000001;
 
     // store variables (there's only one global scope!)
-    private Map<String, Double> memory = new HashMap<String, Double>();
+    private Map<String, String> memory = new HashMap<String, String>();
 
     // count
     @Override
     public Double visitAccount(IndicatorGrammarParser.AccountContext ctx) {
-        String account = ctx.getText();
-       //TODO aca habría que ir a buscar esta cuenta en las cuentas de la empresa
-       // y devolver su valor
-       // System.out.println("se detectó la cuenta: "+account);
-        return 1.00;
+    	Double value;
+    	String account = ctx.getText().replaceAll("$","");
+    	String empresa = memory.get("ParamEmpresa");
+    	String anio = memory.get("ParamAnio");        
+        Account unaCuenta = AccountList.findAccount(account, empresa, anio);
+        if(unaCuenta == null) {
+            throw new RuntimeException("no such account: " + account);
+        }else{
+        	value = unaCuenta.getValor();
+        }
+
+        return value;
     }    
     
     // assignment/id overrides
@@ -33,7 +41,7 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
         String id = ctx.ID().getText();
         Double value = this.visit(ctx.expr());
        // System.out.println("id - valor: "+id+" - "+value.toString());
-        memory.put(id, value);
+        memory.put(id, value.toString());
         return value;
     }    
     // expression
@@ -49,17 +57,22 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
     public Double visitIdAtom(IndicatorGrammarParser.IdAtomContext ctx) {
         String id = ctx.ID().getText();
         //System.out.println(id);
-        Double value = memory.get(id);
-        if(value == null) {
-            throw new RuntimeException("no such variable: " + id);
-        }
-        
 
-//        if(id.equals("Indicador")){
-//        	return new Value(Double.valueOf(100));
-//        } else {
-//        	throw new RuntimeException("no such variable: " + id);
-//        }
+        Double value = memory.get(id) != null ? Double.parseDouble(memory.get(id)) : null;
+        if(value == null) {
+            //throw new RuntimeException("no such variable: " + id);
+        	//si es no está en memory es porque no está calculado en líneas anteriores de la expresión
+        	//se estima entonces que es un indicador
+        	Indicator otroIndicador = IndicatorList.findIndicator(id);
+            if(otroIndicador == null) {
+                throw new RuntimeException("no such indicator: " + id);
+            }else{
+            	String empresa = memory.get("ParamEmpresa");
+            	String anio = memory.get("ParamAnio");
+            	value = otroIndicador.getResult(empresa, anio);
+            }
+        }
+
         return value;
     }
 

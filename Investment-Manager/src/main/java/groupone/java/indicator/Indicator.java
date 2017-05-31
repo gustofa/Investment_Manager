@@ -39,8 +39,13 @@ public class Indicator implements AbstractIndicator{
 		this.expression = expression;
 	}
 	
-	public Double getResult(String empresa, Integer anio){
-        IndicatorGrammarLexer lexer = new IndicatorGrammarLexer(new ANTLRInputStream(this.getExpression()));
+	public Double getResult(String empresa, String anio){
+		
+		String nueva_expresion = getExpression();
+		nueva_expresion = "ParamEmpresa="+empresa+"\r\n"+"ParamAnio="+anio+"\r\n"+nueva_expresion;
+		
+        @SuppressWarnings("deprecation")
+		IndicatorGrammarLexer lexer = new IndicatorGrammarLexer(new ANTLRInputStream(nueva_expresion));
         IndicatorGrammarParser parser = new IndicatorGrammarParser(new CommonTokenStream(lexer));
         ParseTree tree = parser.prog();
         EvalVisitor visitor = new EvalVisitor();
@@ -51,6 +56,7 @@ public class Indicator implements AbstractIndicator{
 	
 	public String validateSyntax() throws Throwable{
 		IndicatorErrorListener indicatorErrorListener = new IndicatorErrorListener(); 
+		@SuppressWarnings("deprecation")
 		IndicatorGrammarLexer lexer = new IndicatorGrammarLexer(new ANTLRInputStream(this.getExpression()));
 		lexer.addErrorListener(indicatorErrorListener);
 		IndicatorGrammarParser parser = new IndicatorGrammarParser(new CommonTokenStream(lexer));

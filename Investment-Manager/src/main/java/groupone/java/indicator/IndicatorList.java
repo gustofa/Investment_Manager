@@ -10,11 +10,11 @@ public class IndicatorList {
 
 		public static void imprimirIndicadores() {
 			for (Indicator indicador : listaIndicadores) {
-				imprimirIndicator(indicador);
+				printIndicator(indicador);
 			}
 		}
 
-		private static void imprimirIndicator(Indicator indicador) {
+		private static void printIndicator(Indicator indicador) {
 			System.out.println(" Indicador: " + indicador.getName() + " /  Expresion: " + indicador.getExpression());
 		}
 

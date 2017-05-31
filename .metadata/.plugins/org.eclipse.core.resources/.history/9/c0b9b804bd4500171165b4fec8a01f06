@@ -1,0 +1,10 @@
+package groupone.java.investment;
+
+import java.io.IOException;
+
+public class LoadAccountsApp {
+
+	public static void main(String[] args) {
+		
+	}
+}

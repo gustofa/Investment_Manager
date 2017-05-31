@@ -9,8 +9,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import grammar.IndicatorGrammarLexer;
 import grammar.IndicatorGrammarParser;
-import groupone.java.indicator.EvalVisitor;
-import groupone.java.indicator.IndicatorErrorListener;
+import groupone.java.investment.EvalVisitor;
+import groupone.java.investment.IndicatorErrorListener;
 
 public class IndicatorUnitTests {
 	@Test

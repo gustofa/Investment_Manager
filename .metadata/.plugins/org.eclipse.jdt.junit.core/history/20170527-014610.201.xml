@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="AccountManagerTests (1)" project="Investment-Manager" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="groupone.test.account.AccountManagerTests" time="3.26">
-    <testcase name="agregarCuentasThrowsInputOutputExceptionIfFileDoesNotExist" classname="groupone.test.account.AccountManagerTests" time="1.88"/>
-    <testcase name="agregarCuentasShouldKeepAccountsInMemory" classname="groupone.test.account.AccountManagerTests" time="1.38"/>
-  </testsuite>
-</testrun>

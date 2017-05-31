@@ -1,6 +1,0 @@
-import com.DDS_2017_k3052_grupo1.proyectoInversion.antlr;
-
-public class IndicatorListener extends IndicatorGrammarBaseListener {
-
-}
- 

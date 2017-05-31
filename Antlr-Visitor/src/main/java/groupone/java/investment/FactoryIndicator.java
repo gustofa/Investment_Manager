@@ -1,8 +1,8 @@
 package groupone.java.investment;
 
-public class FactoryIndicator {
+public class FactoryIndicator implements AbstractFactoryIndicators{
 
-	AbstractIndicator newIndicator(){
+	public Indicator newIndicator(){
 		Indicator indicador = new Indicator();
 		return indicador;
 	}

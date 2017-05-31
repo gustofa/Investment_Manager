@@ -39,7 +39,7 @@ public class IndicatorManagerTest {
 		Indicator insertedIndicator = IndicatorList.indicatorsList.get(0);
 		assertEquals(insertedIndicator.getName(), "IngresoNetoEnOperacionesContinuas");
 		assertEquals(insertedIndicator.getExpression(), "500000*2");
-		//assertEquals(IndicatorList.listaIndicadores.size(),3);
+		assertEquals(IndicatorList.indicatorsList.size(),3);
 	}
 	
 	@Test(expected = IOException.class)

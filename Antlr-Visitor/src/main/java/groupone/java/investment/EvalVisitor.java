@@ -47,8 +47,8 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
     public Double visitExpression(IndicatorGrammarParser.ExpressionContext ctx) {
         //String id = ctx.getText();
         Double value = this.visit(ctx.expr());
-        System.out.println(value);
-        return 0.00;
+        //System.out.println(value);
+        return value;
     }
 
     @Override

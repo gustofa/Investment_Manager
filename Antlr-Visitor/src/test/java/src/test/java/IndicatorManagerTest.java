@@ -47,4 +47,12 @@ public class IndicatorManagerTest {
 		IndicatorManager indicatorManager = new IndicatorManager();
 		indicatorManager.addIndicators("FooFolder/FooFile.Foo");
 	}
+	
+	@Test
+	public void loadPredefinedIndicators() throws IOException{
+		IndicatorManager indicatorManager = new IndicatorManager();
+		File[] predefinedIndicators = indicatorManager.LoadPredefinedIndicators();
+		assertEquals(predefinedIndicators.length, 2);
+	}		
+
 }

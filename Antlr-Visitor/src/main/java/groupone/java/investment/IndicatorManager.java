@@ -6,6 +6,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
+
+import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.apache.commons.io.FilenameUtils;
@@ -58,7 +60,7 @@ public class IndicatorManager {
 		parser.addErrorListener(indicatorErrorListener);
 		ParseTree treeParse = parser.prog();
 		
-		if(indicatorErrorListener.getErrorMessage().length() > 0){
+		if(indicatorErrorListener.hasErrors()){
 			throw new IndicatorSyntaxException(indicatorErrorListener.getErrorMessage());
 		}
 		

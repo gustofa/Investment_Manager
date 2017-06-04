@@ -12,10 +12,14 @@ public class IndicatorErrorListener extends BaseErrorListener {
 	public IndicatorErrorListener() {
 	}
 
-	private StringBuilder errorMessage = new StringBuilder("lista de errores:\r\n");
-
+	private StringBuilder errorMessage = new StringBuilder("");
+	
 	public String getErrorMessage() {
 		return errorMessage.toString();
+	}
+	
+	public boolean hasErrors(){
+		return this.getErrorMessage().length() > 0;
 	}
 
 	@Override
@@ -24,6 +28,7 @@ public class IndicatorErrorListener extends BaseErrorListener {
 		
 		if(e instanceof InputMismatchException ){
 			errorMessage.append("Error sintactico en la formula del indicador, en la linea " + line + ", caracter nº: " + charPositionInLine  + "\r\n");
+	
 		} else if(e instanceof FailedPredicateException ) {
 			errorMessage.append("Error en la linea " + line + ", caracter nº: " + charPositionInLine  + "\r\n");
 		} else if (e instanceof NoViableAltException ){
@@ -31,6 +36,7 @@ public class IndicatorErrorListener extends BaseErrorListener {
 		} else if (e instanceof LexerNoViableAltException ) {
 			errorMessage.append("Caracter no valido en la linea " + line +", caracter nº: " + charPositionInLine + "\r\n");
 		} 
-				
+		
+		System.out.println(line+" - "+charPositionInLine);
 	}
 }

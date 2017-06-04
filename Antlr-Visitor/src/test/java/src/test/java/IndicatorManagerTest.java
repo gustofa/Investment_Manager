@@ -35,11 +35,18 @@ public class IndicatorManagerTest {
 	}
 	
 	@Test
-	public void parseExpression() throws IndicatorSyntaxException {
+	public void parseExpressionWithInclompletedExpressionReturnsSyntacticError() throws IndicatorSyntaxException {
 		expectedEx.expect(IndicatorSyntaxException.class);
 		expectedEx.expectMessage("Error sintactico en la formula del indicador, en la linea 1, caracter nº: 4");
-		
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		indicatorManager.parseExpression("1+3+");	
+		indicatorManager.parseExpression("1+2+");	
+	}
+	
+	@Test
+	public void parseExpressionWithWrongCharacterReturnsSyntacticError() throws IndicatorSyntaxException {
+		expectedEx.expect(IndicatorSyntaxException.class);
+		expectedEx.expectMessage("Caracter no valido en la linea 1, caracter nº: 2");
+		IndicatorManager indicatorManager = IndicatorManager.getInstance();
+		indicatorManager.parseExpression("1+#+2\r\n");	
 	}
 }

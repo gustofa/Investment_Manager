@@ -6,7 +6,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.apache.commons.io.FilenameUtils;
+import grammar.IndicatorGrammarLexer;
+import grammar.IndicatorGrammarParser;
 
 public class IndicatorManager {
 
@@ -27,7 +31,7 @@ public class IndicatorManager {
 		return this.indicators.get(name);
 	}
 
-	public void loadPredefinedIndicators() throws IOException{
+	public void loadPredefinedIndicators() throws IOException, IndicatorSyntaxException{
 		
 		// Get files from file system
 		String predefinedIndicatorsFolder = getClass().getResource("/predefinedIndicators").getFile();
@@ -39,9 +43,25 @@ public class IndicatorManager {
 	    	String indicatorName = FilenameUtils.getBaseName(indicatorFile.getName());
 	    	newIndicator.setName(indicatorName);
 	    	String expression = new String(Files.readAllBytes(Paths.get(indicatorFile.getPath())), StandardCharsets.UTF_8);
-	    	newIndicator.setExpression(expression);
-	    	
+	    	ParseTree parseTree = this.parseExpression(expression);
+	    	newIndicator.setParseTree(parseTree);
 	    	this.indicators.put(newIndicator.getName(),newIndicator);
 	    }
+	}
+	
+	public ParseTree parseExpression(String expression) throws IndicatorSyntaxException {
+		IndicatorErrorListener indicatorErrorListener = new IndicatorErrorListener();
+		@SuppressWarnings("deprecation")
+		IndicatorGrammarLexer lexer = new IndicatorGrammarLexer(new ANTLRInputStream(expression));
+		lexer.addErrorListener(indicatorErrorListener);
+		IndicatorGrammarParser parser = new IndicatorGrammarParser(new CommonTokenStream(lexer));
+		parser.addErrorListener(indicatorErrorListener);
+		ParseTree treeParse = parser.prog();
+		
+		if(indicatorErrorListener.getErrorMessage().length() > 0){
+			throw new IndicatorSyntaxException(indicatorErrorListener.getErrorMessage());
+		}
+		
+		return treeParse;
 	}
 }

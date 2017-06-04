@@ -27,13 +27,12 @@ public class IndicatorErrorListener extends BaseErrorListener {
 			String msg, RecognitionException e) {
 		
 		if(e instanceof InputMismatchException ){
-			errorMessage.append("Error sintactico en la formula del indicador, en la linea " + line + ", caracter nº: " + charPositionInLine  + "\r\n");
+			errorMessage.append(String.format(Messages.getString("IndicatorErrorListener.syntaxErrorMessage"), line, charPositionInLine)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		} else if (e instanceof LexerNoViableAltException ) {
-			errorMessage.append("Caracter no valido en la linea " + line +", caracter nº: " + charPositionInLine + "\r\n");
-		} else if(e instanceof FailedPredicateException ) {
-			errorMessage.append("Error en la linea " + line + ", caracter nº: " + charPositionInLine  + "\r\n");
-		} else if (e instanceof NoViableAltException ){
-			errorMessage.append("Error en la linea " + line + ", caracter nº: " + charPositionInLine  + "\r\n");
-		}
+			errorMessage.append(String.format(Messages.getString("IndicatorErrorListener.notValidCharacter"), line, charPositionInLine)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		} else if(e instanceof FailedPredicateException || e instanceof NoViableAltException ) {
+			errorMessage.append(String.format(Messages.getString("IndicatorErrorListener.errorOnLine"), line, charPositionInLine)); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		} 
+		
 	}
 }

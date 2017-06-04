@@ -30,10 +30,11 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 	@Override
 	public Double visitAccount(IndicatorGrammarParser.AccountContext ctx) {
 		Double value;
-		String account = ctx.getText().replaceAll("$", "");
+		String account = ctx.getText().replace("$", "");
+		System.out.println("la cuenta "+account+" de la empresa "+this.company+" del año "+this.year);
 		Account unaCuenta = AccountList.findAccount(account, this.company, this.year);
 		if (unaCuenta == null) {
-			throw new RuntimeException("no such account: " + account);
+			throw new RuntimeException("Cuenta no encontrada: " + account);
 		} else {
 			value = unaCuenta.getValor();
 		}
@@ -73,7 +74,7 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 			// se estima entonces que es un indicador
 			Indicator otroIndicador = IndicatorManager.getInstance().getIndicator(id);
 			if (otroIndicador == null) {
-				throw new RuntimeException("no such indicator: " + id);
+				throw new RuntimeException("Indicador no encontrado: " + id);
 			} else {
 				String empresa = memory.get("ParamEmpresa");
 				String anio = memory.get("ParamAnio");

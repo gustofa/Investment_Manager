@@ -1,18 +1,16 @@
 package src.test.java;
 
 import static org.junit.Assert.*;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
+
+import java.io.IOException;
+
 import org.antlr.v4.runtime.misc.ParseCancellationException;
-import org.antlr.v4.runtime.tree.ParseTree;
-import org.junit.Assert;
 import org.junit.Test;
-import grammar.IndicatorGrammarLexer;
-import grammar.IndicatorGrammarParser;
-import groupone.java.investment.EvalVisitor;
+import groupone.java.investment.AccountManager;
 import groupone.java.investment.Indicator;
 import groupone.java.investment.IndicatorErrorListener;
 import groupone.java.investment.IndicatorManager;
+import groupone.java.investment.IndicatorSyntaxException;
 
 @SuppressWarnings("deprecation")
 public class IndicatorUnitTests {
@@ -32,4 +30,32 @@ public class IndicatorUnitTests {
 		
 		assertTrue(value == 1100000.0);
 	}
+	
+	@Test
+	public void applyIndicatorWithAccountReturnCorrectResult() throws Exception, IOException, IndicatorSyntaxException{
+		IndicatorManager indicatorManager = IndicatorManager.getInstance();
+		
+		//Importamos las cuentas 
+		AccountManager accountManager = new AccountManager();
+		accountManager.agregarCuentas(indicatorManager.getClass().getClassLoader().getResource("cuentas.json").getFile());
+		accountManager.imprimirCuentas();
+		//Creamos un nuevo indicador que usa una cuenta en su expresión
+		String nuevoIndicador = indicatorManager.getClass().getClassLoader().getResource("MonthlyAverageFreeCashFlow.ind").getFile();
+		Indicator indicador = indicatorManager.loadNewIndicatorFromFile(nuevoIndicador);			
+
+		assertTrue(indicador != null);
+		assertEquals(indicador.getName(),"MonthlyAverageFreeCashFlow");
+		
+		Double valor;
+		try{
+			//calculamos el valor de indicador respecto de una empresa y un año, para saber que cuenta usar
+			valor = indicador.apply("Google", "2016");
+		}catch(final ParseCancellationException e){
+			throw new Exception(e.getMessage());
+		}
+		
+		assertTrue(valor == 1000.00);		
+		
+	
+	}	
 }

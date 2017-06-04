@@ -28,7 +28,7 @@ expr
 atom
  : (INT | FLOAT)  #numberAtom
  | ID             #idAtom
- | '$' INT		  #Account
+ | '$' ID		  #Account
  ;
 
 
@@ -54,6 +54,6 @@ FLOAT
 NEWLINE : '\r'? '\n' ;  // return newlines to parser (is end-statement signal
 
 SPACE
- : [ \t\r\n] -> skip
+ : [ \t] -> skip
  ;
 

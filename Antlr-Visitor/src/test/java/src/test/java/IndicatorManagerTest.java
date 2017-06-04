@@ -5,6 +5,8 @@ import java.io.IOException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import groupone.java.investment.AccountManager;
 import groupone.java.investment.Indicator;
 import groupone.java.investment.IndicatorManager;
 import groupone.java.investment.IndicatorSyntaxException;
@@ -29,5 +31,7 @@ public class IndicatorManagerTest {
 		Indicator ingresoNeto = indicatorManager.getIndicator("IngresoNeto");		
 		assertTrue(ingresoNeto != null);
 		assertEquals(ingresoNeto.getName(),"IngresoNeto");
-	}		
+	}
+
+	
 }

@@ -6,6 +6,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
+
+import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.apache.commons.io.FilenameUtils;
@@ -48,6 +50,23 @@ public class IndicatorManager {
 	    	this.indicators.put(newIndicator.getName(),newIndicator);
 	    }
 	}
+
+	public Indicator loadNewIndicatorFromFile(String pathfile) throws IOException, IndicatorSyntaxException {
+		
+		// Get file from file system
+	    File fileNewIndicator = new File(pathfile);
+	    
+	    // Creates and load predefined indicators
+	    	Indicator newIndicator = new Indicator();
+	    	String indicatorName = FilenameUtils.getBaseName(fileNewIndicator.getName());
+	    	newIndicator.setName(indicatorName);
+	    	String expression = new String(Files.readAllBytes(Paths.get(fileNewIndicator.getPath())), StandardCharsets.UTF_8);
+	    	ParseTree parseTree = this.parseExpression(expression);
+	    	newIndicator.setParseTree(parseTree);
+	    	this.indicators.put(newIndicator.getName(),newIndicator);
+	    	
+	    	return newIndicator;
+	}	
 	
 	public ParseTree parseExpression(String expression) throws IndicatorSyntaxException {
 		IndicatorErrorListener indicatorErrorListener = new IndicatorErrorListener();

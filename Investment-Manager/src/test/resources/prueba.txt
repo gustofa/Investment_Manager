@@ -1,1 +1,0 @@
-44+50+$Indicador1+3+value*$Indicador3

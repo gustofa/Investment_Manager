@@ -1,58 +1,35 @@
 package src.test.java;
 
 import static org.junit.Assert.*;
-
-import java.io.File;
 import java.io.IOException;
-import org.apache.commons.io.FileUtils;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-
 import groupone.java.investment.Indicator;
-import groupone.java.investment.IndicatorList;
 import groupone.java.investment.IndicatorManager;
-
-
 
 public class IndicatorManagerTest {
 	@Rule
 	public TemporaryFolder folder = new TemporaryFolder();
 	
 	@Test
-	public void agregarCuentasShouldKeepAccountsInMemory() throws IOException{
-	    File file = folder.newFile("test.json");
-     
-        String content = "[{"
-             + "\"name\": \"IngresoNetoEnOperacionesContinuas\","
-             + "\"expression\": \"500000*2\"},"
-             + "{\"name\": \"IngresoNetoEnOperacionesDiscontinuadas\","
-             + "\"expression\": \"200000/2\"},"
-             + "{\"name\": \"IngresoNeto\","
-             + "\"expression\": \"IngresoNetoEnOperacionesContinuas+IngresoNetoEnOperacionesDiscontinuadas\"}"
-             + "]";
-        
-        FileUtils.writeStringToFile(file , content);  
- 
-        IndicatorManager indicatorManager = new IndicatorManager();
-		indicatorManager.addIndicators(file.getPath());
-		Indicator insertedIndicator = IndicatorList.indicatorsList.get(0);
-		assertEquals(insertedIndicator.getName(), "IngresoNetoEnOperacionesContinuas");
-		assertEquals(insertedIndicator.getExpression(), "500000*2");
-		assertEquals(IndicatorList.indicatorsList.size(),3);
-	}
-	
-	@Test(expected = IOException.class)
-	public void agregarIndicadoresThrowsInputOutputExceptionIfFileDoesNotExist() throws IOException{
-		IndicatorManager indicatorManager = new IndicatorManager();
-		indicatorManager.addIndicators("FooFolder/FooFile.Foo");
-	}
-	
-	@Test
-	public void loadPredefinedIndicators() throws IOException{
-		IndicatorManager indicatorManager = new IndicatorManager();
-		File[] predefinedIndicators = indicatorManager.LoadPredefinedIndicators();
-		assertEquals(predefinedIndicators.length, 2);
-	}		
+	public void loadPredefinedIndicatorsShouldKeepIndicatorsInMemory() throws IOException{
+		IndicatorManager indicatorManager = IndicatorManager.getInstance();
+		indicatorManager.loadPredefinedIndicators();
+		
+		Indicator ingresoNetoEnOperacionesContinuas = indicatorManager.getIndicator("IngresoNetoEnOperacionesContinuas");
+		assertTrue(ingresoNetoEnOperacionesContinuas != null);
+		assertEquals(ingresoNetoEnOperacionesContinuas.getName(),"IngresoNetoEnOperacionesContinuas");
+		assertEquals(ingresoNetoEnOperacionesContinuas.getExpression(),"500000*2\r\n");
 
+		Indicator ingresoNetoEnOperacionesDiscontinuadas = indicatorManager.getIndicator("IngresoNetoEnOperacionesDiscontinuadas");
+		assertTrue(ingresoNetoEnOperacionesDiscontinuadas != null);
+		assertEquals(ingresoNetoEnOperacionesDiscontinuadas.getName(),"IngresoNetoEnOperacionesDiscontinuadas");
+		assertEquals(ingresoNetoEnOperacionesDiscontinuadas.getExpression(),"200000/2\r\n");
+		
+		Indicator ingresoNeto = indicatorManager.getIndicator("IngresoNeto");		
+		assertTrue(ingresoNeto != null);
+		assertEquals(ingresoNeto.getName(),"IngresoNeto");
+		assertEquals(ingresoNeto.getExpression(),"IngresoNetoEnOperacionesContinuas+IngresoNetoEnOperacionesDiscontinuadas\r\n");
+	}		
 }

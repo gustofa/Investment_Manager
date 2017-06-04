@@ -8,6 +8,7 @@ import java.lang.Double;
 
 import grammar.*;
 
+@SuppressWarnings("deprecation")
 public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 
     // used to compare floating point numbers
@@ -61,7 +62,7 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
             //throw new RuntimeException("no such variable: " + id);
         	//si es no está en memory es porque no está calculado en líneas anteriores de la expresión
         	//se estima entonces que es un indicador
-        	Indicator otroIndicador = IndicatorList.findIndicator(id);
+        	Indicator otroIndicador = IndicatorManager.getInstance().getIndicator(id);
             if(otroIndicador == null) {
                 throw new RuntimeException("no such indicator: " + id);
             }else{

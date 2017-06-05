@@ -23,7 +23,7 @@ public class IndicatorUnitTests {
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
 		indicatorManager.loadPredefinedIndicators();
 		Indicator compoundPredefinedIndicator = indicatorManager.getIndicator("IngresoNeto");
-		Indicator newCompoundIndicator = indicatorManager.createIndicator("IndicatorTest", "IngresoNeto+3");
+		Indicator newCompoundIndicator = indicatorManager.createIndicator("IndicatorTest", "IngresoNeto+3\r\n");
 		
 		Double compoundPredefinedIndicatorResult = compoundPredefinedIndicator.apply("", "");
 		Double newCompoundIndicatorResult = newCompoundIndicator.apply("", "");

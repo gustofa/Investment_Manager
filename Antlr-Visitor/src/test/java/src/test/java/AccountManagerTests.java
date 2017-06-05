@@ -25,7 +25,7 @@ public class AccountManagerTests {
              + "\"empresa\": \"Facebook\","
              + "\"nombre\": \"EBITDA\","
              + "\"anio\": \"2016\","
-             + "\"valor\": 14870}]";
+             + "\"value\": 14870}]";
         
         FileUtils.writeStringToFile(file , content);  
  

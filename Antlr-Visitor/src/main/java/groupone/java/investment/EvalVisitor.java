@@ -33,7 +33,7 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 		String accountName = ctx.getText().replace("$", "");
 		Account account = AccountList.findAccount(accountName, this.company, this.year);
 		if (account == null) {
-			throw new ParseCancellationException("Cuenta no encontrada: " + accountName);
+			throw new ParseCancellationException(String.format(Messages.getString("EvalVisitor.accountNotFound"), accountName)); //$NON-NLS-1$
 		} else {
 			value = account.getValue();
 		}
@@ -63,7 +63,7 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 		if (value == null) {
 			Indicator embebedIndicator = IndicatorManager.getInstance().getIndicator(id);
 			if (embebedIndicator == null) {
-				throw new ParseCancellationException("Indicador no encontrado: " + id);
+				throw new ParseCancellationException(String.format(Messages.getString("EvalVisitor.indicatorNotFound"), id)); //$NON-NLS-1$
 			} else {
 				value = embebedIndicator.apply(company, year);
 			}

@@ -35,6 +35,6 @@ public class AccountManager {
 
 	private void imprimirCuenta(Account cuenta) {
 		System.out.println(" Empresa: " + cuenta.getEmpresa() + " /  Cuenta: " + cuenta.getNombre() + " /  Año: "
-				+ cuenta.getAnio() + " /  Valor (en millones de US$): " + cuenta.getValor());
+				+ cuenta.getAnio() + " /  Valor (en millones de US$): " + cuenta.getValue());
 	}
 }

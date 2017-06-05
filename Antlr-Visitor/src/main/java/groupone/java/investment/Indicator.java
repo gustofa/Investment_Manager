@@ -2,7 +2,7 @@ package groupone.java.investment;
 
 import org.antlr.v4.runtime.tree.ParseTree;
 
-public class Indicator implements AbstractIndicator {
+public class Indicator {
 
 	private String name;
 	private ParseTree parseTree;

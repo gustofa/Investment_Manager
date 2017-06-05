@@ -37,7 +37,7 @@ public class AccountManagerTests {
 		assertEquals(insertedAccount.getEmpresa(), "Facebook");
 		assertEquals(insertedAccount.getNombre(), "EBITDA");
 		assertEquals(insertedAccount.getAnio(), "2016");
-		assertTrue(insertedAccount.getValor() == 14870);
+		assertTrue(insertedAccount.getValue() == 14870);
 	}
 	
 	@Test(expected = IOException.class)

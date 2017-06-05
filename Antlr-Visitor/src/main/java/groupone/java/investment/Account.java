@@ -5,13 +5,13 @@ public class Account {
 	private String nombre;
 	private String empresa;
 	private String anio;
-	private Double valor;
+	private Double value;
 	
-	public Account(String nombre, String empresa, String anio, Double valor) {
+	public Account(String nombre, String empresa, String anio, Double value) {
 		this.nombre = nombre;
 		this.empresa = empresa;
 		this.anio = anio;
-		this.valor = valor;
+		this.value = value;
 	}
 
 	public String getNombre() {
@@ -38,11 +38,11 @@ public class Account {
 		this.anio = anio;
 	}
 
-	public Double getValor() {
-		return valor;
+	public Double getValue() {
+		return this.value;
 	}
 
-	public void setValor(Double valor) {
-		this.valor = valor;
+	public void setValor(Double value) {
+		this.value = value;
 	}
 }

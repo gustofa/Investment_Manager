@@ -39,9 +39,8 @@ public class IndicatorUnitTests {
 
 		// Importamos las cuentas
 		AccountManager accountManager = new AccountManager();
-		accountManager
-				.agregarCuentas(indicatorManager.getClass().getClassLoader().getResource("cuentas.json").getFile());
-		accountManager.imprimirCuentas();
+		accountManager.agregarCuentas(indicatorManager.getClass().getClassLoader().getResource("cuentas.json").getFile());
+	
 		// Creamos un nuevo indicador que usa una cuenta en su expresión
 		String nuevoIndicador = indicatorManager.getClass().getClassLoader()
 				.getResource("MonthlyAverageFreeCashFlow.ind").getFile();
@@ -50,14 +49,9 @@ public class IndicatorUnitTests {
 		assertTrue(indicador != null);
 		assertEquals(indicador.getName(), "MonthlyAverageFreeCashFlow");
 
-		Double valor;
-		try {
-			// calculamos el valor de indicador respecto de una empresa y un
-			// año, para saber que cuenta usar
-			valor = indicador.apply("Google", "2016");
-		} catch (final ParseCancellationException e) {
-			throw new Exception(e.getMessage());
-		}
+		// calculamos el valor de indicador respecto de una empresa y un
+		// año, para saber que cuenta usar
+		Double valor = indicador.apply("Google", "2016");
 
 		assertTrue(valor == 1000.00);
 	}

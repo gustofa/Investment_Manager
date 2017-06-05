@@ -17,57 +17,60 @@ import grammar.IndicatorGrammarParser;
 public class IndicatorManager {
 
 	private static IndicatorManager instance;
-	private HashMap<String,Indicator> indicators = new HashMap<String,Indicator>();
-	
-	private IndicatorManager(){};
-	
-	public static IndicatorManager getInstance(){
-		if(instance == null){
+	private HashMap<String, Indicator> indicators = new HashMap<String, Indicator>();
+
+	private IndicatorManager() {
+	};
+
+	public static IndicatorManager getInstance() {
+		if (instance == null) {
 			instance = new IndicatorManager();
 		}
-		
+
 		return instance;
 	}
-	
-	public Indicator getIndicator(String name){
+
+	public Indicator getIndicator(String name) {
 		return this.indicators.get(name);
 	}
 
-	public void loadPredefinedIndicators() throws IOException, IndicatorSyntaxException{
-		
+	public void loadPredefinedIndicators() throws IOException, IndicatorSyntaxException {
+
 		// Get files from file system
 		String predefinedIndicatorsFolder = getClass().getResource("/predefinedIndicators").getFile();
-	    File[] predefinedIndicators = new File(predefinedIndicatorsFolder).listFiles();
-	    
-	    // Creates and load predefined indicators
-	    for(File indicatorFile : predefinedIndicators){
-	    	Indicator newIndicator = new Indicator();
-	    	String indicatorName = FilenameUtils.getBaseName(indicatorFile.getName());
-	    	newIndicator.setName(indicatorName);
-	    	String expression = new String(Files.readAllBytes(Paths.get(indicatorFile.getPath())), StandardCharsets.UTF_8);
-	    	ParseTree parseTree = this.parseExpression(expression);
-	    	newIndicator.setParseTree(parseTree);
-	    	this.indicators.put(newIndicator.getName(),newIndicator);
-	    }
+		File[] predefinedIndicators = new File(predefinedIndicatorsFolder).listFiles();
+
+		// Creates and load predefined indicators
+		for (File indicatorFile : predefinedIndicators) {
+			Indicator newIndicator = new Indicator();
+			String indicatorName = FilenameUtils.getBaseName(indicatorFile.getName());
+			newIndicator.setName(indicatorName);
+			String expression = new String(Files.readAllBytes(Paths.get(indicatorFile.getPath())),
+					StandardCharsets.UTF_8);
+			ParseTree parseTree = this.parseExpression(expression);
+			newIndicator.setParseTree(parseTree);
+			this.indicators.put(newIndicator.getName(), newIndicator);
+		}
 	}
 
 	public Indicator loadNewIndicatorFromFile(String pathfile) throws IOException, IndicatorSyntaxException {
-		
+
 		// Get file from file system
-	    File fileNewIndicator = new File(pathfile);
-	    
-	    // Creates and load predefined indicators
-	    	Indicator newIndicator = new Indicator();
-	    	String indicatorName = FilenameUtils.getBaseName(fileNewIndicator.getName());
-	    	newIndicator.setName(indicatorName);
-	    	String expression = new String(Files.readAllBytes(Paths.get(fileNewIndicator.getPath())), StandardCharsets.UTF_8);
-	    	ParseTree parseTree = this.parseExpression(expression);
-	    	newIndicator.setParseTree(parseTree);
-	    	this.indicators.put(newIndicator.getName(),newIndicator);
-	    	
-	    	return newIndicator;
-	}	
-	
+		File fileNewIndicator = new File(pathfile);
+
+		// Creates and load predefined indicators
+		Indicator newIndicator = new Indicator();
+		String indicatorName = FilenameUtils.getBaseName(fileNewIndicator.getName());
+		newIndicator.setName(indicatorName);
+		String expression = new String(Files.readAllBytes(Paths.get(fileNewIndicator.getPath())),
+				StandardCharsets.UTF_8);
+		ParseTree parseTree = this.parseExpression(expression);
+		newIndicator.setParseTree(parseTree);
+		this.indicators.put(newIndicator.getName(), newIndicator);
+
+		return newIndicator;
+	}
+
 	public ParseTree parseExpression(String expression) throws IndicatorSyntaxException {
 		IndicatorErrorListener indicatorErrorListener = new IndicatorErrorListener();
 		@SuppressWarnings("deprecation")
@@ -76,11 +79,11 @@ public class IndicatorManager {
 		IndicatorGrammarParser parser = new IndicatorGrammarParser(new CommonTokenStream(lexer));
 		parser.addErrorListener(indicatorErrorListener);
 		ParseTree treeParse = parser.prog();
-		
-		if(indicatorErrorListener.hasErrors()){
+
+		if (indicatorErrorListener.hasErrors()) {
 			throw new IndicatorSyntaxException(indicatorErrorListener.getErrorMessage());
 		}
-		
+
 		return treeParse;
 	}
 }

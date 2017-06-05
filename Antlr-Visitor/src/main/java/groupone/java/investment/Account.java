@@ -5,7 +5,7 @@ public class Account {
 	private String nombre;
 	private String empresa;
 	private String anio;
-	private Double value;
+	private Double value = 0.0;
 	
 	public Account(String nombre, String empresa, String anio, Double value) {
 		this.nombre = nombre;

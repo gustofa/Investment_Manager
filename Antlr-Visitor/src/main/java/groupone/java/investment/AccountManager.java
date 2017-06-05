@@ -10,20 +10,18 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
 public class AccountManager {
-
-	//private List<Account> listaCuentas = new ArrayList<Account>();
-
 	public void agregarCuentas(String pathArchivo) throws IOException {
-			JsonReader reader = new JsonReader(new FileReader(pathArchivo));
-			Type tipoListaCuentas = new TypeToken<List<Account>>() {}.getType();
-			AccountList.listaCuentas = new Gson().fromJson(reader, tipoListaCuentas);
-			
-			for (Account cuenta : AccountList.listaCuentas) {
-				AccountList.MapCuentas.put(cuenta.getNombre()+cuenta.getEmpresa()+cuenta.getAnio(), cuenta);
-			}
+		JsonReader reader = new JsonReader(new FileReader(pathArchivo));
+		Type tipoListaCuentas = new TypeToken<List<Account>>() {
+		}.getType();
+		AccountList.listaCuentas = new Gson().fromJson(reader, tipoListaCuentas);
+
+		for (Account cuenta : AccountList.listaCuentas) {
+			AccountList.MapCuentas.put(cuenta.getNombre() + cuenta.getEmpresa() + cuenta.getAnio(), cuenta);
+		}
 	}
-	
-	public List<Account> getCuentas(){
+
+	public List<Account> getCuentas() {
 		return AccountList.listaCuentas;
 	}
 

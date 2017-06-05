@@ -3,24 +3,24 @@
         "empresa": "Facebook",
         "nombre": "EBITDA",
         "anio": "2016",
-        "valor": 14870
+        "value": 14870
 	},
     {
         "empresa": "Facebook",
         "nombre": "EBITDA",
         "anio": "2015",
-        "valor": 8162
+        "value": 8162
     },
     {
         "empresa": "Google",
         "nombre": "FreeCashFlow",
         "anio": "2016",
-        "valor": 12000
+        "value": 12000
 	},
     {
         "empresa": "Google",
         "nombre": "FDS",
         "anio": "2016",
-        "valor": 5000
+        "value": 5000
 	}	
 ]

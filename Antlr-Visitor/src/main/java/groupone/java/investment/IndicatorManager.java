@@ -77,7 +77,7 @@ public class IndicatorManager {
 		parser.addErrorListener(indicatorErrorListener);
 		ParseTree treeParse = parser.prog();
 		
-		if(indicatorErrorListener.getErrorMessage().length() > 0){
+		if(indicatorErrorListener.hasErrors()){
 			throw new IndicatorSyntaxException(indicatorErrorListener.getErrorMessage());
 		}
 		

@@ -2,8 +2,11 @@ package src.test.java;
 
 import static org.junit.Assert.*;
 import java.io.IOException;
+
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.rules.TemporaryFolder;
 
 import groupone.java.investment.AccountManager;
@@ -13,7 +16,7 @@ import groupone.java.investment.IndicatorSyntaxException;
 
 public class IndicatorManagerTest {
 	@Rule
-	public TemporaryFolder folder = new TemporaryFolder();
+	public ExpectedException expectedEx = ExpectedException.none();
 	
 	@Test
 	public void loadPredefinedIndicatorsShouldKeepIndicatorsInMemory() throws IOException, IndicatorSyntaxException{
@@ -32,6 +35,20 @@ public class IndicatorManagerTest {
 		assertTrue(ingresoNeto != null);
 		assertEquals(ingresoNeto.getName(),"IngresoNeto");
 	}
-
 	
+	@Test
+	public void parseExpressionWithInclompletedExpressionReturnsSyntacticError() throws IndicatorSyntaxException {
+		expectedEx.expect(IndicatorSyntaxException.class);
+		expectedEx.expectMessage("Error sintactico en la formula del indicador, en la linea 1, caracter nº: 4");
+		IndicatorManager indicatorManager = IndicatorManager.getInstance();
+		indicatorManager.parseExpression("1+2+");	
+	}
+	
+	@Test
+	public void parseExpressionWithWrongCharacterReturnsSyntacticError() throws IndicatorSyntaxException {
+		expectedEx.expect(IndicatorSyntaxException.class);
+		expectedEx.expectMessage("Caracter no valido en la linea 1, caracter nº: 2");
+		IndicatorManager indicatorManager = IndicatorManager.getInstance();
+		indicatorManager.parseExpression("1+#+2\r\n");	
+	}
 }

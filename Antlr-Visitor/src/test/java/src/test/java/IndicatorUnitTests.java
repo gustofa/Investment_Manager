@@ -63,11 +63,8 @@ public class IndicatorUnitTests {
 		expectedEx.expectMessage("Indicador no encontrado: NonExistentIndicator");
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		Indicator indicator = new Indicator();
-		ParseTree parseTree = indicatorManager.parseExpression("1+2+NonExistentIndicator");
-		indicator.setParseTree(parseTree);
+		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+NonExistentIndicator");
 		indicator.apply("", "");
-		assertTrue(true);
 	}
 
 	@Test
@@ -77,10 +74,7 @@ public class IndicatorUnitTests {
 		expectedEx.expectMessage("Cuenta no encontrada: NonExistentAccount");
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		Indicator indicator = new Indicator();
-		ParseTree parseTree = indicatorManager.parseExpression("1+2+$NonExistentAccount");
-		indicator.setParseTree(parseTree);
+		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+$NonExistentAccount");
 		indicator.apply("", "");
-		assertTrue(true);
 	}
 }

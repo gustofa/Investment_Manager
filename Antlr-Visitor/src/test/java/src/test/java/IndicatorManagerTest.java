@@ -15,38 +15,40 @@ import groupone.java.investment.IndicatorSyntaxException;
 public class IndicatorManagerTest {
 	@Rule
 	public ExpectedException expectedEx = ExpectedException.none();
-	
+
 	@Test
-	public void loadPredefinedIndicatorsShouldKeepIndicatorsInMemory() throws IOException, IndicatorSyntaxException{
+	public void loadPredefinedIndicatorsShouldKeepIndicatorsInMemory() throws IOException, IndicatorSyntaxException {
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
 		indicatorManager.loadPredefinedIndicators();
-		
-		Indicator ingresoNetoEnOperacionesContinuas = indicatorManager.getIndicator("IngresoNetoEnOperacionesContinuas");
-		assertTrue(ingresoNetoEnOperacionesContinuas != null);
-		assertEquals(ingresoNetoEnOperacionesContinuas.getName(),"IngresoNetoEnOperacionesContinuas");
 
-		Indicator ingresoNetoEnOperacionesDiscontinuadas = indicatorManager.getIndicator("IngresoNetoEnOperacionesDiscontinuadas");
+		Indicator ingresoNetoEnOperacionesContinuas = indicatorManager
+				.getIndicator("IngresoNetoEnOperacionesContinuas");
+		assertTrue(ingresoNetoEnOperacionesContinuas != null);
+		assertEquals(ingresoNetoEnOperacionesContinuas.getName(), "IngresoNetoEnOperacionesContinuas");
+
+		Indicator ingresoNetoEnOperacionesDiscontinuadas = indicatorManager
+				.getIndicator("IngresoNetoEnOperacionesDiscontinuadas");
 		assertTrue(ingresoNetoEnOperacionesDiscontinuadas != null);
-		assertEquals(ingresoNetoEnOperacionesDiscontinuadas.getName(),"IngresoNetoEnOperacionesDiscontinuadas");
-		
-		Indicator ingresoNeto = indicatorManager.getIndicator("IngresoNeto");		
+		assertEquals(ingresoNetoEnOperacionesDiscontinuadas.getName(), "IngresoNetoEnOperacionesDiscontinuadas");
+
+		Indicator ingresoNeto = indicatorManager.getIndicator("IngresoNeto");
 		assertTrue(ingresoNeto != null);
-		assertEquals(ingresoNeto.getName(),"IngresoNeto");
+		assertEquals(ingresoNeto.getName(), "IngresoNeto");
 	}
-	
+
 	@Test
-	public void parseExpressionWithInclompletedExpressionReturnsSyntacticError() throws IndicatorSyntaxException {
+	public void createIndicatorWithInclompletedExpressionReturnsSyntacticError() throws IndicatorSyntaxException {
 		expectedEx.expect(IndicatorSyntaxException.class);
 		expectedEx.expectMessage("Error sintactico en la formula del indicador, en la linea 1, caracter nº: 4");
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		indicatorManager.parseExpression("1+2+");	
+		indicatorManager.createIndicator("Indicator1", "1+2+");
 	}
-	
+
 	@Test
-	public void parseExpressionWithWrongCharacterReturnsSyntacticError() throws IndicatorSyntaxException {
+	public void createIndicatorWithWrongCharacterReturnsSyntacticError() throws IndicatorSyntaxException {
 		expectedEx.expect(IndicatorSyntaxException.class);
 		expectedEx.expectMessage("Caracter no valido en la linea 1, caracter nº: 2");
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		indicatorManager.parseExpression("1+#+2\r\n");	
+		indicatorManager.createIndicator("Indicator1", "1+#+2\r\n");
 	}
 }

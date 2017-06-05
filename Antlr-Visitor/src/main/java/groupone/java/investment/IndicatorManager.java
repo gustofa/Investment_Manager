@@ -33,45 +33,40 @@ public class IndicatorManager {
 	public Indicator getIndicator(String name) {
 		return this.indicators.get(name);
 	}
+	
+	public Indicator createIndicator(String name, String expression) throws IndicatorSyntaxException{
+		Indicator indicator = new Indicator();
+		indicator.setName(name);
+		ParseTree parseTree = this.parseExpression(expression);
+		indicator.setParseTree(parseTree);
+		
+		this.indicators.put(name, indicator);
+		return indicator;
+	}
 
 	public void loadPredefinedIndicators() throws IOException, IndicatorSyntaxException {
-
-		// Get files from file system
+		// Gets files from file system
 		String predefinedIndicatorsFolder = getClass().getResource("/predefinedIndicators").getFile();
 		File[] predefinedIndicators = new File(predefinedIndicatorsFolder).listFiles();
-
-		// Creates and load predefined indicators
 		for (File indicatorFile : predefinedIndicators) {
-			Indicator newIndicator = new Indicator();
-			String indicatorName = FilenameUtils.getBaseName(indicatorFile.getName());
-			newIndicator.setName(indicatorName);
-			String expression = new String(Files.readAllBytes(Paths.get(indicatorFile.getPath())),
-					StandardCharsets.UTF_8);
-			ParseTree parseTree = this.parseExpression(expression);
-			newIndicator.setParseTree(parseTree);
-			this.indicators.put(newIndicator.getName(), newIndicator);
+			this.createIndicator(indicatorFile);
 		}
 	}
 
 	public Indicator loadNewIndicatorFromFile(String pathfile) throws IOException, IndicatorSyntaxException {
-
-		// Get file from file system
 		File fileNewIndicator = new File(pathfile);
-
-		// Creates and load predefined indicators
-		Indicator newIndicator = new Indicator();
-		String indicatorName = FilenameUtils.getBaseName(fileNewIndicator.getName());
-		newIndicator.setName(indicatorName);
-		String expression = new String(Files.readAllBytes(Paths.get(fileNewIndicator.getPath())),
+		return this.createIndicator(fileNewIndicator);
+	}
+	
+	private Indicator createIndicator(File file) throws IOException, IndicatorSyntaxException{
+		String indicatorName = FilenameUtils.getBaseName(file.getName());
+		String expression = new String(Files.readAllBytes(Paths.get(file.getPath())),
 				StandardCharsets.UTF_8);
-		ParseTree parseTree = this.parseExpression(expression);
-		newIndicator.setParseTree(parseTree);
-		this.indicators.put(newIndicator.getName(), newIndicator);
-
-		return newIndicator;
+		
+		return this.createIndicator(indicatorName, expression);
 	}
 
-	public ParseTree parseExpression(String expression) throws IndicatorSyntaxException {
+	private ParseTree parseExpression(String expression) throws IndicatorSyntaxException {
 		IndicatorErrorListener indicatorErrorListener = new IndicatorErrorListener();
 		@SuppressWarnings("deprecation")
 		IndicatorGrammarLexer lexer = new IndicatorGrammarLexer(new ANTLRInputStream(expression));

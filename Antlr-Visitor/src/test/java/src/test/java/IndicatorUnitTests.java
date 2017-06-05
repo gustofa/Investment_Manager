@@ -11,6 +11,7 @@ import groupone.java.investment.AccountManager;
 import groupone.java.investment.Indicator;
 import groupone.java.investment.IndicatorManager;
 import groupone.java.investment.IndicatorSyntaxException;
+import groupone.java.investment.Messages;
 
 public class IndicatorUnitTests {
 
@@ -60,7 +61,7 @@ public class IndicatorUnitTests {
 	public void applyIndicatorWithNonExistentIndicatorShouldThrowParseCancellationException()
 			throws IndicatorSyntaxException {
 		expectedEx.expect(ParseCancellationException.class);
-		expectedEx.expectMessage("Indicador no encontrado: NonExistentIndicator");
+		expectedEx.expectMessage(String.format(Messages.getString("EvalVisitor.indicatorNotFound"),"NonExistentIndicator"));
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
 		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+NonExistentIndicator\r\n");
@@ -71,7 +72,7 @@ public class IndicatorUnitTests {
 	public void applyIndicatorWithNonExistentAccountShouldThrowParseCancellationException()
 			throws IndicatorSyntaxException {
 		expectedEx.expect(ParseCancellationException.class);
-		expectedEx.expectMessage("Cuenta no encontrada: NonExistentAccount");
+		expectedEx.expectMessage(String.format(Messages.getString("EvalVisitor.accountNotFound"), "NonExistentAccount"));
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
 		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+$NonExistentAccount\r\n");

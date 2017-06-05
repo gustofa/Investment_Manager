@@ -63,7 +63,7 @@ public class IndicatorUnitTests {
 		expectedEx.expectMessage("Indicador no encontrado: NonExistentIndicator");
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+NonExistentIndicator");
+		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+NonExistentIndicator\r\n");
 		indicator.apply("", "");
 	}
 
@@ -74,7 +74,22 @@ public class IndicatorUnitTests {
 		expectedEx.expectMessage("Cuenta no encontrada: NonExistentAccount");
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+$NonExistentAccount");
+		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+$NonExistentAccount\r\n");
 		indicator.apply("", "");
 	}
+	
+	@Test
+	public void applyIndicatorWithConstantShouldReturnCorrectResult() throws Exception {
+		IndicatorManager indicatorManager = IndicatorManager.getInstance();
+		Indicator indicator =  indicatorManager.createIndicator("Indicator3", "constante=400\r\n150+constante\r\n");
+
+		Double value;
+		try {
+			value = indicator.apply("", "");
+		} catch (final ParseCancellationException e) {
+			throw new Exception(e.getMessage());
+		}
+
+		assertTrue(value == 550.0);
+	}	
 }

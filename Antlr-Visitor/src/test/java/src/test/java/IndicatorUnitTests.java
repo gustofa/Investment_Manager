@@ -22,16 +22,14 @@ public class IndicatorUnitTests {
 	public void applyCompoundIndicatorShouldReturnCorrectResult() throws Exception {
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
 		indicatorManager.loadPredefinedIndicators();
-		Indicator indicator = indicatorManager.getIndicator("IngresoNeto");
-
-		Double value;
-		try {
-			value = indicator.apply("", "");
-		} catch (final ParseCancellationException e) {
-			throw new Exception(e.getMessage());
-		}
-
-		assertTrue(value == 1100000.0);
+		Indicator compoundPredefinedIndicator = indicatorManager.getIndicator("IngresoNeto");
+		Indicator newCompoundIndicator = indicatorManager.createIndicator("IndicatorTest", "IngresoNeto+3");
+		
+		Double compoundPredefinedIndicatorResult = compoundPredefinedIndicator.apply("", "");
+		Double newCompoundIndicatorResult = newCompoundIndicator.apply("", "");
+		
+		assertTrue(compoundPredefinedIndicatorResult == 1100000.0);
+		assertTrue(newCompoundIndicatorResult == 1100003.0);
 	}
 
 	@Test

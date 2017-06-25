@@ -1,4 +1,4 @@
-package groupone.java.investment;
+package groupone.java.error;
 
 import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.FailedPredicateException;

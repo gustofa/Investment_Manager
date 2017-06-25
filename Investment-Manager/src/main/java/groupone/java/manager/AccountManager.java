@@ -1,4 +1,4 @@
-package groupone.java.investment;
+package groupone.java.manager;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,6 +8,9 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+
+import groupone.java.bean.Account;
+import groupone.java.investment.AccountList;
 
 public class AccountManager {
 	public void agregarCuentas(String pathArchivo) throws IOException {

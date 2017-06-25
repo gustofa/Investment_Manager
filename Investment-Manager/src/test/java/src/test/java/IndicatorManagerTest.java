@@ -8,9 +8,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.TemporaryFolder;
-import groupone.java.investment.Indicator;
-import groupone.java.investment.IndicatorManager;
-import groupone.java.investment.IndicatorSyntaxException;
+
+import groupone.java.bean.Indicator;
+import groupone.java.error.IndicatorSyntaxException;
+import groupone.java.manager.IndicatorManager;
 
 public class IndicatorManagerTest {
 	@Rule

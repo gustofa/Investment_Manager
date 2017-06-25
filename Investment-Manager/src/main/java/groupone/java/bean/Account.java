@@ -1,4 +1,4 @@
-package groupone.java.investment;
+package groupone.java.bean;
 
 public class Account {
 

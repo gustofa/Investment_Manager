@@ -1,4 +1,4 @@
-package groupone.java.investment;
+package groupone.java.manager;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +13,9 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.apache.commons.io.FilenameUtils;
 import grammar.IndicatorGrammarLexer;
 import grammar.IndicatorGrammarParser;
+import groupone.java.bean.Indicator;
+import groupone.java.error.IndicatorErrorListener;
+import groupone.java.error.IndicatorSyntaxException;
 
 public class IndicatorManager {
 

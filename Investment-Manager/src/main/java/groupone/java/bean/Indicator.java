@@ -1,6 +1,8 @@
-package groupone.java.investment;
+package groupone.java.bean;
 
 import org.antlr.v4.runtime.tree.ParseTree;
+
+import groupone.java.investment.EvalVisitor;
 
 public class Indicator {
 

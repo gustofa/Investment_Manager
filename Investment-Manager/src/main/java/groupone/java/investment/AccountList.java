@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import groupone.java.bean.Account;
+
 public class AccountList {
 
 	public static List<Account> listaCuentas = new ArrayList<Account>();

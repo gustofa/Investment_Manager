@@ -7,11 +7,12 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import groupone.java.investment.AccountManager;
-import groupone.java.investment.Indicator;
-import groupone.java.investment.IndicatorManager;
-import groupone.java.investment.IndicatorSyntaxException;
-import groupone.java.investment.Messages;
+
+import groupone.java.bean.Indicator;
+import groupone.java.error.IndicatorSyntaxException;
+import groupone.java.error.Messages;
+import groupone.java.manager.AccountManager;
+import groupone.java.manager.IndicatorManager;
 
 public class IndicatorUnitTests {
 

@@ -9,6 +9,10 @@ import java.util.Map;
 import java.lang.Double;
 
 import grammar.*;
+import groupone.java.bean.Account;
+import groupone.java.bean.Indicator;
+import groupone.java.error.Messages;
+import groupone.java.manager.IndicatorManager;
 
 @SuppressWarnings("deprecation")
 public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {

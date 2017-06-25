@@ -10,8 +10,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import groupone.java.investment.Account;
-import groupone.java.investment.AccountManager;
+import groupone.java.bean.Account;
+import groupone.java.manager.AccountManager;
 
 public class AccountManagerTests {
 	@Rule

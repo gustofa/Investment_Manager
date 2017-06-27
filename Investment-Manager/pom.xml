@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.DDS-2017-k3052-grupo1</groupId>
-	<artifactId>antlr-Project</artifactId>
+	<artifactId>Investment-Manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>antlr-Project</name>
+	<name>Investment-Manager</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<drools.version>6.3.0.Final</drools.version>

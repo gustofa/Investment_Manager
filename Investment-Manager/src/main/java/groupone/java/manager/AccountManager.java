@@ -13,29 +13,30 @@ import groupone.java.bean.Account;
 import groupone.java.investment.AccountList;
 
 public class AccountManager {
-	public void agregarCuentas(String pathArchivo) throws IOException {
+	public void loadAccounts(String pathArchivo) throws IOException {
 		JsonReader reader = new JsonReader(new FileReader(pathArchivo));
-		Type tipoListaCuentas = new TypeToken<List<Account>>() {
+		Type accountListType = new TypeToken<List<Account>>() {
 		}.getType();
-		AccountList.listaCuentas = new Gson().fromJson(reader, tipoListaCuentas);
+		
+		AccountList.accountList = new Gson().fromJson(reader, accountListType);
 
-		for (Account cuenta : AccountList.listaCuentas) {
-			AccountList.MapCuentas.put(cuenta.getNombre() + cuenta.getEmpresa() + cuenta.getAnio(), cuenta);
+		for (Account account : AccountList.accountList) {
+			AccountList.MapCuentas.put(account.getName() + account.getCompany() + account.getAnio(), account);
 		}
 	}
 
-	public List<Account> getCuentas() {
-		return AccountList.listaCuentas;
+	public List<Account> getAccounts() {
+		return AccountList.accountList;
 	}
 
-	public void imprimirCuentas() {
-		for (Account cuenta : AccountList.listaCuentas) {
-			this.imprimirCuenta(cuenta);
+	public void printAccounts() {
+		for (Account cuenta : AccountList.accountList) {
+			this.printAccount(cuenta);
 		}
 	}
 
-	private void imprimirCuenta(Account cuenta) {
-		System.out.println(" Empresa: " + cuenta.getEmpresa() + " /  Cuenta: " + cuenta.getNombre() + " /  Año: "
-				+ cuenta.getAnio() + " /  Valor (en millones de US$): " + cuenta.getValue());
+	private void printAccount(Account account) {
+		System.out.println(" Empresa: " + account.getCompany() + " /  Cuenta: " + account.getName() + " /  Año: "
+				+ account.getAnio() + " /  Valor (en millones de US$): " + account.getValue());
 	}
 }

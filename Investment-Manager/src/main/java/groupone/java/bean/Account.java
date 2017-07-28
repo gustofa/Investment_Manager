@@ -2,40 +2,40 @@ package groupone.java.bean;
 
 public class Account {
 
-	private String nombre;
-	private String empresa;
-	private String anio;
+	private String name;
+	private String company;
+	private String year;
 	private Double value = 0.0;
 	
 	public Account(String nombre, String empresa, String anio, Double value) {
-		this.nombre = nombre;
-		this.empresa = empresa;
-		this.anio = anio;
+		this.name = nombre;
+		this.company = empresa;
+		this.year = anio;
 		this.value = value;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getName() {
+		return name;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String nombre) {
+		this.name = nombre;
 	}
 
-	public String getEmpresa() {
-		return empresa;
+	public String getCompany() {
+		return this.company;
 	}
 
-	public void setEmpresa(String empresa) {
-		this.empresa = empresa;
+	public void setCompany(String empresa) {
+		this.company = empresa;
 	}
 
 	public String getAnio() {
-		return anio;
+		return year;
 	}
 
 	public void setAnio(String anio) {
-		this.anio = anio;
+		this.year = anio;
 	}
 
 	public Double getValue() {

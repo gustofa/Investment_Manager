@@ -22,4 +22,11 @@ public class Company {
 	public void addAccount(Account account){
 		this.accountList.add(account);
 	}
+	
+	public Account getAccount(String name, String year){
+		return this.accountList.stream()
+						.filter(a -> a.getName().equals(name) && a.getAnio().equals(year))
+						.findFirst()
+						.orElse(null);		
+	}
 }

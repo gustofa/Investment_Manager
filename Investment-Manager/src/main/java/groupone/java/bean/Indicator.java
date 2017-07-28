@@ -30,7 +30,7 @@ public class Indicator {
 		this.parseTree = parseTree;
 	}
 
-	public Double apply(String company, String year) {
+	public Double apply(Company company, String year) {
 		EvalVisitor visitor = new EvalVisitor();
 		return visitor.visit(this.parseTree, company, year);
 	}

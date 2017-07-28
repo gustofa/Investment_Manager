@@ -26,8 +26,8 @@ public class IndicatorUnitTests {
 		Indicator compoundPredefinedIndicator = indicatorManager.getIndicator("IngresoNeto");
 		Indicator newCompoundIndicator = indicatorManager.createIndicator("IndicatorTest", "IngresoNeto+3\r\n");
 		
-		Double compoundPredefinedIndicatorResult = compoundPredefinedIndicator.apply("", "");
-		Double newCompoundIndicatorResult = newCompoundIndicator.apply("", "");
+		Double compoundPredefinedIndicatorResult = compoundPredefinedIndicator.apply(null, "");
+		Double newCompoundIndicatorResult = newCompoundIndicator.apply(null, "");
 		
 		assertTrue(compoundPredefinedIndicatorResult == 1100000.0);
 		assertTrue(newCompoundIndicatorResult == 1100003.0);
@@ -39,7 +39,7 @@ public class IndicatorUnitTests {
 
 		// Importamos las cuentas
 		AccountManager accountManager = new AccountManager();
-		accountManager.agregarCuentas(indicatorManager.getClass().getClassLoader().getResource("cuentas.json").getFile());
+		accountManager.loadAccounts(indicatorManager.getClass().getClassLoader().getResource("cuentas.json").getFile());
 	
 		// Creamos un nuevo indicador que usa una cuenta en su expresión
 		String nuevoIndicador = indicatorManager.getClass().getClassLoader()
@@ -50,7 +50,8 @@ public class IndicatorUnitTests {
 		assertEquals(indicador.getName(), "MonthlyAverageFreeCashFlow");
 
 		// calculamos el valor de indicador respecto de una empresa y un
-		// año, para saber que cuenta usar
+		// año, para saber que cuenta usar'
+		
 		Double valor = indicador.apply("Google", "2016");
 
 		assertTrue(valor == 1000.00);
@@ -64,7 +65,7 @@ public class IndicatorUnitTests {
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
 		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+NonExistentIndicator\r\n");
-		indicator.apply("", "");
+		indicator.apply(null, "");
 	}
 
 	@Test
@@ -75,7 +76,7 @@ public class IndicatorUnitTests {
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
 		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+$NonExistentAccount\r\n");
-		indicator.apply("", "");
+		indicator.apply(null, "");
 	}
 	
 	@Test
@@ -85,7 +86,7 @@ public class IndicatorUnitTests {
 
 		Double value;
 		try {
-			value = indicator.apply("", "");
+			value = indicator.apply(null, "");
 		} catch (final ParseCancellationException e) {
 			throw new Exception(e.getMessage());
 		}

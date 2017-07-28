@@ -10,6 +10,7 @@ import java.lang.Double;
 
 import grammar.*;
 import groupone.java.bean.Account;
+import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
 import groupone.java.error.Messages;
 import groupone.java.manager.IndicatorManager;
@@ -22,10 +23,10 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 
 	// store variables (there's only one global scope!)
 	private Map<String, String> memory = new HashMap<String, String>();
-	private String company;
+	private Company company;
 	private String year;
 
-	public Double visit(ParseTree parseTree, String company, String year) {
+	public Double visit(ParseTree parseTree, Company company, String year) {
 		this.company = company;
 		this.year = year;
 		return super.visit(parseTree);
@@ -35,7 +36,7 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 	public Double visitAccount(IndicatorGrammarParser.AccountContext ctx) {
 		Double value;
 		String accountName = ctx.getText().replace("$", "");
-		Account account = AccountList.findAccount(accountName, this.company, this.year);
+		Account account = this.company.getAccount(accountName, this.year); 
 		if (account == null) {
 			throw new ParseCancellationException(String.format(Messages.getString("EvalVisitor.accountNotFound"), accountName)); //$NON-NLS-1$
 		} else {

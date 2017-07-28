@@ -13,11 +13,11 @@ public class Main {
 		AccountManager accountLoader = new AccountManager();
 		
 		try{
-			accountLoader.agregarCuentas(path);
+			accountLoader.loadAccounts(path);
 		}catch(IOException ex){
 			System.out.println(ex.getMessage());
 		}
 		
-		accountLoader.imprimirCuentas();
+		accountLoader.printAccounts();
     }
 }

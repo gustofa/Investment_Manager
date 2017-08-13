@@ -25,7 +25,7 @@ public class Company {
 	
 	public Account getAccount(String name, String year){
 		return this.accountList.stream()
-						.filter(a -> a.getName().equals(name) && a.getAnio().equals(year))
+						.filter(a -> a.getName().equals(name) && a.getYear().equals(year))
 						.findFirst()
 						.orElse(null);		
 	}

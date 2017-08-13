@@ -8,16 +8,14 @@ import groupone.java.manager.AccountManager;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        String path = "/cuentas.json";
-		
-		AccountManager accountLoader = new AccountManager();
+        String path = "/cuentas.json";		
 		
 		try{
-			accountLoader.loadAccounts(path);
+			AccountManager.getInstance().loadAccounts(path);
 		}catch(IOException ex){
 			System.out.println(ex.getMessage());
 		}
 		
-		accountLoader.printAccounts();
+		AccountManager.getInstance().printAccounts();
     }
 }

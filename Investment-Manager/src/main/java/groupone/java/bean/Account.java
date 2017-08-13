@@ -3,14 +3,12 @@ package groupone.java.bean;
 public class Account {
 
 	private String name;
-	private String company;
 	private String year;
 	private Double value = 0.0;
 	
-	public Account(String nombre, String empresa, String anio, Double value) {
+	public Account(String nombre, String anio, Double value) {
 		this.name = nombre;
-		this.company = empresa;
-		this.year = anio;
+		this.setYear(anio);
 		this.value = value;
 	}
 
@@ -22,27 +20,19 @@ public class Account {
 		this.name = nombre;
 	}
 
-	public String getCompany() {
-		return this.company;
-	}
-
-	public void setCompany(String empresa) {
-		this.company = empresa;
-	}
-
-	public String getAnio() {
-		return year;
-	}
-
-	public void setAnio(String anio) {
-		this.year = anio;
-	}
-
 	public Double getValue() {
 		return this.value;
 	}
 
 	public void setValor(Double value) {
 		this.value = value;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
 	}
 }

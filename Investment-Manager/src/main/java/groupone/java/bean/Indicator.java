@@ -9,6 +9,10 @@ public class Indicator {
 	private String name;
 	private ParseTree parseTree;
 
+	public ParseTree getParseTree() {
+		return parseTree;
+	}
+
 	public Indicator() {
 
 	}
@@ -30,8 +34,8 @@ public class Indicator {
 		this.parseTree = parseTree;
 	}
 
-	public Double apply(Company company, String year) {
-		EvalVisitor visitor = new EvalVisitor();
-		return visitor.visit(this.parseTree, company, year);
-	}
+//	public Double apply(Company company, String year) {
+//		EvalVisitor visitor = new EvalVisitor();
+//		return visitor.visit(this.parseTree, company, year);
+//	}
 }

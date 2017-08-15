@@ -14,6 +14,8 @@ import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
 import groupone.java.error.Messages;
 import groupone.java.manager.IndicatorManager;
+import groupone.java.services.CompanyService;
+import groupone.java.services.IndicatorService;
 
 @SuppressWarnings("deprecation")
 public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
@@ -36,7 +38,10 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 	public Double visitAccount(IndicatorGrammarParser.AccountContext ctx) {
 		Double value;
 		String accountName = ctx.getText().replace("$", "");
-		Account account = this.company.getAccount(accountName, this.year); 
+		CompanyService compService = new CompanyService();
+		
+		Account account = compService.getAccount(accountName, this.year, this.company);
+		 
 		if (account == null) {
 			throw new ParseCancellationException(String.format(Messages.getString("EvalVisitor.accountNotFound"), accountName)); //$NON-NLS-1$
 		} else {
@@ -65,12 +70,14 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 	public Double visitIdAtom(IndicatorGrammarParser.IdAtomContext ctx) {
 		String id = ctx.ID().getText();
 		Double value = memory.get(id) != null ? Double.parseDouble(memory.get(id)) : null;
+		IndicatorService indService = new IndicatorService();
+		
 		if (value == null) {
 			Indicator embebedIndicator = IndicatorManager.getInstance().getIndicator(id);
 			if (embebedIndicator == null) {
 				throw new ParseCancellationException(String.format(Messages.getString("EvalVisitor.indicatorNotFound"), id)); //$NON-NLS-1$
 			} else {
-				value = embebedIndicator.apply(company, year);
+				value = indService.apply(company, year,embebedIndicator);
 			}
 		}
 

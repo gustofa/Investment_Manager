@@ -14,6 +14,7 @@ import groupone.java.error.IndicatorSyntaxException;
 import groupone.java.error.Messages;
 import groupone.java.manager.AccountManager;
 import groupone.java.manager.IndicatorManager;
+import groupone.java.services.IndicatorService;
 
 public class IndicatorUnitTests {
 
@@ -27,8 +28,10 @@ public class IndicatorUnitTests {
 		Indicator compoundPredefinedIndicator = indicatorManager.getIndicator("IngresoNeto");
 		Indicator newCompoundIndicator = indicatorManager.createIndicator("IndicatorTest", "IngresoNeto+3\r\n");
 		
-		Double compoundPredefinedIndicatorResult = compoundPredefinedIndicator.apply(null, "");
-		Double newCompoundIndicatorResult = newCompoundIndicator.apply(null, "");
+		IndicatorService indService = new IndicatorService();
+		
+		Double compoundPredefinedIndicatorResult = indService.apply(null, "", compoundPredefinedIndicator);
+		Double newCompoundIndicatorResult = indService.apply(null, "", newCompoundIndicator);
 		
 		assertTrue(compoundPredefinedIndicatorResult == 1100000.0);
 		assertTrue(newCompoundIndicatorResult == 1100003.0);
@@ -55,8 +58,9 @@ public class IndicatorUnitTests {
 		comp.setName("Google");
 		Account account = new Account("FreeCashFlow","2016",1000.0);
 		comp.addAccount(account);
+		IndicatorService indService = new IndicatorService();
 		
-		Double valor = indicador.apply(comp, "2016");
+		Double valor = indService.apply(comp, "2016", indicador);
 
 //		assertTrue(valor == 1000.0);
 	}
@@ -68,8 +72,9 @@ public class IndicatorUnitTests {
 		expectedEx.expectMessage(String.format(Messages.getString("EvalVisitor.indicatorNotFound"),"NonExistentIndicator"));
 
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
+		IndicatorService indService = new IndicatorService();
 		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+NonExistentIndicator\r\n");
-		indicator.apply(null, "");
+		indService.apply(null, "", indicator);
 	}
 
 	@Test
@@ -85,18 +90,20 @@ public class IndicatorUnitTests {
 		comp.setName("Google");
 		Account account = new Account("FreeCashFlow","2016",1000.0);
 		comp.addAccount(account);
+		IndicatorService indService = new IndicatorService();
 		
-		indicator.apply(comp, "2016");
+		indService.apply(comp, "2016", indicator);
 	}
 	
 	@Test
 	public void applyIndicatorWithConstantShouldReturnCorrectResult() throws Exception {
 		IndicatorManager indicatorManager = IndicatorManager.getInstance();
 		Indicator indicator =  indicatorManager.createIndicator("Indicator3", "constante=400\r\n150+constante\r\n");
+		IndicatorService indService = new IndicatorService();
 
 		Double value;
 		try {
-			value = indicator.apply(null, "");
+			value = indService.apply(null, "", indicator);
 		} catch (final ParseCancellationException e) {
 			throw new Exception(e.getMessage());
 		}

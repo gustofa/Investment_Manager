@@ -3,11 +3,9 @@ package src.test.java;
 import static org.junit.Assert.*;
 import java.io.IOException;
 
-import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.junit.rules.TemporaryFolder;
 
 import groupone.java.bean.Indicator;
 import groupone.java.error.IndicatorSyntaxException;

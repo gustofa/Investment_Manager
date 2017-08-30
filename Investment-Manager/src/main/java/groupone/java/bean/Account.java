@@ -1,10 +1,23 @@
 package groupone.java.bean;
 
-public class Account {
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Account")
+public class Account extends Persistible {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private String year;
 	private Double value = 0.0;
+	
+	public Account() {
+		
+	}
 	
 	public Account(String nombre, String anio, Double value) {
 		this.name = nombre;

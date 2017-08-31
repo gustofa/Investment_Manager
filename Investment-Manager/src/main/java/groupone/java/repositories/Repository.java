@@ -4,7 +4,9 @@ import javax.persistence.EntityManager;
 
 
 public class Repository {
-	private Accounts account;
+	private Accounts accounts;
+	private Indicators indicators;
+	private Companies companies;
 	protected EntityManager em;
 
 	public Repository(EntityManager em) {
@@ -12,12 +14,26 @@ public class Repository {
 	}
 
 	public Accounts accounts() {
-		if (account == null) {
-			account = new Accounts(em);
+		if (accounts == null) {
+			accounts = new Accounts(em);
 		}
-		return account;
+		return accounts;
 	}
 
+	public Indicators indicators() {
+		if (indicators == null) {
+			indicators = new Indicators(em);
+		}
+		return indicators;
+	}
+	
+	public Companies companies() {
+		if (companies == null) {
+			companies = new Companies(em);
+		}
+		return companies;
+	}
+	
 	public void close() {
 		em.close();
 	}

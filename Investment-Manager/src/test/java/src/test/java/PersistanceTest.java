@@ -1,6 +1,5 @@
 package src.test.java;
 
-import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.junit.After;
@@ -9,6 +8,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import groupone.java.bean.Account;
+import groupone.java.bean.Company;
 import groupone.java.repositories.Repository;;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -27,7 +27,12 @@ public class PersistanceTest {
 	public void aPersistir() {
 		Account account = new Account(null, null, null);
 		account.setName("unaCuenta");
-		repository.accounts().persistir(account);
+		repository.accounts().persist(account);
+		
+		Company company = new Company();
+		company.setName("unaCompania");
+		company.addAccount(account);
+		repository.companies().persist(company);
 	}
 	/*
 	@Test

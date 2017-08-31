@@ -9,11 +9,11 @@ public class Accounts extends Repository {
 		super(em);
 	}
 
-	public Account buscarPorId(Long id) {
+	public Account findById(Long id) {
 		return em.find(Account.class, id);
 	}
 
-	public void persistir(Account account) {
+	public void persist(Account account) {
 		em.getTransaction().begin();
 		em.persist(account);
 		em.getTransaction().commit();

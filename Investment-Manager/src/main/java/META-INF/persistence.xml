@@ -9,11 +9,12 @@
             Persistence unit for JPA with Hibernate
         </description>
 		<class>groupone.java.bean.Account</class>
+		<class>groupone.java.bean.Company</class>
 		<class>groupone.java.bean.Persistible</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dds" />
-			<property name="javax.persistence.jdbc.user" value="dds" />
+			<property name="javax.persistence.jdbc.user" value="dds2" />
 			<property name="javax.persistence.jdbc.password" value="ddsistemas" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			<property name="hibernate.show_sql" value="false" />

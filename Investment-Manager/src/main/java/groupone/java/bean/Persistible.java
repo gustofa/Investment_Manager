@@ -13,7 +13,7 @@ public class Persistible implements Serializable {
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
 protected Long id;
-protected String nombre;
+protected String name;
 
 protected Persistible() {
 }
@@ -24,14 +24,14 @@ return id;
 public void setId(Long id) {
 this.id = id;
 }
-@Column(name = "nombre")
-public String getNombre() {
-return nombre;
+@Column(name = "name")
+public String getName() {
+return name;
 }
-public void setNombre(String nombre) {
-this.nombre = nombre;
+public void setName(String name) {
+this.name = name;
 }
 public String toString() {
-return getId() + "-" + getNombre();
+return getId() + "-" + getName();
 }
 }

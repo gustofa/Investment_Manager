@@ -1,5 +1,8 @@
 package src.test.java;
 
+import java.io.IOException;
+import java.util.List;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.junit.After;
@@ -25,15 +28,36 @@ public class PersistanceTest {
 
 	@Test
 	public void aPersistir() {
-		Account account = new Account(null, null, null);
-		account.setName("unaCuenta");
-		repository.accounts().persist(account);
-		
 		Company company = new Company();
-		company.setName("unaCompania");
-		company.addAccount(account);
+		company.setName("unaCompania2");
+		
+		Account account1 = new Account(null, "2016", 1000.00);
+		account1.setName("unaCuenta1");
+
+		Account account2 = new Account(null, "2015", 2500.00);
+		account2.setName("unaCuenta2");
+		
+		company.addAccount(account1);
+		company.addAccount(account2);
+		account1.setCompany(company);
+		account2.setCompany(company);
+		repository.accounts().persist(account1);
+		repository.accounts().persist(account2);
 		repository.companies().persist(company);
 	}
+	
+	
+	@Test
+	public void buscarCuentaPorNombreyCompania() throws IOException{
+		List<Account> cuentas = repository.accounts().getAccountbyNameCo("unaCuenta2",2);
+		for (Account cuenta : cuentas) {
+			System.out.println(cuenta.toString());
+			System.out.println("Año: " + cuenta.getYear());
+			System.out.println("Valor: " + cuenta.getValue().toString());
+			
+		}
+	}	
+	
 	/*
 	@Test
 	public void buscarComunaPorId() {
@@ -47,16 +71,7 @@ public class PersistanceTest {
 	System.out.println("Poi encontrado por ID: " + poi.getNombre());
 	}
 
-	@Test
-	public void buscarPoiPorNombre() {
-		List<Poi> pois = repositorio.pois().buscarPoiPorNombre("Alm");
-		for (Poi poi : pois) {
-			System.out.println(poi.getComuna().getNombre());
-			System.out.println(poi.getNombre());
-			System.out.println(poi.getGeoref().getLatitud());
-			
-		}
-	}
+
 */
 	@After
 	public void tearDown() throws Exception {

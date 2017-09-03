@@ -7,6 +7,7 @@ public class Repository {
 	private Accounts accounts;
 	private Indicators indicators;
 	private Companies companies;
+	private Metodologies metodologies;
 	protected EntityManager em;
 
 	public Repository(EntityManager em) {
@@ -32,6 +33,13 @@ public class Repository {
 			companies = new Companies(em);
 		}
 		return companies;
+	}
+	
+	public Metodologies metodologies() {
+		if (metodologies == null) {
+			metodologies = new Metodologies(em);
+		}
+		return metodologies;
 	}
 	
 	public void close() {

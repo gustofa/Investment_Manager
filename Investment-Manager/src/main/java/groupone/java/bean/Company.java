@@ -16,18 +16,9 @@ public class Company extends Persistible {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String name;
-	
+
 	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
 	private List<Account> accountList = new ArrayList<Account>();
-	
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 	public List<Account> getAccounts(){
 		return this.accountList;

@@ -16,7 +16,6 @@ public class Account extends Persistible {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String name;
 	private String year;
 	private Double value = 0.0;
 	
@@ -40,14 +39,6 @@ public class Account extends Persistible {
 	
 	public void setCompany(Company company) {
 		this.company = company;
-	}
-		
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String nombre) {
-		this.name = nombre;
 	}
 
 	public Double getValue() {

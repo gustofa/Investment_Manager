@@ -1,4 +1,4 @@
-/*package src.test.java;
+package src.test.java;
 
 import static org.junit.Assert.*;
 import java.io.IOException;
@@ -9,28 +9,28 @@ import org.junit.rules.ExpectedException;
 
 import groupone.java.bean.Indicator;
 import groupone.java.error.IndicatorSyntaxException;
-import groupone.java.manager.IndicatorManager;
+import groupone.java.services.IndicatorService;
 
-public class IndicatorManagerTest {
+public class IndicatorServiceTest {
 	@Rule
 	public ExpectedException expectedEx = ExpectedException.none();
 
 	@Test
 	public void loadPredefinedIndicatorsShouldKeepIndicatorsInMemory() throws IOException, IndicatorSyntaxException {
-		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		indicatorManager.loadPredefinedIndicators();
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		indicatorService.loadPredefinedIndicators();
 
-		Indicator ingresoNetoEnOperacionesContinuas = indicatorManager
+		Indicator ingresoNetoEnOperacionesContinuas = indicatorService
 				.getIndicator("IngresoNetoEnOperacionesContinuas");
 		assertTrue(ingresoNetoEnOperacionesContinuas != null);
 		assertEquals(ingresoNetoEnOperacionesContinuas.getName(), "IngresoNetoEnOperacionesContinuas");
 
-		Indicator ingresoNetoEnOperacionesDiscontinuadas = indicatorManager
+		Indicator ingresoNetoEnOperacionesDiscontinuadas = indicatorService
 				.getIndicator("IngresoNetoEnOperacionesDiscontinuadas");
 		assertTrue(ingresoNetoEnOperacionesDiscontinuadas != null);
 		assertEquals(ingresoNetoEnOperacionesDiscontinuadas.getName(), "IngresoNetoEnOperacionesDiscontinuadas");
 
-		Indicator ingresoNeto = indicatorManager.getIndicator("IngresoNeto");
+		Indicator ingresoNeto = indicatorService.getIndicator("IngresoNeto");
 		assertTrue(ingresoNeto != null);
 		assertEquals(ingresoNeto.getName(), "IngresoNeto");
 	}
@@ -39,16 +39,15 @@ public class IndicatorManagerTest {
 	public void createIndicatorWithInclompletedExpressionReturnsSyntacticError() throws IndicatorSyntaxException {
 		expectedEx.expect(IndicatorSyntaxException.class);
 		expectedEx.expectMessage("Error sintactico en la formula del indicador, en la linea 1, caracter nº: 4");
-		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		indicatorManager.createIndicator("Indicator1", "1+2+");
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		indicatorService.createIndicator("Indicator1", "1+2+");
 	}
 
 	@Test
 	public void createIndicatorWithWrongCharacterReturnsSyntacticError() throws IndicatorSyntaxException {
 		expectedEx.expect(IndicatorSyntaxException.class);
 		expectedEx.expectMessage("Caracter no valido en la linea 1, caracter nº: 2");
-		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		indicatorManager.createIndicator("Indicator1", "1+#+2\r\n");
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		indicatorService.createIndicator("Indicator1", "1+#+2\r\n");
 	}
 }
-*/

@@ -1,7 +1,10 @@
-/*package src.test.java;
+package src.test.java;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.io.IOException;
+
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.junit.Rule;
 import org.junit.Test;
@@ -13,7 +16,6 @@ import groupone.java.bean.Indicator;
 import groupone.java.error.IndicatorSyntaxException;
 import groupone.java.error.Messages;
 import groupone.java.manager.AccountManager;
-import groupone.java.manager.IndicatorManager;
 import groupone.java.services.IndicatorService;
 
 public class IndicatorUnitTests {
@@ -23,15 +25,13 @@ public class IndicatorUnitTests {
 
 	@Test
 	public void applyCompoundIndicatorShouldReturnCorrectResult() throws Exception {
-		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		indicatorManager.loadPredefinedIndicators();
-		Indicator compoundPredefinedIndicator = indicatorManager.getIndicator("IngresoNeto");
-		Indicator newCompoundIndicator = indicatorManager.createIndicator("IndicatorTest", "IngresoNeto+3\r\n");
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		indicatorService .loadPredefinedIndicators();
+		Indicator compoundPredefinedIndicator = indicatorService .getIndicator("IngresoNeto");
+		Indicator newCompoundIndicator = indicatorService .createIndicator("IndicatorTest", "IngresoNeto+3\r\n");
 		
-		IndicatorService indService = new IndicatorService();
-		
-		Double compoundPredefinedIndicatorResult = indService.apply(null, "", compoundPredefinedIndicator);
-		Double newCompoundIndicatorResult = indService.apply(null, "", newCompoundIndicator);
+		Double compoundPredefinedIndicatorResult = indicatorService .apply(null, "", compoundPredefinedIndicator);
+		Double newCompoundIndicatorResult = indicatorService .apply(null, "", newCompoundIndicator);
 		
 		assertTrue(compoundPredefinedIndicatorResult == 1100000.0);
 		assertTrue(newCompoundIndicatorResult == 1100003.0);
@@ -39,30 +39,29 @@ public class IndicatorUnitTests {
 
 	@Test
 	public void applyIndicatorWithAccountReturnCorrectResult() throws Exception, IOException, IndicatorSyntaxException {
-		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		
 		// Importamos las cuentas		
-		AccountManager.getInstance().loadAccounts(indicatorManager.getClass().getClassLoader().getResource("cuentas.json").getFile());
+		AccountManager.getInstance().loadAccounts(indicatorService.getClass().getClassLoader().getResource("cuentas.json").getFile());
 	
 		// Creamos un nuevo indicador que usa una cuenta en su expresión
-		String nuevoIndicador = indicatorManager.getClass().getClassLoader()
+		String nuevoIndicador = indicatorService.getClass().getClassLoader()
 				.getResource("MonthlyAverageFreeCashFlow.ind").getFile();
-		Indicator indicador = indicatorManager.loadNewIndicatorFromFile(nuevoIndicador);
+		Indicator indicador = indicatorService.loadNewIndicatorFromFile(nuevoIndicador);
 
 		assertTrue(indicador != null);
 		assertEquals(indicador.getName(), "MonthlyAverageFreeCashFlow");
 
 		// calculamos el valor de indicador respecto de una empresa y un
 		// año, para saber que cuenta usar'
-		Company comp = new Company();
-		comp.setName("Google");
-		Account account = new Account("FreeCashFlow","2016",1000.0);
-		comp.addAccount(account);
-		IndicatorService indService = new IndicatorService();
+		Company company = new Company();
+		company.setName("Google");
+		Account account = new Account("FreeCashFlow","2016",1200.0);
+		company.addAccount(account);
 		
-		Double valor = indService.apply(comp, "2016", indicador);
+		Double valor = indicatorService.apply(company, "2016", indicador);
 
-//		assertTrue(valor == 1000.0);
+		assertTrue(valor == 100);
 	}
 
 	@Test
@@ -71,10 +70,9 @@ public class IndicatorUnitTests {
 		expectedEx.expect(ParseCancellationException.class);
 		expectedEx.expectMessage(String.format(Messages.getString("EvalVisitor.indicatorNotFound"),"NonExistentIndicator"));
 
-		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		IndicatorService indService = new IndicatorService();
-		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+NonExistentIndicator\r\n");
-		indService.apply(null, "", indicator);
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		Indicator indicator =  indicatorService.createIndicator("Indicator1", "1+2+NonExistentIndicator\r\n");
+		indicatorService.apply(null, "", indicator);
 	}
 
 	@Test
@@ -83,27 +81,25 @@ public class IndicatorUnitTests {
 		expectedEx.expect(ParseCancellationException.class);
 		expectedEx.expectMessage(String.format(Messages.getString("EvalVisitor.accountNotFound"), "NonExistentAccount"));
 
-		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		Indicator indicator =  indicatorManager.createIndicator("Indicator1", "1+2+$NonExistentAccount\r\n");
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		Indicator indicator =  indicatorService.createIndicator("Indicator1", "1+2+$NonExistentAccount\r\n");
 		
 		Company comp = new Company();
 		comp.setName("Google");
 		Account account = new Account("FreeCashFlow","2016",1000.0);
 		comp.addAccount(account);
-		IndicatorService indService = new IndicatorService();
 		
-		indService.apply(comp, "2016", indicator);
+		indicatorService.apply(comp, "2016", indicator);
 	}
 	
 	@Test
 	public void applyIndicatorWithConstantShouldReturnCorrectResult() throws Exception {
-		IndicatorManager indicatorManager = IndicatorManager.getInstance();
-		Indicator indicator =  indicatorManager.createIndicator("Indicator3", "constante=400\r\n150+constante\r\n");
-		IndicatorService indService = new IndicatorService();
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		Indicator indicator =  indicatorService.createIndicator("Indicator3", "constante=400\r\n150+constante\r\n");
 
 		Double value;
 		try {
-			value = indService.apply(null, "", indicator);
+			value = indicatorService.apply(null, "", indicator);
 		} catch (final ParseCancellationException e) {
 			throw new Exception(e.getMessage());
 		}
@@ -111,4 +107,3 @@ public class IndicatorUnitTests {
 		assertTrue(value == 550.0);
 	}	
 }
-*/

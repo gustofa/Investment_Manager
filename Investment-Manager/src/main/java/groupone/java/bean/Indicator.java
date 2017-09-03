@@ -1,25 +1,33 @@
 package groupone.java.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import groupone.java.investment.EvalVisitor;
+@Entity
+@Table(name = "Indicator")
+public class Indicator extends Persistible {
 
-public class Indicator {
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name;
-	private ParseTree parseTree;
+	private String expression;
+	
+/*	private ParseTree parseTree;*/
 
-	public ParseTree getParseTree() {
+/*	public ParseTree getParseTree() {
 		return parseTree;
 	}
-
+*/
 	public Indicator() {
 
 	}
 
-	public Indicator(String name, ParseTree parseTree) {
+	public Indicator(String name, String expression ) {
 		this.name = name;
-		this.parseTree = parseTree;
+		this.expression = expression;
 	}
 
 	public String getName() {
@@ -29,10 +37,18 @@ public class Indicator {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public void setParseTree(ParseTree parseTree) {
-		this.parseTree = parseTree;
+
+	public String getExpression() {
+		return this.expression;
 	}
+
+	public void setExpression(String expression) {
+		this.expression = expression;
+	}
+	
+	/*public void setParseTree(ParseTree parseTree) {
+		this.parseTree = parseTree;
+	}*/
 
 //	public Double apply(Company company, String year) {
 //		EvalVisitor visitor = new EvalVisitor();

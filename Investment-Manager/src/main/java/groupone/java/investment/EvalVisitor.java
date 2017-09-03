@@ -1,19 +1,18 @@
 package groupone.java.investment;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.lang.Double;
-
-import grammar.*;
+import grammar.IndicatorGrammarBaseVisitor;
+import grammar.IndicatorGrammarParser;
 import groupone.java.bean.Account;
 import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
 import groupone.java.error.Messages;
-import groupone.java.manager.IndicatorManager;
 import groupone.java.services.CompanyService;
 import groupone.java.services.IndicatorService;
 
@@ -70,14 +69,13 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 	public Double visitIdAtom(IndicatorGrammarParser.IdAtomContext ctx) {
 		String id = ctx.ID().getText();
 		Double value = memory.get(id) != null ? Double.parseDouble(memory.get(id)) : null;
-		IndicatorService indService = new IndicatorService();
 		
 		if (value == null) {
-			Indicator embebedIndicator = IndicatorManager.getInstance().getIndicator(id);
+			Indicator embebedIndicator = IndicatorService.getInstance().getIndicator(id);
 			if (embebedIndicator == null) {
 				throw new ParseCancellationException(String.format(Messages.getString("EvalVisitor.indicatorNotFound"), id)); //$NON-NLS-1$
 			} else {
-				value = indService.apply(company, year,embebedIndicator);
+				value = IndicatorService.getInstance().apply(company, year,embebedIndicator);
 			}
 		}
 

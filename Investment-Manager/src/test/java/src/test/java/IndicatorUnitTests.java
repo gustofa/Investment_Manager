@@ -15,7 +15,7 @@ import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
 import groupone.java.error.IndicatorSyntaxException;
 import groupone.java.error.Messages;
-import groupone.java.manager.AccountManager;
+import groupone.java.services.AccountService;
 import groupone.java.services.IndicatorService;
 
 public class IndicatorUnitTests {
@@ -42,7 +42,7 @@ public class IndicatorUnitTests {
 		IndicatorService indicatorService = IndicatorService.getInstance();
 		
 		// Importamos las cuentas		
-		AccountManager.getInstance().loadAccounts(indicatorService.getClass().getClassLoader().getResource("cuentas.json").getFile());
+		AccountService.getInstance().loadAccounts(indicatorService.getClass().getClassLoader().getResource("cuentas.json").getFile());
 	
 		// Creamos un nuevo indicador que usa una cuenta en su expresión
 		String nuevoIndicador = indicatorService.getClass().getClassLoader()

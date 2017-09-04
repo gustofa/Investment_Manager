@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
 import groupone.java.bean.Account;
-import groupone.java.manager.AccountManager;
+import groupone.java.services.AccountService;
 
 public class AccountManagerTests {
 	@Rule
@@ -29,10 +29,10 @@ public class AccountManagerTests {
         
         FileUtils.writeStringToFile(file , content);  
  		
-        AccountManager.getInstance().loadAccounts(file.getPath());
+        AccountService.getInstance().loadAccounts(file.getPath());
 		
 //		assertTrue(accountManager.getAccounts().size() == 1);
-		Account insertedAccount = AccountManager.getInstance().getAccounts().get(0);
+		Account insertedAccount = AccountService.getInstance().getAccounts().get(0);
 
 		assertEquals(insertedAccount.getName(), "EBITDA");
 		assertEquals(insertedAccount.getYear(), "2016");
@@ -42,6 +42,6 @@ public class AccountManagerTests {
 	@Test(expected = IOException.class)
 	public void agregarCuentasThrowsInputOutputExceptionIfFileDoesNotExist() throws IOException{
 
-		AccountManager.getInstance().loadAccounts("FooFolder/FooFile.Foo");
+		AccountService.getInstance().loadAccounts("FooFolder/FooFile.Foo");
 	}
 }

@@ -1,4 +1,4 @@
-package groupone.java.manager;
+package groupone.java.services;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,17 +16,17 @@ import groupone.java.bean.Company;
 import groupone.java.investment.AccountList;
 import groupone.java.investment.CompanyList;
 
-public class AccountManager {
-	private static AccountManager instance;
+public class AccountService {
+	private static AccountService instance;
 	private List<Account> accountList = new ArrayList<Account>();
 	
-	private AccountManager(){
+	private AccountService(){
 		
 	}
 	
-	public static AccountManager getInstance(){
+	public static AccountService getInstance(){
 		if(instance == null){
-			instance = new AccountManager();
+			instance = new AccountService();
 		}
 			
 		return instance;

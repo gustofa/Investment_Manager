@@ -3,7 +3,7 @@ package groupone.java.investment;
 import java.io.IOException;
 import java.lang.Exception;
 
-import groupone.java.manager.AccountManager;
+import groupone.java.services.AccountService;
 
 public class Main {
 
@@ -11,11 +11,11 @@ public class Main {
         String path = "/cuentas.json";		
 		
 		try{
-			AccountManager.getInstance().loadAccounts(path);
+			AccountService.getInstance().loadAccounts(path);
 		}catch(IOException ex){
 			System.out.println(ex.getMessage());
 		}
 		
-		AccountManager.getInstance().printAccounts();
+		AccountService.getInstance().printAccounts();
     }
 }

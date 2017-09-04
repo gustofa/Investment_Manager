@@ -5,10 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+
+import groupone.java.bean.Indicator;
 import groupone.java.bean.Metodology;
 import groupone.java.repositories.Repository;;
 
@@ -26,9 +29,11 @@ public class MetodologiesRepositoryTest {
 
 	@Test
 	public void persistMetodology() {
-		Metodology metodology = new Metodology();
-		metodology.setName("MetodologyTest");
-		repository.metodologies().persist(metodology);
+		Metodology metodologyToPersist = new Metodology();
+		metodologyToPersist.setName("MetodologyTest");
+		repository.metodologies().persist(metodologyToPersist);
+		Metodology persistedMetodology = repository.metodologies().findById(1L);
+		Assert.assertTrue(persistedMetodology.getName() == metodologyToPersist.getName());
 	}
 
 

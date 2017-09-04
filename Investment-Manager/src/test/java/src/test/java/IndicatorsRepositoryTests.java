@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -26,37 +27,15 @@ public class IndicatorsRepositoryTests {
 
 	@Test
 	public void persistIndicator() {
-		Indicator indicator = new Indicator();
-		indicator.setName("IndicadorUno");
-		repository.indicators().persist(indicator);
+		Indicator indicatorToPersist = new Indicator();
+		indicatorToPersist.setName("IndicadorUno");
+		indicatorToPersist.setExpression("1+3");
+		repository.indicators().persist(indicatorToPersist);
+		Indicator persistedIndicator = repository.indicators().findById(1L);
+		Assert.assertTrue(persistedIndicator.getName() == indicatorToPersist.getName());
+		Assert.assertTrue(persistedIndicator.getExpression() == indicatorToPersist.getExpression());
 	}
-
-	/*@Test
-	public void buscarCuentaPorNombreyCompania() throws IOException{
-		List<Account> cuentas = repository.accounts().getAccountbyNameCo("unaCuenta2",2);
-		for (Account cuenta : cuentas) {
-			System.out.println(cuenta.toString());
-			System.out.println("Año: " + cuenta.getYear());
-			System.out.println("Valor: " + cuenta.getValue().toString());
-
-		}
-	}*/	
 	
-	/*
-	@Test
-	public void buscarComunaPorId() {
-		Comuna comuna = repositorio.comunas().buscarPorId(1L);
-		System.out.println("Comuna encontrada por ID: " + comuna.getNombre());
-	}
-
-	@Test
-	public void buscarPoiPorId() {
-	Poi poi = repositorio.pois().buscarPorId(2L);
-	System.out.println("Poi encontrado por ID: " + poi.getNombre());
-	}
-
-
-*/
 	@After
 	public void tearDown() throws Exception {
 		repository.close();

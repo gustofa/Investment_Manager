@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
+import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.apache.commons.io.FilenameUtils;
@@ -18,6 +19,7 @@ import groupone.java.error.IndicatorErrorListener;
 import groupone.java.error.IndicatorSyntaxException;
 import groupone.java.investment.EvalVisitor;
 
+@SuppressWarnings("deprecation")
 public class IndicatorService {
 
 	private static IndicatorService instance;

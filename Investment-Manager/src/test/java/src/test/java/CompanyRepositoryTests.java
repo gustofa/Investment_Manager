@@ -29,7 +29,7 @@ public class CompanyRepositoryTests {
 		Company companyToPersist = new Company();
 		companyToPersist.setName("CompanyTest1");
 		repository.companies().persist(companyToPersist);
-		Company persistedCompany = repository.companies().findById(1L);
+		Company persistedCompany = repository.companies().findById(companyToPersist.getId());
 		Assert.assertTrue(persistedCompany.getName() == companyToPersist.getName());
 	}
 	

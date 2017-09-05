@@ -32,10 +32,9 @@ public class MetodologiesRepositoryTest {
 		Metodology metodologyToPersist = new Metodology();
 		metodologyToPersist.setName("MetodologyTest");
 		repository.metodologies().persist(metodologyToPersist);
-		Metodology persistedMetodology = repository.metodologies().findById(1L);
+		Metodology persistedMetodology = repository.metodologies().findById(metodologyToPersist.getId());
 		Assert.assertTrue(persistedMetodology.getName() == metodologyToPersist.getName());
 	}
-
 
 	@After
 	public void tearDown() throws Exception {

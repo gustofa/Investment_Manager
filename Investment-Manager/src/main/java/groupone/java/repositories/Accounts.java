@@ -22,11 +22,11 @@ public class Accounts extends Repository {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Account> getAccountbyNameCo(String name, int co_id) {
+	public List<Account> getAccountbyNameCo(String name, long co_id) {
 		List<Account> accounts = null;
 		accounts = em.createNamedQuery("getAccountbyNameCo")
 				.setParameter("pname", "%" + name + "%")
-				.setParameter("pco_id", Integer.toString(co_id))
+				.setParameter("pco_id", co_id)
 				.getResultList();
 		return accounts;
 		}

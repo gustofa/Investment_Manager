@@ -31,7 +31,7 @@ public class IndicatorsRepositoryTests {
 		indicatorToPersist.setName("IndicadorUno");
 		indicatorToPersist.setExpression("1+3");
 		repository.indicators().persist(indicatorToPersist);
-		Indicator persistedIndicator = repository.indicators().findById(1L);
+		Indicator persistedIndicator = repository.indicators().findById(indicatorToPersist.getId());
 		Assert.assertTrue(persistedIndicator.getName() == indicatorToPersist.getName());
 		Assert.assertTrue(persistedIndicator.getExpression() == indicatorToPersist.getExpression());
 	}

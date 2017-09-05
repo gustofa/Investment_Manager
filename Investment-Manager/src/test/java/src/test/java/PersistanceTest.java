@@ -1,5 +1,9 @@
 package src.test.java;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -19,6 +23,7 @@ public class PersistanceTest {
 	private static final String PERSISTENCE_UNIT_NAME = "DDS";
 	private EntityManagerFactory emFactory;
 	private Repository repository;
+	private Company company;
 
 	@Before
 	public void setUp() throws Exception {
@@ -26,9 +31,9 @@ public class PersistanceTest {
 		repository = new Repository(emFactory.createEntityManager());
 	}
 
-	@Test
+	@Before
 	public void aPersistir() {
-		Company company = new Company();
+		company = new Company();
 		company.setName("unaCompania2");
 		
 		Account account1 = new Account(null, "2016", 1000.00);
@@ -49,30 +54,19 @@ public class PersistanceTest {
 	
 	@Test
 	public void buscarCuentaPorNombreyCompania() throws IOException{
-		List<Account> cuentas = repository.accounts().getAccountbyNameCo("unaCuenta2",2);
-		for (Account cuenta : cuentas) {
-			System.out.println(cuenta.toString());
-			System.out.println("Año: " + cuenta.getYear());
-			System.out.println("Valor: " + cuenta.getValue().toString());
-			
-		}
+		
+		System.out.println("Company ID : " + company.getId().toString()); 
+		System.out.println("Company Name : " + company.getName()); 
+		
+		List<Account> cuentas = repository.accounts().getAccountbyNameCo("unaCuenta2",company.getId());
+
+	    assertNotNull(cuentas);
+	    assertEquals(1, cuentas.size());
+		assertEquals(cuentas.get(0).getName(), "unaCuenta2");
+		
 	}	
 	
-	/*
-	@Test
-	public void buscarComunaPorId() {
-		Comuna comuna = repositorio.comunas().buscarPorId(1L);
-		System.out.println("Comuna encontrada por ID: " + comuna.getNombre());
-	}
 
-	@Test
-	public void buscarPoiPorId() {
-	Poi poi = repositorio.pois().buscarPorId(2L);
-	System.out.println("Poi encontrado por ID: " + poi.getNombre());
-	}
-
-
-*/
 	@After
 	public void tearDown() throws Exception {
 		repository.close();

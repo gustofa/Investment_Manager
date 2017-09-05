@@ -8,11 +8,12 @@ import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import groupone.java.bean.Indicator;
+
+import groupone.java.bean.Company;
 import groupone.java.repositories.Repository;;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class IndicatorsRepositoryTests {
+public class CompanyRepositoryTests {
 	private static final String PERSISTENCE_UNIT_NAME = "DDS";
 	private EntityManagerFactory emFactory;
 	private Repository repository;
@@ -25,13 +26,11 @@ public class IndicatorsRepositoryTests {
 
 	@Test
 	public void persistIndicator() {
-		Indicator indicatorToPersist = new Indicator();
-		indicatorToPersist.setName("IndicadorUno");
-		indicatorToPersist.setExpression("1+3");
-		repository.indicators().persist(indicatorToPersist);
-		Indicator persistedIndicator = repository.indicators().findById(1L);
-		Assert.assertTrue(persistedIndicator.getName() == indicatorToPersist.getName());
-		Assert.assertTrue(persistedIndicator.getExpression() == indicatorToPersist.getExpression());
+		Company companyToPersist = new Company();
+		companyToPersist.setName("CompanyTest1");
+		repository.companies().persist(companyToPersist);
+		Company persistedCompany = repository.companies().findById(1L);
+		Assert.assertTrue(persistedCompany.getName() == companyToPersist.getName());
 	}
 	
 	@After

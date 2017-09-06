@@ -4,19 +4,29 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 import org.junit.runners.MethodSorters;
 import groupone.java.bean.Account;
 import groupone.java.bean.Company;
-import groupone.java.repositories.Repository;;
+import groupone.java.investment.AccountList;
+import groupone.java.investment.CompanyList;
+import groupone.java.repositories.Repository;
+import groupone.java.services.AccountService;
+import groupone.java.services.CompanyService;
+import groupone.java.services.IndicatorService;;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PersistanceTest {
@@ -24,6 +34,9 @@ public class PersistanceTest {
 	private EntityManagerFactory emFactory;
 	private Repository repository;
 	private Company company;
+	
+	@Rule
+	public TemporaryFolder folder = new TemporaryFolder();
 
 	@Before
 	public void setUp() throws Exception {
@@ -50,6 +63,37 @@ public class PersistanceTest {
 		repository.accounts().persist(account2);
 		repository.companies().persist(company);
 	}
+	
+//	@Before
+//	public void aPersistir2() throws IOException {
+//
+//        IndicatorService indicatorService = IndicatorService.getInstance();
+//        AccountService.getInstance().loadAccounts2(indicatorService.getClass().getClassLoader().getResource("cuentas.json").getFile());
+//		
+//        for (Company company1 : CompanyList.companyList) {
+//        	repository.companies().persist(company1);
+//        	company = company1;
+//		}
+//
+//		for (Account account : AccountService.getInstance().getAccounts()) {
+//			repository.accounts().persist(account);
+//		}
+//			
+//	}
+//	
+//	@Test
+//	public void buscarCuentaPorNombreyCompaniaDesdeArch() throws IOException{
+//		
+//		System.out.println("Company ID : " + company.getId().toString()); 
+//		System.out.println("Company Name : " + company.getName()); 
+//		
+//		List<Account> cuentas = repository.accounts().getAccountbyNameCo("FreeCashFlow",company.getId());
+//
+//	    assertNotNull(cuentas);
+//	    assertEquals(1, cuentas.size());
+//		assertEquals(cuentas.get(0).getName(), "FreeCashFlow");
+//		
+//	}	
 	
 	
 	@Test

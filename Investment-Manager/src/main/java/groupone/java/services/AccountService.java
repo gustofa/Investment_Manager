@@ -55,6 +55,25 @@ public class AccountService {
 		}*/
 		
 	}
+	
+	public void loadAccounts2(String pathArchivo) throws IOException {
+		JsonReader reader = new JsonReader(new FileReader(pathArchivo));
+		Type companyListType = new TypeToken<List<Company>>() {
+		}.getType();
+		
+		CompanyList.companyList = new Gson().fromJson(reader, companyListType);						
+		
+		for (int i = 0; i < CompanyList.companyList.size(); i++) {
+			Company company = CompanyList.companyList.get(i);
+			
+			for (int j = 0; j < company.getAccounts().size(); j++) {
+				Account a = company.getAccounts().get(j);
+				a.setCompany(company);
+				AccountList.accountList.add(a);
+			}
+		}
+		
+	}
 
 	public List<Account> getAccounts() {
 		return AccountList.accountList;

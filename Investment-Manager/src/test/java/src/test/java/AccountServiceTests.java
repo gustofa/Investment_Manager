@@ -12,7 +12,7 @@ import org.junit.rules.TemporaryFolder;
 import groupone.java.bean.Account;
 import groupone.java.services.AccountService;
 
-public class AccountManagerTests {
+public class AccountServiceTests {
 	@Rule
 	public TemporaryFolder folder = new TemporaryFolder();
 	

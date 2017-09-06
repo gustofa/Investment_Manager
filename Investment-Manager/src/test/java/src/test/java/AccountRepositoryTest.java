@@ -44,6 +44,31 @@ public class AccountRepositoryTest {
 		repository = new Repository(emFactory.createEntityManager());
 	}
 
+ 	
+ 	@Test
+ 	public void buscarCuentaPorNombreyCompaniaDesdeArch() throws IOException{
+ 		Company company2 = new Company();
+        IndicatorService indicatorService = IndicatorService.getInstance();
+        AccountService.getInstance().loadAccounts2(indicatorService.getClass().getClassLoader().getResource("cuentas.json").getFile());
+
+ 		for (Account account : AccountService.getInstance().getAccounts()) {
+			repository.accounts().persist(account);
+		}
+ 		
+        for (Company company1 : CompanyList.companyList) {
+        	repository.companies().persist(company1);
+        	company2 = company1;
+		}
+ 		
+ 		List<Account> cuentas = repository.accounts().getAccountbyNameCo("FreeCashFlow",company2.getId());
+ 
+ 	    assertNotNull(cuentas);
+ 	    assertEquals(1, cuentas.size());
+ 		assertEquals(cuentas.get(0).getName(), "FreeCashFlow");
+ 		
+ 	}	
+	
+	
 	@Before
 	public void persistAccountAndCompany() {
 		company = new Company();
@@ -67,8 +92,8 @@ public class AccountRepositoryTest {
 	@Test
 	public void buscarCuentaPorNombreyCompania() throws IOException{
 		
-		System.out.println("Company ID : " + company.getId().toString()); 
-		System.out.println("Company Name : " + company.getName()); 
+		//System.out.println("Company ID : " + company.getId().toString()); 
+		//System.out.println("Company Name : " + company.getName()); 
 		
 		List<Account> cuentas = repository.accounts().getAccountbyNameCo("unaCuenta2",company.getId());
 

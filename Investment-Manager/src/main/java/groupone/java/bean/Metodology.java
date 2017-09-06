@@ -13,4 +13,15 @@ public class Metodology extends Persistible {
 	
 	private static final long serialVersionUID = 1L;
 	
+	private String expression;
+
+	public String getExpression() {
+		return expression;
+	}
+
+	public void setExpression(String expression) {
+		this.expression = expression;
+	} 
+	
+	
 }

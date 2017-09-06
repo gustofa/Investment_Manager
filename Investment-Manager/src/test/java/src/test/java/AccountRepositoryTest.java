@@ -29,7 +29,7 @@ import groupone.java.services.CompanyService;
 import groupone.java.services.IndicatorService;;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class PersistanceTest {
+public class AccountRepositoryTest {
 	private static final String PERSISTENCE_UNIT_NAME = "DDS";
 	private EntityManagerFactory emFactory;
 	private Repository repository;
@@ -45,7 +45,7 @@ public class PersistanceTest {
 	}
 
 	@Before
-	public void aPersistir() {
+	public void persistAccountAndCompany() {
 		company = new Company();
 		company.setName("unaCompania2");
 		
@@ -63,39 +63,7 @@ public class PersistanceTest {
 		repository.accounts().persist(account2);
 		repository.companies().persist(company);
 	}
-	
-//	@Before
-//	public void aPersistir2() throws IOException {
-//
-//        IndicatorService indicatorService = IndicatorService.getInstance();
-//        AccountService.getInstance().loadAccounts2(indicatorService.getClass().getClassLoader().getResource("cuentas.json").getFile());
-//		
-//        for (Company company1 : CompanyList.companyList) {
-//        	repository.companies().persist(company1);
-//        	company = company1;
-//		}
-//
-//		for (Account account : AccountService.getInstance().getAccounts()) {
-//			repository.accounts().persist(account);
-//		}
-//			
-//	}
-//	
-//	@Test
-//	public void buscarCuentaPorNombreyCompaniaDesdeArch() throws IOException{
-//		
-//		System.out.println("Company ID : " + company.getId().toString()); 
-//		System.out.println("Company Name : " + company.getName()); 
-//		
-//		List<Account> cuentas = repository.accounts().getAccountbyNameCo("FreeCashFlow",company.getId());
-//
-//	    assertNotNull(cuentas);
-//	    assertEquals(1, cuentas.size());
-//		assertEquals(cuentas.get(0).getName(), "FreeCashFlow");
-//		
-//	}	
-	
-	
+
 	@Test
 	public void buscarCuentaPorNombreyCompania() throws IOException{
 		

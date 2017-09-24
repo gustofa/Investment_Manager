@@ -54,18 +54,21 @@ public class App {
 	        
 	        post("/create_account", (request, response) -> {
 	        	Map<String, Object> model = new HashMap<String, Object>();
-	        	List<Company> companies = serviceCompany.getCompanies();
+	        	//List<Company> companies = serviceCompany.getCompanies();
 	        	
 	        	String name = request.queryParams("name");
 	        	String year = request.queryParams("year");
 	        	Double value = Double.parseDouble(request.queryParams("value"));
-	        	
-	    		Account account = new Account(name, year, value);
-	        	//Falta buscar la compañia segun el valor del select traido con queryParams
-	    		//agregar la cuenta a la compañia, guardar y devolver un template 
-	    		
-	        	model.put("companies", companies);
-	        	model.put("template", "account.vtl" );
+	        	Company company = repository.companies().findById(Long.parseLong(request.queryParams("company")));       	
+	    		Account account = new Account(name, year, value);  		
+	    		company.addAccount(account);
+	    		account.setCompany(company);
+	    		repository.accounts().persist(account);
+	    		repository.companies().persist(company);
+
+	        	model.put("template", "create_ok.vtl" );
+	        	model.put("title", "Cuentas - Administraci&oacute;n");
+	        	model.put("subtitle", "Creaci&oacute;n de Cuentas");
 	            return new ModelAndView(model, layout);
 	        }, new VelocityTemplateEngine());   
 	        

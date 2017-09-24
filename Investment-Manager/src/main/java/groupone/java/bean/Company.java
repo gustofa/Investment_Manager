@@ -15,7 +15,7 @@ public class Company extends Persistible {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
 	private List<Account> accountList = new ArrayList<Account>();
 	

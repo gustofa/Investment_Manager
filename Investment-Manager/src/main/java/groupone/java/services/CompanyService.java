@@ -1,9 +1,12 @@
 package groupone.java.services;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 import groupone.java.bean.Account;
 import groupone.java.bean.Company;
+import groupone.java.bean.Indicator;
 
 public class CompanyService {
 	
@@ -25,8 +28,8 @@ public class CompanyService {
 				.orElse(null);	
 	}
 	
-	public Collection<Company> getCompanies(){
-		return this.companies.values();
+	public List<Company> getCompanies(){
+		return  new ArrayList<Company>(this.companies.values());
 	}
 
 }

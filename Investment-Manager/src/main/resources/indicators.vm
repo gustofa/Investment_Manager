@@ -1,0 +1,22 @@
+<html>
+<head>
+    <style>
+        .name {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h1>
+        <span class="name">Grupo 1 campeon</span>
+    </h1>
+<ul>
+#foreach ($indicator in $indicators)
+    <li>Item ${indicator.getName()}</li>
+#end
+</ul>
+</div>
+</body>
+</html>

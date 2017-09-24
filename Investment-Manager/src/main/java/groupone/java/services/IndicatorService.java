@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -51,6 +53,10 @@ public class IndicatorService {
 		return evaluationResult;
 	}
 
+	public List<Indicator> getIndicators() {
+		return  new ArrayList<Indicator>(this.indicators.values());
+	}	
+	
 	public Indicator getIndicator(String name) {
 		return this.indicators.get(name);
 	}

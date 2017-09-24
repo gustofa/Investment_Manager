@@ -31,7 +31,8 @@ public class App {
 			Repository repository = new Repository(emFactory.createEntityManager());		 
 		 
 	        //Instancio las compañias
-	        CompanyService serviceCompany = CompanyService.getInstance();
+	        //CompanyService serviceCompany = CompanyService.getInstance();
+			List<Company> companies = repository.companies().getCompanies();
 	        
 		 	Spark.staticFileLocation("public");	
 		 	Spark.port(9000);
@@ -46,7 +47,6 @@ public class App {
 	    	        
 	        get("/account", (request, response) -> {
 	        	Map<String, Object> model = new HashMap<String, Object>();
-	        	List<Company> companies = serviceCompany.getCompanies();
 	        	model.put("companies", companies);
 	        	model.put("template", "account.vtl" );
 	            return new ModelAndView(model, layout);
@@ -54,12 +54,17 @@ public class App {
 	        
 	        post("/create_account", (request, response) -> {
 	        	Map<String, Object> model = new HashMap<String, Object>();
-	        	//List<Company> companies = serviceCompany.getCompanies();
-	        	
+
 	        	String name = request.queryParams("name");
 	        	String year = request.queryParams("year");
 	        	Double value = Double.parseDouble(request.queryParams("value"));
-	        	Company company = repository.companies().findById(Long.parseLong(request.queryParams("company")));       	
+	        	Long id = Long.parseLong(request.queryParams("company"));
+	        	
+	        	Company company = companies.stream()
+	    				.filter(a -> a.getId().equals(id) )
+	    				.findFirst()
+	    				.orElse(null); 
+	        	
 	    		Account account = new Account(name, year, value);  		
 	    		company.addAccount(account);
 	    		account.setCompany(company);

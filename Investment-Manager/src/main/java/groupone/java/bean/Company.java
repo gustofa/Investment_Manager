@@ -5,11 +5,13 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Company")
+@NamedQuery(name = "getCompanies", query = "SELECT c FROM Company c")
 public class Company extends Persistible {
 	/**
 	 * 

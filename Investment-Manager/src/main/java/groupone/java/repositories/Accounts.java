@@ -31,4 +31,12 @@ public class Accounts extends Repository {
 		return accounts;
 		}
 	
+	@SuppressWarnings("unchecked")
+	public List<Account> getAccounts() {
+		List<Account> accounts = null;
+		accounts = em.createNamedQuery("getAccounts")
+				.getResultList();
+		return accounts;
+		}
+	
 }

@@ -33,7 +33,10 @@ public class App {
 	        //Instancio las compañias
 	        //CompanyService serviceCompany = CompanyService.getInstance();
 			List<Company> companies = repository.companies().getCompanies();
-	        
+
+			//Instancio las cuentas
+			List<Account> accounts = repository.accounts().getAccounts();
+			
 		 	Spark.staticFileLocation("public");	
 		 	Spark.port(9000);
 		 	//página base que contendrá a todas las demás
@@ -45,6 +48,16 @@ public class App {
 		      return new ModelAndView(model, layout);
 		    }, new VelocityTemplateEngine());	          
 	    	        
+		    
+		   //Vista: Listado de Cuentas
+		    get("/accounts", (request, response) -> {
+	        	Map<String, Object> model = new HashMap<String, Object>();
+	        	model.put("accounts", accounts);
+	        	model.put("template", "accounts.vtl" );
+	            return new ModelAndView(model, layout);
+	        }, new VelocityTemplateEngine());     
+		    
+		    //Vista: Crear Cuenta
 	        get("/account", (request, response) -> {
 	        	Map<String, Object> model = new HashMap<String, Object>();
 	        	model.put("companies", companies);

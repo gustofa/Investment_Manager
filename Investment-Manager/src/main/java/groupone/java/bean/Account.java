@@ -5,11 +5,22 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.NamedQueries;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Account")
-@NamedQuery(name = "getAccountbyNameCo", query = "SELECT p FROM Account p WHERE p.name LIKE :pname AND company_id=:pco_id")
+
+@NamedQueries({
+	@NamedQuery(name = "getAccountbyNameCo", 
+				query = "SELECT p FROM Account p WHERE p.name LIKE :pname AND company_id=:pco_id"),
+    @NamedQuery(name = "getAccounts", 
+    			query = "SELECT c FROM Account c")
+}) 
+
+
+
+
 public class Account extends Persistible {
 
 	/**

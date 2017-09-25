@@ -108,8 +108,8 @@ public class App {
 	        	List<Indicator> indicators = service.getIndicators();
 	        	
 	        	model.put("indicators", indicators);
-	            // The wm files are located under the resources directory
-	            return new ModelAndView(model, "indicators.vm");
+	        	model.put("template", "Views/Indicator/indicators.vtl");
+	        	return new ModelAndView(model, layout);
 	        }, new VelocityTemplateEngine());
 
 	        

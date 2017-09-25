@@ -28,7 +28,7 @@
 					  #foreach ($account in $accounts)
 					  <tr>
 					    <td>${account.getName()}</td>
-					    <td></td>
+					    <td>${account.getCompany().getName()}</td>
 					    <td>${account.getValue()}</td>
 					    <td>${account.getYear()}</td>
 					  </tr>

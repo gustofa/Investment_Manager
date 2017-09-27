@@ -38,7 +38,7 @@ public class App {
 			List<Account> accounts = repository.accounts().getAccounts();
 			
 		 	Spark.staticFileLocation("public");	
-		 	Spark.port(9000);
+		 	Spark.port(9002);
 		 	//página base que contendrá a todas las demás
 		    String layout = "index.vtl";
 
@@ -116,6 +116,13 @@ public class App {
 	        get("/json", (request, response) -> {
 	            return null; 
 	        }, new JSONTransformer());
+	        
+		    //Vista: Crear Indicador
+	        get("/indicator", (request, response) -> {
+	        	Map<String, Object> model = new HashMap<String, Object>();
+	        	model.put("template", "Views/Indicator/indicators.vtl" );
+	            return new ModelAndView(model, layout);
+	        }, new VelocityTemplateEngine());    
 	    }
 
 

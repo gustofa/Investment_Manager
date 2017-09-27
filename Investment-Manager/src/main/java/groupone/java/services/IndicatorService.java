@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -20,14 +23,18 @@ import groupone.java.bean.Indicator;
 import groupone.java.error.IndicatorErrorListener;
 import groupone.java.error.IndicatorSyntaxException;
 import groupone.java.investment.EvalVisitor;
+import groupone.java.repositories.Repository;
 
 @SuppressWarnings("deprecation")
 public class IndicatorService {
 
+	private static final String PERSISTENCE_UNIT_NAME = "DDS";
 	private static IndicatorService instance;
-	private HashMap<String, Indicator> indicators = new HashMap<String, Indicator>();
-
+	private Repository repository;
+	
 	private IndicatorService() {
+		EntityManagerFactory emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+		this.repository = new Repository(emFactory.createEntityManager());		 
 	};
 
 	public static IndicatorService getInstance() {
@@ -52,13 +59,13 @@ public class IndicatorService {
 		
 		return evaluationResult;
 	}
-
+	
 	public List<Indicator> getIndicators() {
-		return  new ArrayList<Indicator>(this.indicators.values());
+		return  repository.indicators().getIndicators();
 	}	
 	
 	public Indicator getIndicator(String name) {
-		return this.indicators.get(name);
+		return repository.indicators().findByName(name);
 	}
 	
 	public Indicator createIndicator(String name, String expression) throws IndicatorSyntaxException{
@@ -66,7 +73,7 @@ public class IndicatorService {
 		indicator.setName(name);
 		this.parseExpression(expression);
 		indicator.setExpression(expression);		
-		this.indicators.put(name, indicator);
+		this.repository.indicators().persist(indicator); 
 		return indicator;
 	}
 

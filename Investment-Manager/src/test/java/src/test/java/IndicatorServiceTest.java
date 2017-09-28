@@ -14,7 +14,7 @@ import groupone.java.services.IndicatorService;
 public class IndicatorServiceTest {
 	@Rule
 	public ExpectedException expectedEx = ExpectedException.none();
-
+/*
 	@Test
 	public void loadPredefinedIndicatorsShouldKeepIndicatorsInMemory() throws IOException, IndicatorSyntaxException {
 		IndicatorService indicatorService = IndicatorService.getInstance();
@@ -34,7 +34,7 @@ public class IndicatorServiceTest {
 		assertTrue(ingresoNeto != null);
 		assertEquals(ingresoNeto.getName(), "IngresoNeto");
 	}
-
+*/
 	@Test
 	public void createIndicatorWithInclompletedExpressionReturnsSyntacticError() throws IndicatorSyntaxException {
 		expectedEx.expect(IndicatorSyntaxException.class);

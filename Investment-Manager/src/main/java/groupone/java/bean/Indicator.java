@@ -8,7 +8,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 @Table(name = "Indicator")
 public class Indicator extends Persistible {
 	private static final long serialVersionUID = 1L;
-	private String name;
+	//private String name;
 	private String expression;
 	
 	public Indicator() {
@@ -20,13 +20,13 @@ public class Indicator extends Persistible {
 		this.expression = expression;
 	}
 
-	public String getName() {
+/*	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
+	}*/
 
 	public String getExpression() {
 		return this.expression;

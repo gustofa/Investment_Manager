@@ -37,7 +37,7 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 	public Double visitAccount(IndicatorGrammarParser.AccountContext ctx) {
 		Double value;
 		String accountName = ctx.getText().replace("$", "");
-		CompanyService compService = new CompanyService();
+		CompanyService compService = CompanyService.getInstance();
 		
 		Account account = compService.getAccount(accountName, this.year, this.company);
 		 

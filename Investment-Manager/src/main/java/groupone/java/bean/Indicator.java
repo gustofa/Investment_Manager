@@ -7,20 +7,10 @@ import org.antlr.v4.runtime.tree.ParseTree;
 @Entity
 @Table(name = "Indicator")
 public class Indicator extends Persistible {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private String expression;
 	
-/*	private ParseTree parseTree;*/
-
-/*	public ParseTree getParseTree() {
-		return parseTree;
-	}
-*/
 	public Indicator() {
 
 	}
@@ -45,13 +35,4 @@ public class Indicator extends Persistible {
 	public void setExpression(String expression) {
 		this.expression = expression;
 	}
-	
-	/*public void setParseTree(ParseTree parseTree) {
-		this.parseTree = parseTree;
-	}*/
-
-//	public Double apply(Company company, String year) {
-//		EvalVisitor visitor = new EvalVisitor();
-//		return visitor.visit(this.parseTree, company, year);
-//	}
 }

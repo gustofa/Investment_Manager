@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 
 public class Repository {
 	private Accounts accounts;
-	private Indicators indicators;
+	private IndicatorRepository indicators;
 	private Companies companies;
 	private Metodologies metodologies;
 	protected EntityManager em;
@@ -21,9 +21,9 @@ public class Repository {
 		return accounts;
 	}
 
-	public Indicators indicators() {
+	public IndicatorRepository indicators() {
 		if (indicators == null) {
-			indicators = new Indicators(em);
+			indicators = new IndicatorRepository(em);
 		}
 		return indicators;
 	}

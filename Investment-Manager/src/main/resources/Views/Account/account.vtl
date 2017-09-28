@@ -21,7 +21,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Compa&ntilde;ia</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="company" class="form-control">
+                          <select id="company"  name="company" class="form-control">
 						   <option value="">Seleccionar</option>
                           #foreach ($company in $companies)
                             <option value="${company.getId()}">${company.getName()}</option>
@@ -33,7 +33,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">

@@ -44,15 +44,16 @@ public class AccountRepositoryTest {
 		repository = new Repository(emFactory.createEntityManager());
 	}
 
- 	
+ /*	
  	@Test
  	public void buscarCuentaPorNombreyCompaniaDesdeArch() throws IOException{
  		Company company2 = new Company();
         IndicatorService indicatorService = IndicatorService.getInstance();
-        AccountService.getInstance().loadAccounts2(indicatorService.getClass().getClassLoader().getResource("cuentas.json").getFile());
+        AccountService accountService = AccountService.getInstance();
+        accountService.loadAccounts2(indicatorService.getClass().getClassLoader().getResource("cuentas.json").getFile());
 
- 		for (Account account : AccountService.getInstance().getAccounts()) {
-			repository.accounts().persist(account);
+ 		for (Account account : accountService.getAccounts()) {
+ 			accountService.accounts().persist(account);
 		}
  		
         for (Company company1 : CompanyList.companyList) {
@@ -67,7 +68,7 @@ public class AccountRepositoryTest {
  		assertEquals(cuentas.get(0).getName(), "FreeCashFlow");
  		
  	}	
-	
+	*/
 	
 	@Before
 	public void persistAccountAndCompany() {

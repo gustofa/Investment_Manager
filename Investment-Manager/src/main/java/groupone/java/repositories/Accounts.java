@@ -21,6 +21,12 @@ public class Accounts extends Repository {
 		em.getTransaction().commit();
 	}
 	
+	public void merge(Account account) {
+		em.getTransaction().begin();
+		em.merge(account);
+		em.getTransaction().commit();
+	}	
+	
 	@SuppressWarnings("unchecked")
 	public List<Account> getAccountbyNameCo(String name, long co_id) {
 		List<Account> accounts = null;

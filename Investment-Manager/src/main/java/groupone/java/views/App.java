@@ -30,13 +30,17 @@ public class App {
 			emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 			Repository repository = new Repository(emFactory.createEntityManager());		 
 		 
-	        //Instancio las compañias
-	        //CompanyService serviceCompany = CompanyService.getInstance();
-			List<Company> companies = repository.companies().getCompanies();
+	        //Instanciamos Servicio para Compañias
+	        CompanyService serviceCompany = CompanyService.getInstance();
+			//repository.companies().getCompanies();
 
-			//Instancio las cuentas
-			List<Account> accounts = repository.accounts().getAccounts();
+			//Instanciamos Servicio para Cuentas
+			AccountService serviceAccount = AccountService.getInstance();
+			//repository.accounts().getAccounts();
 			
+			//Instanciamos Servicio para Indicadores
+	        IndicatorService service = IndicatorService.getInstance();
+	        
 		 	Spark.staticFileLocation("public");	
 		 	Spark.port(9002);
 		 	//página base que contendrá a todas las demás
@@ -52,16 +56,16 @@ public class App {
 		   //Vista: Listado de Cuentas
 		    get("/accounts", (request, response) -> {
 	        	Map<String, Object> model = new HashMap<String, Object>();
-	        	model.put("accounts", accounts);
-	        	model.put("template", "accounts.vtl" );
+	        	model.put("accounts", serviceAccount.getAccounts());
+	        	model.put("template", "Views/Account/accounts.vtl" );
 	            return new ModelAndView(model, layout);
 	        }, new VelocityTemplateEngine());     
 		    
 		    //Vista: Crear Cuenta
 	        get("/account", (request, response) -> {
 	        	Map<String, Object> model = new HashMap<String, Object>();
-	        	model.put("companies", companies);
-	        	model.put("template", "account.vtl" );
+	        	model.put("companies", serviceCompany.getCompanies());
+	        	model.put("template", "Views/Account/account.vtl" );
 	            return new ModelAndView(model, layout);
 	        }, new VelocityTemplateEngine());     
 	        
@@ -72,25 +76,20 @@ public class App {
 	        	String year = request.queryParams("year");
 	        	Double value = Double.parseDouble(request.queryParams("value"));
 	        	Long id = Long.parseLong(request.queryParams("company"));
-	        	
-	        	Company company = companies.stream()
+	        	Company company = serviceCompany.getCompanies().stream()
 	    				.filter(a -> a.getId().equals(id) )
 	    				.findFirst()
 	    				.orElse(null); 
 	        	
-	    		Account account = new Account(name, year, value);  		
-	    		company.addAccount(account);
-	    		account.setCompany(company);
-	    		repository.accounts().persist(account);
-	    		repository.companies().persist(company);
+	        	Account account = serviceAccount.createAccount(name, year, value, company);
 
-	        	model.put("template", "create_ok.vtl" );
+	        	model.put("template", "Views/Account/create_ok.vtl" );
 	        	model.put("title", "Cuentas - Administraci&oacute;n");
 	        	model.put("subtitle", "Creaci&oacute;n de Cuentas");
+	        	model.put("account", account);
 	            return new ModelAndView(model, layout);
 	        }, new VelocityTemplateEngine());   
 	        
-	        IndicatorService service = IndicatorService.getInstance();
 	    	try {
 				service.createIndicator("pepito", "1+2");
 				service.createIndicator("mengano", "1+2");

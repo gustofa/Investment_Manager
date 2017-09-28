@@ -17,11 +17,24 @@
                   </div>
                     <br />
                  <div class="x_content bs-example-popovers">
-                  <div class="alert alert-success alert-dismissible fade in" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                    </button>
-                    <strong>$name creada correctamente.</strong>
-                  </div>
+					<div class="alert alert-success alert-dismissible" role="alert">
+						<strong>Cuenta creada correctamente.</strong>
+					</div>
+					<table class="col-md-12 col-sm-12 col-xs-12 table">
+					  <tr>
+					  <th>Nombre</th>
+					    <th>Compa&ntilde;ia</th>
+					    <th>Valor</th>
+					    <th>A&ntilde;o</th>
+					  </tr>
+					  <tr>
+					    <td>${account.getName()}</td>
+					    <td>${account.getCompany().getName()}</td>
+					    <td>${account.getValue()}</td>
+					    <td>${account.getYear()}</td>
+					  </tr>
+					</table>
+                  
                 </div>
                 </div>
               </div>

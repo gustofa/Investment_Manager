@@ -14,10 +14,12 @@ public class IndicatorController {
 	private static String layout = "index.vtl";
 
 	public static TemplateViewRoute serveIndicatorsPage = (request, response) -> {
+		Boolean addConfirmed = Boolean.parseBoolean(request.queryParams("confirmed"));
 		IndicatorService indicatorService = IndicatorService.getInstance();
 		List<Indicator> indicators = indicatorService.getIndicators();
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("indicators", indicators);
+		model.put("addConfirmed", addConfirmed);
 		model.put("template", "Views/Indicator/indicators.vtl");
 		return new ModelAndView(model, layout);
 	};
@@ -31,12 +33,10 @@ public class IndicatorController {
 	public static TemplateViewRoute handleCreateIndicatorPost = (request, response) -> {
 		String name = request.queryParams("name");
     	String expression = request.queryParams("expression"); 	
-    
     	IndicatorService indicatorService = IndicatorService.getInstance();
-		indicatorService.createIndicator(name, expression);
-    	
-		Map<String, Object> model = new HashMap<String, Object>();
-    	model.put("template", "Views/Indicator/indicators.vtl");
-        return new ModelAndView(model, layout);
+    	//TODO: Falta validar la creacion
+    	indicatorService.createIndicator(name, expression);
+    	response.redirect("/indicators?confirmed=true");
+    	return null;
 	};
 }

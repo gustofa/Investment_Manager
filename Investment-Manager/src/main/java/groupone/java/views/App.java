@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 import groupone.java.bean.Account;
 import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
+import groupone.java.controllers.IndicatorController;
 import groupone.java.error.IndicatorSyntaxException;
 import groupone.java.repositories.Repository;
 import groupone.java.services.AccountService;
@@ -90,40 +91,13 @@ public class App {
 	            return new ModelAndView(model, layout);
 	        }, new VelocityTemplateEngine());   
 	        
-	    	try {
-				service.createIndicator("pepito", "1+2");
-				service.createIndicator("mengano", "1+2");
-				service.createIndicator("fulano", "1+2");
-				
-	    	
-	    	} catch (IndicatorSyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-            
-	        get("/indicators", (request, response) -> {
-	        	
-	        	 Map<String, Object> model = new HashMap<String, Object>();
-	        	List<Indicator> indicators = service.getIndicators();
-	        	
-	        	model.put("indicators", indicators);
-	        	model.put("template", "Views/Indicator/indicators.vtl");
-	        	return new ModelAndView(model, layout);
-	        }, new VelocityTemplateEngine());
-
+	        get("/indicators", IndicatorController.serveIndicatorsPage, new VelocityTemplateEngine());
+	        get("/indicator", IndicatorController.serveCreateIndicatorPage, new VelocityTemplateEngine());
+	        post("/indicator", IndicatorController.handleCreateIndicatorPost, new VelocityTemplateEngine());   
 	        
 	        get("/json", (request, response) -> {
 	            return null; 
 	        }, new JSONTransformer());
-	        
-		    //Vista: Crear Indicador
-	        get("/indicator", (request, response) -> {
-	        	Map<String, Object> model = new HashMap<String, Object>();
-	        	model.put("template", "Views/Indicator/indicators.vtl" );
-	            return new ModelAndView(model, layout);
-	        }, new VelocityTemplateEngine());    
+	  
 	    }
-
-
-
 }

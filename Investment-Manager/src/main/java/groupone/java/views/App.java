@@ -1,7 +1,6 @@
 package groupone.java.views;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManagerFactory;
@@ -9,9 +8,7 @@ import javax.persistence.Persistence;
 
 import groupone.java.bean.Account;
 import groupone.java.bean.Company;
-import groupone.java.bean.Indicator;
 import groupone.java.controllers.IndicatorController;
-import groupone.java.error.IndicatorSyntaxException;
 import groupone.java.repositories.Repository;
 import groupone.java.services.AccountService;
 import groupone.java.services.CompanyService;
@@ -39,9 +36,6 @@ public class App {
 			AccountService serviceAccount = AccountService.getInstance();
 			//repository.accounts().getAccounts();
 			
-			//Instanciamos Servicio para Indicadores
-	        IndicatorService service = IndicatorService.getInstance();
-	        
 		 	Spark.staticFileLocation("public");	
 		 	Spark.port(9002);
 		 	//página base que contendrá a todas las demás

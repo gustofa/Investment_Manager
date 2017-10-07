@@ -34,6 +34,14 @@
                         </div>
                       </div>
                       <div class="ln_solid"></div>
+                      
+                      #if($addFailure)
+			            <div class="alert alert-danger fade in">
+			    			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			    			<strong>Error!</strong> $errorMessage
+						</div>
+					  #end
+					  
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button class="btn btn-primary" type="button">Cancelar</button>

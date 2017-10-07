@@ -9,6 +9,7 @@ import java.util.Map;
 
 import groupone.java.bean.Indicator;
 import groupone.java.services.IndicatorService;
+import groupone.java.error.IndicatorSyntaxException;
 
 public class IndicatorController {
 	private static String layout = "index.vtl";
@@ -25,7 +26,11 @@ public class IndicatorController {
 	};
 
 	public static TemplateViewRoute serveCreateIndicatorPage = (request, response) -> {
+		Boolean addFailure = Boolean.parseBoolean(request.queryParams("failure"));
+		String errorMessage = request.queryParams("message");
 		Map<String, Object> model = new HashMap<String, Object>();
+		model.put("addFailure", addFailure);
+		model.put("errorMessage", errorMessage);
 		model.put("template", "Views/Indicator/indicator.vtl");
 		return new ModelAndView(model, layout);
 	};
@@ -34,8 +39,14 @@ public class IndicatorController {
 		String name = request.queryParams("name");
     	String expression = request.queryParams("expression"); 	
     	IndicatorService indicatorService = IndicatorService.getInstance();
-    	//TODO: Falta validar la creacion
-    	indicatorService.createIndicator(name, expression);
+
+    	try {
+    		indicatorService.createIndicator(name, expression);
+		} catch (IndicatorSyntaxException e) {
+			// TODO: handle exception			
+			response.redirect("/indicator?failure=true&message=" + e.getMessage());
+		}
+    	
     	response.redirect("/indicators?confirmed=true");
     	return null;
 	};

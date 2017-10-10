@@ -26,7 +26,7 @@ public class App {
 	public static void main( String[] args ) {
 
 		 	Spark.staticFileLocation("public");	
-		 	Spark.port(9002);
+		 	Spark.port(9000);
 		 	
 		 	//página base que contendrá a todas las demás
 		    String layout = "index.vtl";
@@ -44,6 +44,8 @@ public class App {
 	        get("/indicators", IndicatorController.serveIndicatorsPage, new VelocityTemplateEngine());
 	        get("/indicator", IndicatorController.serveCreateIndicatorPage, new VelocityTemplateEngine());
 	        post("/indicator", IndicatorController.handleCreateIndicatorPost, new VelocityTemplateEngine());   
+	        get("/apply-indicator", IndicatorController.serveApplyIndicatorPage, new VelocityTemplateEngine());
+	        post("/apply-indicator", IndicatorController.handleApplyIndicatorPage, new VelocityTemplateEngine());   
 	        
 	        get("/json", (request, response) -> {
 	            return null; 

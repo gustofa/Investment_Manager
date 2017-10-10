@@ -42,7 +42,8 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 		Account account = compService.getAccount(accountName, this.year, this.company);
 		 
 		if (account == null) {
-			throw new ParseCancellationException(String.format(Messages.getString("EvalVisitor.accountNotFound"), accountName)); //$NON-NLS-1$
+			//throw new ParseCancellationException(String.format(Messages.getString("EvalVisitor.accountNotFound"), accountName)); //$NON-NLS-1$
+			value = 0.0;
 		} else {
 			value = account.getValue();
 		}

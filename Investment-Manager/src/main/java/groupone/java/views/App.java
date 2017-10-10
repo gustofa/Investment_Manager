@@ -10,6 +10,7 @@ import groupone.java.bean.Account;
 import groupone.java.bean.Company;
 import groupone.java.controllers.AccountController;
 import groupone.java.controllers.IndicatorController;
+import groupone.java.controllers.LoginController;
 import groupone.java.repositories.Repository;
 import groupone.java.services.AccountService;
 import groupone.java.services.CompanyService;
@@ -30,13 +31,11 @@ public class App {
 		 	
 		 	//página base que contendrá a todas las demás
 		    String layout = "index.vtl";
-
-		    get("/", (request, response) -> {
-		      Map<String, Object> model = new HashMap<String, Object>();
-		      model.put("template", "home.vtl" );
-		      return new ModelAndView(model, layout);
-		    }, new VelocityTemplateEngine());	          
-	    	            
+		    
+		    get("/", LoginController.serveLoginPage, new VelocityTemplateEngine());
+		    post("/login", LoginController.handleLoginPost, new VelocityTemplateEngine());
+		    post("/logout", LoginController.handleLogoutPost, new VelocityTemplateEngine());
+		    
 		    get("/accounts",AccountController.serveAccountsPage, new VelocityTemplateEngine());     
 	        get("/account",AccountController.serveCreateAccountPage, new VelocityTemplateEngine());     
 	        post("/account", AccountController.handleCreateAccountPost , new VelocityTemplateEngine());   
@@ -46,10 +45,10 @@ public class App {
 	        post("/indicator", IndicatorController.handleCreateIndicatorPost, new VelocityTemplateEngine());   
 	        get("/apply-indicator", IndicatorController.serveApplyIndicatorPage, new VelocityTemplateEngine());
 	        post("/apply-indicator", IndicatorController.handleApplyIndicatorPage, new VelocityTemplateEngine());   
-	        
+	 
 	        get("/json", (request, response) -> {
 	            return null; 
 	        }, new JSONTransformer());
-	  
+	 
 	    }
 }

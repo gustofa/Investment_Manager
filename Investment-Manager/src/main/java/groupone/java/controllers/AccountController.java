@@ -18,6 +18,7 @@ public class AccountController {
 	
 	   //Vista: Listado de Cuentas
 	public static TemplateViewRoute serveAccountsPage = (request, response) -> {
+		LoginController.ensureUserIsLoggedIn(request, response);
 		Boolean addConfirmed = Boolean.parseBoolean(request.queryParams("confirmed"));
     	Map<String, Object> model = new HashMap<String, Object>();
     	AccountService serviceAccount = AccountService.getInstance();
@@ -29,6 +30,7 @@ public class AccountController {
     
     //Vista: Crear Cuenta
     public static TemplateViewRoute serveCreateAccountPage = (request, response) -> {
+    	LoginController.ensureUserIsLoggedIn(request, response);
     	Map<String, Object> model = new HashMap<String, Object>();
     	CompanyService serviceCompany = CompanyService.getInstance();
     	model.put("companies", serviceCompany.getCompanies());
@@ -37,6 +39,7 @@ public class AccountController {
     };     
     
     public static TemplateViewRoute handleCreateAccountPost = (request, response) -> {
+    	LoginController.ensureUserIsLoggedIn(request, response);
     	AccountService serviceAccount = AccountService.getInstance();
     	String name = request.queryParams("name");
     	String year = request.queryParams("year");

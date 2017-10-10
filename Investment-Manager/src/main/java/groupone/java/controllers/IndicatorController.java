@@ -17,6 +17,7 @@ public class IndicatorController {
 	private static String layout = "index.vtl";
 
 	public static TemplateViewRoute serveIndicatorsPage = (request, response) -> {
+		LoginController.ensureUserIsLoggedIn(request, response);
 		Boolean addConfirmed = Boolean.parseBoolean(request.queryParams("confirmed"));
 		IndicatorService indicatorService = IndicatorService.getInstance();
 		List<Indicator> indicators = indicatorService.getIndicators();
@@ -28,6 +29,7 @@ public class IndicatorController {
 	};
 
 	public static TemplateViewRoute serveCreateIndicatorPage = (request, response) -> {
+		LoginController.ensureUserIsLoggedIn(request, response);
 		Boolean addFailure = Boolean.parseBoolean(request.queryParams("failure"));
 		String errorMessage = request.queryParams("message");
 		Map<String, Object> model = new HashMap<String, Object>();
@@ -38,6 +40,7 @@ public class IndicatorController {
 	};
 	
 	public static TemplateViewRoute handleCreateIndicatorPost = (request, response) -> {
+		LoginController.ensureUserIsLoggedIn(request, response);
 		String name = request.queryParams("name");
     	String expression = request.queryParams("expression"); 	
     	IndicatorService indicatorService = IndicatorService.getInstance();

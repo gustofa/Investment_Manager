@@ -8,6 +8,7 @@ public class Repository {
 	private IndicatorRepository indicators;
 	private Companies companies;
 	private Metodologies metodologies;
+	private UserRepository users;
 	protected EntityManager em;
 
 	public Repository(EntityManager em) {
@@ -40,6 +41,13 @@ public class Repository {
 			metodologies = new Metodologies(em);
 		}
 		return metodologies;
+	}
+	
+	public UserRepository users() {
+		if (users == null) {
+			users = new UserRepository(em);
+		}
+		return users;
 	}
 	
 	public void close() {

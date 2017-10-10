@@ -53,6 +53,4 @@ public class AccountController {
     	response.redirect("/accounts?confirmed=true");
     	return null;
     };   
-	
-	
 }

@@ -17,12 +17,12 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.apache.commons.io.FilenameUtils;
 import grammar.IndicatorGrammarLexer;
 import grammar.IndicatorGrammarParser;
+import groupone.java.app.EvalVisitor;
 import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
 import groupone.java.bean.User;
 import groupone.java.error.IndicatorErrorListener;
 import groupone.java.error.IndicatorSyntaxException;
-import groupone.java.investment.EvalVisitor;
 import groupone.java.repositories.Repository;
 
 @SuppressWarnings("deprecation")

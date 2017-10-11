@@ -1,4 +1,4 @@
-package groupone.java.investment;
+package groupone.java.app;
 
 import java.util.HashMap;
 import java.util.Map;

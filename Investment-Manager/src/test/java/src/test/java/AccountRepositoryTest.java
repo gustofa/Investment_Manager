@@ -19,10 +19,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runners.MethodSorters;
+
+import groupone.java.app.AccountList;
+import groupone.java.app.CompanyList;
 import groupone.java.bean.Account;
 import groupone.java.bean.Company;
-import groupone.java.investment.AccountList;
-import groupone.java.investment.CompanyList;
 import groupone.java.repositories.Repository;
 import groupone.java.services.AccountService;
 import groupone.java.services.CompanyService;

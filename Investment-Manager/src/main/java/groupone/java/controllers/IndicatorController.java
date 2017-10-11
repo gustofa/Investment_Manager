@@ -20,7 +20,8 @@ public class IndicatorController {
 		LoginController.ensureUserIsLoggedIn(request, response);
 		Boolean addConfirmed = Boolean.parseBoolean(request.queryParams("confirmed"));
 		IndicatorService indicatorService = IndicatorService.getInstance();
-		List<Indicator> indicators = indicatorService.getIndicators();
+		String username = request.session().attribute("currentUser");	
+		List<Indicator> indicators = indicatorService.getIndicators(username);
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("indicators", indicators);
 		model.put("addConfirmed", addConfirmed);
@@ -46,7 +47,6 @@ public class IndicatorController {
 		IndicatorService indicatorService = IndicatorService.getInstance();
 		String username = request.session().attribute("currentUser");
 		
-		
 		try {
 			indicatorService.createIndicator(name, expression, username);
 		} catch (IndicatorSyntaxException e) {
@@ -61,14 +61,12 @@ public class IndicatorController {
 	public static TemplateViewRoute serveApplyIndicatorPage = (request, response) -> {
 		LoginController.ensureUserIsLoggedIn(request, response);
 		String username = request.session().attribute("currentUser");
-
 		IndicatorService indicatorService = IndicatorService.getInstance();
-		List<Indicator> indicators = indicatorService.getIndicators();
+		List<Indicator> indicators = indicatorService.getIndicators(username);
 		CompanyService serviceCompany = CompanyService.getInstance();
 		List<Company> companies = serviceCompany.getCompanies();
 		Map<String, Object> model = new HashMap<String, Object>();
-		
-		
+				
 		model.put("companies", companies);
 		model.put("indicators", indicators);
 		model.put("template", "Views/Indicator/apply-indicator.vtl");
@@ -79,8 +77,10 @@ public class IndicatorController {
 	public static TemplateViewRoute handleApplyIndicatorPage = (request, response) -> {
 		LoginController.ensureUserIsLoggedIn(request, response);
 		Map<String, Object> model = new HashMap<String, Object>();
-				IndicatorService indicatorService = IndicatorService.getInstance();
-		List<Indicator> indicators = indicatorService.getIndicators();
+		String username = request.session().attribute("currentUser");
+	
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		List<Indicator> indicators = indicatorService.getIndicators(username);
 		CompanyService serviceCompany = CompanyService.getInstance();
 		List<Company> companies = serviceCompany.getCompanies();
 
@@ -91,7 +91,7 @@ public class IndicatorController {
 		Company company_selected = CompanyService.getInstance().getCompanies().stream()
 				.filter(a -> a.getId().equals(company_id)).findFirst().orElse(null);
 
-		Indicator indicator_selected = IndicatorService.getInstance().getIndicators().stream()
+		Indicator indicator_selected = IndicatorService.getInstance().getIndicators(username).stream()
 				.filter(a -> a.getId().equals(indicator_id)).findFirst().orElse(null);
 
 		Double result = indicatorService.apply(company_selected, year, indicator_selected);

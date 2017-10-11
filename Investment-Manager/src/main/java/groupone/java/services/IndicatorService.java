@@ -59,8 +59,9 @@ public class IndicatorService {
 		return evaluationResult;
 	}
 	
-	public List<Indicator> getIndicators() {
-		return  repository.indicators().getIndicators();
+	public List<Indicator> getIndicators(String username) {
+		User user = this.repository.users().findByName(username);
+		return  repository.indicators().getIndicators(user.getId());
 	}	
 	
 	public Indicator getIndicator(String name) {

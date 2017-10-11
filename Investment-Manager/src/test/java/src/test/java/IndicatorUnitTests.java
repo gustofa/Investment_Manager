@@ -28,7 +28,7 @@ public class IndicatorUnitTests {
 		IndicatorService indicatorService = IndicatorService.getInstance();
 		indicatorService .loadPredefinedIndicators();
 		Indicator compoundPredefinedIndicator = indicatorService .getIndicator("IngresoNeto");
-		Indicator newCompoundIndicator = indicatorService .createIndicator("IndicatorTest", "IngresoNeto+3\r\n");
+		Indicator newCompoundIndicator = indicatorService .createIndicator("IndicatorTest", "IngresoNeto+3\r\n","user");
 		
 		Double compoundPredefinedIndicatorResult = indicatorService .apply(null, "", compoundPredefinedIndicator);
 		Double newCompoundIndicatorResult = indicatorService .apply(null, "", newCompoundIndicator);
@@ -71,7 +71,7 @@ public class IndicatorUnitTests {
 		expectedEx.expectMessage(String.format(Messages.getString("EvalVisitor.indicatorNotFound"),"NonExistentIndicator"));
 
 		IndicatorService indicatorService = IndicatorService.getInstance();
-		Indicator indicator =  indicatorService.createIndicator("Indicator1", "1+2+NonExistentIndicator\r\n");
+		Indicator indicator =  indicatorService.createIndicator("Indicator1", "1+2+NonExistentIndicator\r\n","user");
 		indicatorService.apply(null, "", indicator);
 	}
 
@@ -82,7 +82,7 @@ public class IndicatorUnitTests {
 		expectedEx.expectMessage(String.format(Messages.getString("EvalVisitor.accountNotFound"), "NonExistentAccount"));
 
 		IndicatorService indicatorService = IndicatorService.getInstance();
-		Indicator indicator =  indicatorService.createIndicator("Indicator1", "1+2+$NonExistentAccount\r\n");
+		Indicator indicator =  indicatorService.createIndicator("Indicator1", "1+2+$NonExistentAccount\r\n", "user");
 		
 		Company comp = new Company();
 		comp.setName("Google");
@@ -95,7 +95,7 @@ public class IndicatorUnitTests {
 	@Test
 	public void applyIndicatorWithConstantShouldReturnCorrectResult() throws Exception {
 		IndicatorService indicatorService = IndicatorService.getInstance();
-		Indicator indicator =  indicatorService.createIndicator("Indicator3", "constante=400\r\n150+constante\r\n");
+		Indicator indicator =  indicatorService.createIndicator("Indicator3", "constante=400\r\n150+constante\r\n","user");
 
 		Double value;
 		try {

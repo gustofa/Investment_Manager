@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Metodology")
-@NamedQuery(name = "getMetodologies", query = "SELECT m FROM Metodology m")
+@NamedQuery(name = "getMetodologies", query = "SELECT m FROM Metodology m WHERE m.user_id=:user_id")
 public class Metodology extends Persistible {
 	
 	private static final long serialVersionUID = 1L;

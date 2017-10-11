@@ -20,7 +20,8 @@ public class MetodologyController {
 		LoginController.ensureUserIsLoggedIn(request, response);
 		Boolean addConfirmed = Boolean.parseBoolean(request.queryParams("confirmed"));
 		MetodologyService metodologyService = MetodologyService.getInstance();
-		List<Metodology> metodologies = metodologyService.getMetodologies();
+		String username = request.session().attribute("currentUser");	
+		List<Metodology> metodologies = metodologyService.getMetodologies(username);
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("metodologies", metodologies);
 		model.put("addConfirmed", addConfirmed);

@@ -22,7 +22,6 @@ import groupone.java.bean.User;
 import groupone.java.bean.Metodology;
 import groupone.java.error.IndicatorErrorListener;
 import groupone.java.error.IndicatorSyntaxException;
-import groupone.java.investment.EvalVisitor;
 import groupone.java.repositories.Repository;
 import groupone.java.repositories.Metodologies;
 
@@ -47,8 +46,9 @@ public class MetodologyService {
 	}
 	
 	
-	public List<Metodology> getMetodologies() {
-		return  repository.metodologies().getMetodologies();
+	public List<Metodology> getMetodologies(String username) {
+		User user = this.repository.users().findByName(username);
+		return  repository.metodologies().getMetodologies(user.getId());
 	}	
 
 	public Metodology createMetodology(String name, String expression, String username){

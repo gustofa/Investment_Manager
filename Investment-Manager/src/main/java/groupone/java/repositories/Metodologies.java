@@ -19,9 +19,10 @@ public class Metodologies extends Repository{
 
 	
 	@SuppressWarnings("unchecked")
-	public List<Metodology> getMetodologies() {
+	public List<Metodology> getMetodologies(long userId) {
 		List<Metodology> metodologies = null;
 		metodologies = em.createNamedQuery("getMetodologies")
+				.setParameter("user_id", userId)
 				.getResultList();
 		return metodologies;
 		}

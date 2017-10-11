@@ -11,6 +11,7 @@ import groupone.java.bean.Company;
 import groupone.java.controllers.AccountController;
 import groupone.java.controllers.IndicatorController;
 import groupone.java.controllers.LoginController;
+import groupone.java.controllers.MetodologyController;
 import groupone.java.repositories.Repository;
 import groupone.java.services.AccountService;
 import groupone.java.services.CompanyService;
@@ -27,7 +28,7 @@ public class App {
 	public static void main( String[] args ) {
 
 		 	Spark.staticFileLocation("public");	
-		 	Spark.port(9000);
+		 	Spark.port(9010);
 		 	
 		 	//página base que contendrá a todas las demás
 		    String layout = "index.vtl";
@@ -46,6 +47,11 @@ public class App {
 	        get("/apply-indicator", IndicatorController.serveApplyIndicatorPage, new VelocityTemplateEngine());
 	        post("/apply-indicator", IndicatorController.handleApplyIndicatorPage, new VelocityTemplateEngine());   
 	 
+	        
+	        get("/metodologies", MetodologyController.serveMetodologiesPage, new VelocityTemplateEngine()); 
+	        get("/metodology", MetodologyController.serveCreateMetodologyPage, new VelocityTemplateEngine());
+	        post("/metodology", MetodologyController.handleCreateMetodologyPost, new VelocityTemplateEngine());    
+	        
 	        get("/json", (request, response) -> {
 	            return null; 
 	        }, new JSONTransformer());

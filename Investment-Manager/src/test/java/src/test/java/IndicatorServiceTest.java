@@ -40,7 +40,7 @@ public class IndicatorServiceTest {
 		expectedEx.expect(IndicatorSyntaxException.class);
 		expectedEx.expectMessage("Error sintactico en la formula del indicador, en la linea 1, caracter nº: 4");
 		IndicatorService indicatorService = IndicatorService.getInstance();
-		indicatorService.createIndicator("Indicator1", "1+2+");
+		indicatorService.createIndicator("Indicator1", "1+2+","user");
 	}
 
 	@Test
@@ -48,6 +48,6 @@ public class IndicatorServiceTest {
 		expectedEx.expect(IndicatorSyntaxException.class);
 		expectedEx.expectMessage("Caracter no valido en la linea 1, caracter nº: 2");
 		IndicatorService indicatorService = IndicatorService.getInstance();
-		indicatorService.createIndicator("Indicator1", "1+#+2\r\n");
+		indicatorService.createIndicator("Indicator1", "1+#+2\r\n","user");
 	}
 }

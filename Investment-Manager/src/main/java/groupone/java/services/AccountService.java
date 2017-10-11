@@ -14,10 +14,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
+import groupone.java.app.AccountList;
+import groupone.java.app.CompanyList;
 import groupone.java.bean.Account;
 import groupone.java.bean.Company;
-import groupone.java.investment.AccountList;
-import groupone.java.investment.CompanyList;
 import groupone.java.repositories.Repository;
 
 public class AccountService {

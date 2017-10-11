@@ -21,9 +21,11 @@ public class IndicatorRepository extends Repository {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Indicator> getIndicators() {
+	public List<Indicator> getIndicators(long userId) {
 		List<Indicator> indicators = null;
-		indicators = em.createQuery("SELECT i FROM Indicator i").getResultList();
+		indicators = em.createQuery("SELECT i FROM Indicator i WHERE user_id=:user_id")
+						.setParameter("user_id", userId)
+						.getResultList();
 		return indicators;
 	}
 

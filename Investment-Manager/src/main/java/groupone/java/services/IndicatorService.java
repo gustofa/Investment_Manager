@@ -18,6 +18,7 @@ import grammar.IndicatorGrammarLexer;
 import grammar.IndicatorGrammarParser;
 import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
+import groupone.java.bean.User;
 import groupone.java.error.IndicatorErrorListener;
 import groupone.java.error.IndicatorSyntaxException;
 import groupone.java.investment.EvalVisitor;
@@ -66,11 +67,14 @@ public class IndicatorService {
 		return repository.indicators().findByName(name);
 	}
 	
-	public Indicator createIndicator(String name, String expression) throws IndicatorSyntaxException{
+	public Indicator createIndicator(String name, String expression, String username) throws IndicatorSyntaxException{
+		User user = this.repository.users().findByName(username);
+		
 		Indicator indicator = new Indicator();
 		indicator.setName(name);
 		this.parseExpression(expression);
 		indicator.setExpression(expression);		
+		indicator.setUserId(user.getId());		
 		this.repository.indicators().persist(indicator); 
 		return indicator;
 	}
@@ -94,7 +98,7 @@ public class IndicatorService {
 		String expression = new String(Files.readAllBytes(Paths.get(file.getPath())),
 				StandardCharsets.UTF_8);
 		
-		return this.createIndicator(indicatorName, expression);
+		return this.createIndicator(indicatorName, expression, "test");
 	}
 
 	private ParseTree parseExpression(String expression) throws IndicatorSyntaxException {

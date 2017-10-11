@@ -1,7 +1,10 @@
 package groupone.java.repositories;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
+import groupone.java.bean.Account;
 import groupone.java.bean.Metodology;
 
 public class Metodologies extends Repository{
@@ -13,6 +16,16 @@ public class Metodologies extends Repository{
 		return em.find(Metodology.class, id);
 	}
 
+
+	
+	@SuppressWarnings("unchecked")
+	public List<Metodology> getMetodologies() {
+		List<Metodology> metodologies = null;
+		metodologies = em.createNamedQuery("getMetodologies")
+				.getResultList();
+		return metodologies;
+		}
+	
 	public void persist(Metodology metodology) {
 		em.getTransaction().begin();
 		em.persist(metodology);

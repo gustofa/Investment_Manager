@@ -31,6 +31,8 @@ public class MetodologiesRepositoryTest {
 	public void persistMetodology() {
 		Metodology metodologyToPersist = new Metodology();
 		metodologyToPersist.setName("MetodologyTest");
+		metodologyToPersist.setExpression("1+5");
+		metodologyToPersist.setUserId(1);
 		repository.metodologies().persist(metodologyToPersist);
 		Metodology persistedMetodology = repository.metodologies().findById(metodologyToPersist.getId());
 		Assert.assertTrue(persistedMetodology.getName() == metodologyToPersist.getName());

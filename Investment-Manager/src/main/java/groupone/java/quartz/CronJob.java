@@ -16,10 +16,10 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
-public class SimpleExample {
+public class CronJob {
 
   public void run() throws Exception {
-    Logger log = LoggerFactory.getLogger(SimpleExample.class);
+    Logger log = LoggerFactory.getLogger(CronJob.class);
 
     log.info("------- Initializing ----------------------");
 
@@ -35,14 +35,14 @@ public class SimpleExample {
     log.info("------- Scheduling Job  -------------------");
 
     // define the job and tie it to our HelloJob class
-    JobDetail job = newJob(BachAccount.class).withIdentity("job1", "group1").build();
+    JobDetail job = newJob(BatchAccount.class).withIdentity("job1", "group1").build();
 
     // Trigger the job to run on the next round minute
 //    Trigger trigger = newTrigger().withIdentity("trigger1", "group1").startAt(runTime).build();
     
     CronTrigger trigger = newTrigger()
     	    .withIdentity("trigger1", "group1")
-    	    .withSchedule(CronScheduleBuilder.cronSchedule("0 13 01 22 1/1 ? *"))
+    	    .withSchedule(CronScheduleBuilder.cronSchedule("0 00 00 * * ? *"))
     	    .build();
 
     // Tell quartz to schedule the job using our trigger
@@ -74,7 +74,7 @@ public class SimpleExample {
 
   public static void main(String[] args) throws Exception {
 
-    SimpleExample example = new SimpleExample();
+    CronJob example = new CronJob();
     example.run();
 
   }

@@ -17,7 +17,10 @@ public class IndicatorRepository extends Repository {
 	}
 	
 	public Indicator findByName(String name) {
-		return em.find(Indicator.class, name);
+		Indicator indicator = (Indicator) em.createQuery("SELECT i FROM Indicator i WHERE name=:name")
+								.setParameter("name", name)
+								.getSingleResult();
+		return indicator;
 	}
 
 	@SuppressWarnings("unchecked")

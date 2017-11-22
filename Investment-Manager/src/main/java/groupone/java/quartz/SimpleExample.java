@@ -42,7 +42,7 @@ public class SimpleExample {
     
     CronTrigger trigger = newTrigger()
     	    .withIdentity("trigger1", "group1")
-    	    .withSchedule(CronScheduleBuilder.cronSchedule("0 22 00 22 1/1 ? *"))
+    	    .withSchedule(CronScheduleBuilder.cronSchedule("0 13 01 22 1/1 ? *"))
     	    .build();
 
     // Tell quartz to schedule the job using our trigger

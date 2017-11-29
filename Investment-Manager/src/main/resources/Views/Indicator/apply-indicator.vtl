@@ -38,9 +38,9 @@
                         <label class="control-label col-md-12 col-sm-12 col-xs-12">A&ntilde;o </label>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                         #if ($result)
-                          <input type="number" id="year" name="year" required="required" value="$year"class="form-control col-md-7 col-xs-12">
+                          <input type="number" id="year" name="year" required="required" min="2014" max="2017" value="$year"class="form-control col-md-7 col-xs-12">
                           #else
-                           <input type="number" id="year" name="year" required="required" class="form-control col-md-7 col-xs-12">
+                           <input type="number" id="year" name="year" required="required" min="2014" max="2017" class="form-control col-md-7 col-xs-12">
                           #end
                         </div>
                       </div>

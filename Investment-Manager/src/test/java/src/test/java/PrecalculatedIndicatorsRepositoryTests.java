@@ -3,8 +3,10 @@ package src.test.java;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
+import java.util.Calendar;
 
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import org.junit.After;
 import org.junit.Assert;
@@ -34,14 +36,7 @@ public class PrecalculatedIndicatorsRepositoryTests {
 
 	@Test
 	public void persistIndicator() {
-		PrecalculatedIndicator precalculatedIndicatorToPersist = new PrecalculatedIndicator();
-		precalculatedIndicatorToPersist.setYear("2017");
-		precalculatedIndicatorToPersist.setCompanyId(15);
-		precalculatedIndicatorToPersist.setIndicatorId(20);
-		repository.precalculatedIndicators().persist(precalculatedIndicatorToPersist);
-		PrecalculatedIndicator persistedPrecalculatedIndicator = repository.precalculatedIndicators().findById(precalculatedIndicatorToPersist.getId());
-		Assert.assertTrue(persistedPrecalculatedIndicator.getYear() == precalculatedIndicatorToPersist.getYear());
-		Assert.assertTrue(persistedPrecalculatedIndicator.getCompanyId() == precalculatedIndicatorToPersist.getCompanyId());
+		
 		
 		CompanyService companyService = CompanyService.getInstance();
 		List<Company> companies = companyService.getCompanies();
@@ -51,16 +46,43 @@ public class PrecalculatedIndicatorsRepositoryTests {
 		
 		//System.out.println(indicators);
 		//System.out.println(companies);
-		
+
+		int current_year = Calendar.getInstance().get(Calendar.YEAR);
 		
 		for (int i=0; i<indicators.size(); i++){
-			//System.out.print(indicators.get(i));
-			//System.out.print((indicators.get(i)).getId());
+			
 			
 			for (int j=0; j<companies.size(); j++){
-				//System.out.print((companies.get(i)).getId());
 				
-				System.out.print(indicatorService.apply(companies.get(j), "2016", indicators.get(i)));
+				
+				for (int y=2014; y<=current_year; y++){
+					String year = Integer.toString(y);
+					
+					PrecalculatedIndicator precalculatedIndicatorToPersist = new PrecalculatedIndicator();
+								
+					
+					
+					try {
+				         
+						PrecalculatedIndicator precalc = repository.precalculatedIndicators().getPrecalculatedIndicator((indicators.get(i)).getId(), year, (companies.get(j)).getId());					 
+							
+							precalc.setValue(150);
+							repository.precalculatedIndicators().updatePrecalculatedIndicator(precalculatedIndicatorToPersist);
+						}
+				      catch (NoResultException e) { 
+				         /* This block will only execute if any Arithmetic exception 
+				          * occurs in try block
+				          */
+				         System.out.println("You should not divide a number by zero");
+				         precalculatedIndicatorToPersist.setYear(year);
+							precalculatedIndicatorToPersist.setCompanyId((companies.get(j)).getId());
+							precalculatedIndicatorToPersist.setIndicatorId((indicators.get(i)).getId());
+							precalculatedIndicatorToPersist.setName((indicators.get(i)).getName());
+							precalculatedIndicatorToPersist.setValue(indicatorService.apply(companies.get(j), year, indicators.get(i)));
+							repository.precalculatedIndicators().persist(precalculatedIndicatorToPersist);
+				      }
+					
+					}
 			}
 		}
 	

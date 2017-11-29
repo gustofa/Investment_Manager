@@ -28,7 +28,7 @@ public class App {
 	public static void main( String[] args ) {
 
 		 	Spark.staticFileLocation("public");	
-		 	Spark.port(9010);
+		 	Spark.port(9030);
 		 	
 		 	//página base que contendrá a todas las demás
 		    String layout = "index.vtl";

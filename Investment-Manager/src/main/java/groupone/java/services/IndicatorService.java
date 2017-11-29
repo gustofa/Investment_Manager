@@ -68,6 +68,14 @@ public class IndicatorService {
 		return repository.indicators().findByName(name);
 	}
 	
+	public List<Indicator> getAllIndicators(){
+		return  repository.indicators().getAllIndicators();
+	}
+	
+	public Indicator getIndicatorById(Long id) {
+		return repository.indicators().findById(id);
+	}
+	
 	public Indicator createIndicator(String name, String expression, String username) throws IndicatorSyntaxException{
 		User user = this.repository.users().findByName(username);
 		

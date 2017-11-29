@@ -9,6 +9,7 @@ public class Repository {
 	private Companies companies;
 	private Metodologies metodologies;
 	private UserRepository users;
+	private PrecalculatedIndicators precalculated_indicators;
 	protected EntityManager em;
 
 	public Repository(EntityManager em) {
@@ -48,6 +49,13 @@ public class Repository {
 			users = new UserRepository(em);
 		}
 		return users;
+	}
+	
+	public PrecalculatedIndicators precalculatedIndicators() {
+		if (precalculated_indicators == null) {
+			precalculated_indicators = new PrecalculatedIndicators(em);
+		} 
+		return precalculated_indicators;
 	}
 	
 	public void close() {

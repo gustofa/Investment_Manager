@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import groupone.java.bean.Account;
+import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
 
 public class IndicatorRepository extends Repository {
@@ -32,6 +33,15 @@ public class IndicatorRepository extends Repository {
 		return indicators;
 	}
 
+	
+	@SuppressWarnings("unchecked")
+	public List<Indicator> getAllIndicators() {
+		List<Indicator> allIndicators = null;
+		allIndicators =  em.createQuery("SELECT i FROM Indicator i")
+				.getResultList();
+		return allIndicators;
+		}	
+	
 	public void persist(Indicator indicator) {
 		em.getTransaction().begin();
 		em.persist(indicator);

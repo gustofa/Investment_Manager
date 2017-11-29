@@ -9,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.apache.commons.io.FilenameUtils;
+import org.hibernate.HibernateException;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -32,7 +33,7 @@ public class BatchAccount implements Job {
     }
 
     public void execute(JobExecutionContext context)
-        throws JobExecutionException {
+        throws JobExecutionException , HibernateException{
 
                
         emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
@@ -54,32 +55,60 @@ public class BatchAccount implements Job {
         		});
         	 for (int x=0;x<ficheros.length;x++){
         		 System.out.println(ficheros[x].getName());
+        		 System.out.println(ficheros[x].getPath());
         		 
         		 //If the file name contains the string "-read" then the batch is not charged on database
         		 if ( !(ficheros[x].getName().toLowerCase().indexOf(read.toLowerCase()) != -1) ) {
         		 try {
-        				accountService.loadAccounts2(indicatorService.getClass().getClassLoader().getResource(ficheros[x].getName()).getFile());
+//        				accountService.loadAccounts2(indicatorService.getClass().getClassLoader().getResource(ficheros[x].getName()).getPath());
+        				accountService.loadAccounts2(ficheros[x].getPath());
     			} catch (IOException e) {
     				// TODO Auto-generated catch block
     				e.printStackTrace();
-    			}
-
-    	  		for (Account account : AccountList.accountList) {
-    	  			repository.accounts().persist(account);
-    	 		}
+    			}   	  		
     	  		
     	         for (Company company1 : CompanyList.companyList) {
-    	         	repository.companies().persist(company1);
+    	        	 
+    	        	 Company comp = repository.companies().getCompanyByName(company1.getName());
+    	        	 if(comp == null){
+    	        		 repository.companies().persist(company1);
+    	        		 
+    	        		 for (Account account : company1.getAccounts()) {
+    	      	  			repository.accounts().persist(account);
+    	      	 		}
+    	        	 } else {
+    	        		 
+    	        		 for (Account account : company1.getAccounts()) {
+     	      	  			
+     	      	  			Account acc = repository.accounts().getAccountByName(account.getName(), account.getYear(), comp.getId());
+     	      	  			
+     	      	  			if(acc == null){
+	     	      	  			repository.accounts().persist(account);
+		       	        		 		       	        		
+		       	        	 } else {
+		       	        		account.setCompany(comp);
+		       	        		repository.accounts().updateAccount(account);
+		       	        	 }
+     	      	 		}
+    	        		    	        		 
+    	        	 }
     	 		}
+   	             	  
         		 
     	         //Get the file name without extension
     	         String basename = FilenameUtils.getBaseName(ficheros[x].getName());
     	          	         
     	         File file = new File("src\\main\\resources\\batches\\" + ficheros[x].getName()); 
+    	         
+    	         File file2 = new File("src\\main\\resources\\batches\\" + basename + "-read.json");
 
     	         //Rename the file to avoid reading again
-                 file.renameTo(new File("src\\main\\resources\\batches\\" + basename + "-read.json"));
-        	   
+    	         boolean correcto = file.renameTo(file2);
+    	         if (correcto)
+    	        	  System.out.println("El renombrado ha sido correcto");
+    	        	else
+    	        	  System.out.println("El renombrado no se ha podido realizar");
+    	         
 
     	         } else {
 

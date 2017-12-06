@@ -49,21 +49,21 @@ public class LoginController {
         }
         
         request.session().attribute("currentUser", name);
-        response.redirect("/accounts");
+        response.redirect("./accounts");
         return null;  
     };
     
     public static TemplateViewRoute handleLogoutPost = (request, response) -> {
         request.session().removeAttribute("currentUser");
         request.session().attribute("loggedOut", true);
-        response.redirect("/");
+        response.redirect("./");
         return null;
     };
     
     public static void ensureUserIsLoggedIn(Request request, Response response) {
         if (request.session().attribute("currentUser") == null) {
             request.session().attribute("loginRedirect", request.pathInfo());
-            response.redirect("/");
+            response.redirect("./");
         }
     };    
  }

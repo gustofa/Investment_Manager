@@ -50,7 +50,7 @@ public class AccountController {
 				.findFirst()
 				.orElse(null); 
     	serviceAccount.createAccount(name, year, value, company);
-    	response.redirect("/accounts?confirmed=true");
+    	response.redirect("./accounts?confirmed=true");
     	return null;
     };   
 }

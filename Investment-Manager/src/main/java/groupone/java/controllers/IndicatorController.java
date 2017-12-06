@@ -51,10 +51,10 @@ public class IndicatorController {
 			indicatorService.createIndicator(name, expression, username);
 		} catch (IndicatorSyntaxException e) {
 			// TODO: handle exception
-			response.redirect("/indicator?failure=true&message=" + e.getMessage());
+			response.redirect("./indicator?failure=true&message=" + e.getMessage());
 		}
 
-		response.redirect("/indicators?confirmed=true");
+		response.redirect("./indicators?confirmed=true");
 		return null;
 	};
 

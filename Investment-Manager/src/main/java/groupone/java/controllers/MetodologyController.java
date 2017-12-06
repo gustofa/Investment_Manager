@@ -51,7 +51,7 @@ public class MetodologyController {
 		
 		metodologyService.createMetodology(name, expression, username);
 	
-		response.redirect("/metodologies?confirmed=true");
+		response.redirect("./metodologies?confirmed=true");
 		return null;
 	};
 }

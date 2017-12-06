@@ -18,17 +18,22 @@ import groupone.java.services.CompanyService;
 import groupone.java.services.IndicatorService;
 import spark.ModelAndView;
 import spark.Spark;
+import spark.servlet.SparkApplication;
 import spark.template.velocity.VelocityTemplateEngine;
 
 import static spark.Spark.*;
 
-public class App {
+public class App implements SparkApplication{
 	private static final String PERSISTENCE_UNIT_NAME = "DDS";
 
 	public static void main( String[] args ) {
+		new App().init();
+	}
+	
 
-		 	Spark.staticFileLocation("public");	
-		 	Spark.port(9030);
+	public void init(){
+		 	Spark.staticFileLocation("/public");	
+		 	Spark.port(8080);
 		 	
 		 	//página base que contendrá a todas las demás
 		    String layout = "index.vtl";

@@ -34,7 +34,7 @@ public class IndicatorServiceTest {
 		assertTrue(ingresoNeto != null);
 		assertEquals(ingresoNeto.getName(), "IngresoNeto");
 	}
-*/
+
 	@Test
 	public void createIndicatorWithInclompletedExpressionReturnsSyntacticError() throws IndicatorSyntaxException {
 		expectedEx.expect(IndicatorSyntaxException.class);
@@ -50,4 +50,5 @@ public class IndicatorServiceTest {
 		IndicatorService indicatorService = IndicatorService.getInstance();
 		indicatorService.createIndicator("Indicator1", "1+#+2\r\n","user");
 	}
+	*/
 }

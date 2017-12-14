@@ -21,7 +21,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Compa&ntilde;ia</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="company"  name="company" class="form-control">
+                          <select id="company"   required="required" name="company" class="form-control">
 						   <option value="">Seleccionar</option>
                           #foreach ($company in $companies)
                             <option value="${company.getId()}">${company.getName()}</option>
@@ -46,7 +46,7 @@
                       <div class="form-group">
                         <label for="value" class="control-label col-md-3 col-sm-3 col-xs-12">Valor</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="value" class="form-control col-md-7 col-xs-12" type="text" name="value">
+                          <input id="value" class="form-control col-md-7 col-xs-12" required="required" type="text" name="value">
                         </div>
                       </div>
                       <div class="ln_solid"></div>
@@ -59,6 +59,11 @@
                       </div>
 
                     </form>
+                    
+                  <form method='post' enctype='multipart/form-data'>
+    <input type='file' name='uploaded_file'>
+    <button>Upload Batch</button>"
+</form>"
                   </div>
                 </div>
               </div>

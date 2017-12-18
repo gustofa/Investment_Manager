@@ -68,7 +68,8 @@ public class BatchAccount implements Job {
         		//If the file name contains the string "-read" then the batch is not charged on database
         		 if ( !(ficheros[x].getName().toLowerCase().indexOf(read.toLowerCase()) != -1) ) {
         		 try {
-        				accountService.loadAccounts2(indicatorService.getClass().getClassLoader().getResource(ficheros[x].getName()).getFile());
+        			 	accountService.loadAccounts2(ficheros[x].getPath());
+        				//accountService.loadAccounts2(indicatorService.getClass().getClassLoader().getResource(ficheros[x].getName()).getFile());
     			} catch (IOException e) {
     				// TODO Auto-generated catch block
     				e.printStackTrace();

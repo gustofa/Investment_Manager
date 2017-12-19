@@ -106,4 +106,23 @@ public class IndicatorController {
 		model.put("template", "Views/Indicator/apply-indicator.vtl");
 		return new ModelAndView(model, layout);
 	};
+	
+	public static TemplateViewRoute serveEditIndicatorPage = (request, response) -> {
+		LoginController.ensureUserIsLoggedIn(request, response);
+		String indicatorName = request.queryParams("ind");	
+		String username = request.session().attribute("currentUser");
+		IndicatorService indicatorService = IndicatorService.getInstance();
+		
+		Indicator indicatorToEdit = indicatorService.getIndicator(indicatorName);
+	
+		Map<String, Object> model = new HashMap<String, Object>();
+		
+		model.put("indicatorName", indicatorName);
+		model.put("template", "Views/Indicator/edit-indicator.vtl");
+		model.put("indicatorToEdit", indicatorToEdit);
+		model.put("result", false);
+		return new ModelAndView(model, layout);
+	};
+	
+	
 }

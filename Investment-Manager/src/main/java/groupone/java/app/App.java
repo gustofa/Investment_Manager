@@ -65,6 +65,8 @@ public class App implements SparkApplication{
 	        post("/indicator", IndicatorController.handleCreateIndicatorPost, new VelocityTemplateEngine());   
 	        get("/apply-indicator", IndicatorController.serveApplyIndicatorPage, new VelocityTemplateEngine());
 	        post("/apply-indicator", IndicatorController.handleApplyIndicatorPage, new VelocityTemplateEngine());   
+	        get("/edit-indicator", IndicatorController.serveEditIndicatorPage, new VelocityTemplateEngine());
+	       // post("/edit-indicator", IndicatorController.serveHandleEditIndicatorPage, new VelocityTemplateEngine());
 	 
 	        
 	        get("/metodologies", MetodologyController.serveMetodologiesPage, new VelocityTemplateEngine()); 

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.hibernate.HibernateException;
+
 import groupone.java.bean.Account;
 import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
@@ -47,4 +49,14 @@ public class IndicatorRepository extends Repository {
 		em.persist(indicator);
 		em.getTransaction().commit();
 	}
+	
+	public void updateIndicatorExpression(Indicator Indicator) throws HibernateException{	
+		em.getTransaction().begin();
+		em.createQuery("UPDATE Indicator SET expression=:expression WHERE name=:name and id=:id")
+				.setParameter("expression", Indicator.getExpression())
+				
+				.executeUpdate();
+		em.getTransaction().commit();
+		
+		}
 }

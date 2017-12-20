@@ -45,7 +45,7 @@ public class App implements SparkApplication{
 		 	Spark.staticFileLocation("/public");	
 		 	Spark.port(9090);
 		 	
-		 	//p√°gina base que contendr√° a todas las dem√°s
+		 	//p·gina base que contendr· a todas las dem·s
 		    String layout = "index.vtl";
 		    
 		    get("/", LoginController.serveLoginPage, new VelocityTemplateEngine());
@@ -66,7 +66,7 @@ public class App implements SparkApplication{
 	        get("/apply-indicator", IndicatorController.serveApplyIndicatorPage, new VelocityTemplateEngine());
 	        post("/apply-indicator", IndicatorController.handleApplyIndicatorPage, new VelocityTemplateEngine());   
 	        get("/edit-indicator", IndicatorController.serveEditIndicatorPage, new VelocityTemplateEngine());
-	       // post("/edit-indicator", IndicatorController.serveHandleEditIndicatorPage, new VelocityTemplateEngine());
+	        post("/edit-indicator", IndicatorController.serveHandleEditIndicatorPage, new VelocityTemplateEngine());
 	 
 	        
 	        get("/metodologies", MetodologyController.serveMetodologiesPage, new VelocityTemplateEngine()); 

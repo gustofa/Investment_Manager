@@ -50,11 +50,12 @@ public class IndicatorRepository extends Repository {
 		em.getTransaction().commit();
 	}
 	
-	public void updateIndicatorExpression(Indicator Indicator) throws HibernateException{	
+	public void updateIndicatorExpression(Indicator indicator) throws HibernateException{	
 		em.getTransaction().begin();
 		em.createQuery("UPDATE Indicator SET expression=:expression WHERE name=:name and id=:id")
-				.setParameter("expression", Indicator.getExpression())
-				
+				.setParameter("expression", indicator.getExpression())
+				.setParameter("name", indicator.getName())
+				.setParameter("id", indicator.getId())
 				.executeUpdate();
 		em.getTransaction().commit();
 		

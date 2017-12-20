@@ -87,6 +87,12 @@ public class IndicatorService {
 		this.repository.indicators().persist(indicator); 
 		return indicator;
 	}
+	
+	public void editIndicator(Indicator indicatorToEdit, String expression) throws IndicatorSyntaxException{
+	    this.parseExpression(expression);
+	    indicatorToEdit.setExpression(expression);
+	    this.repository.indicators().updateIndicatorExpression(indicatorToEdit);
+	}
 
 	public void loadPredefinedIndicators() throws IOException, IndicatorSyntaxException {
 		// Gets files from file system
@@ -125,4 +131,5 @@ public class IndicatorService {
 
 		return treeParse;
 	}
+	
 }

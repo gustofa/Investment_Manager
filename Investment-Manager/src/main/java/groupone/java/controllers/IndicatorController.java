@@ -96,7 +96,6 @@ public class IndicatorController {
 
 		Double result = indicatorService.apply(company_selected, year, indicator_selected);
 		
-
 		model.put("companies", companies);
 		model.put("company_selected", company_selected);
 		model.put("year", year);

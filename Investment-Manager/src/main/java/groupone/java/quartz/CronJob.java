@@ -38,7 +38,7 @@ public class CronJob {
     JobDetail job = newJob(BatchAccount.class).withIdentity("job1", "group1").build();
 
     // Trigger the job to run on the next round minute
-//    Trigger trigger = newTrigger().withIdentity("trigger1", "group1").startAt(runTime).build();
+    // Trigger trigger = newTrigger().withIdentity("trigger1", "group1").startAt(runTime).build();
     
     CronTrigger trigger = newTrigger()
     	    .withIdentity("trigger1", "group1")
@@ -72,11 +72,9 @@ public class CronJob {
     log.info("------- Shutdown Complete -----------------");
   }
 
-  public static void main(String[] args) throws Exception {
-
+ /* public static void main(String[] args) throws Exception {
     CronJob example = new CronJob();
     example.run();
-
   }
-
+*/
 }

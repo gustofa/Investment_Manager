@@ -47,8 +47,6 @@ public class MetodologyController {
 		MetodologyService metodologyService = MetodologyService.getInstance();
 		String username = request.session().attribute("currentUser");
 		
-		
-		
 		metodologyService.createMetodology(name, expression, username);
 	
 		response.redirect("./metodologies?confirmed=true");

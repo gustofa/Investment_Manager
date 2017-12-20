@@ -23,6 +23,7 @@ import groupone.java.bean.Account;
 import groupone.java.bean.Company;
 import groupone.java.bean.Indicator;
 import groupone.java.bean.PrecalculatedIndicator;
+import groupone.java.controllers.AccountController;
 import groupone.java.repositories.Repository;
 import groupone.java.services.AccountService;
 import groupone.java.services.CompanyService;
@@ -51,8 +52,8 @@ public class BatchAccount implements Job {
  		 List<Company> companies = companyService.getCompanies();		
 	 	 List<Indicator> indicators = indicatorService.getAllIndicators();
 
-                  
-         String sDirectorio = "src\\main\\resources\\batches";
+	 	 String sDirectorio = BatchAccount.class.getClassLoader().getResource("/").getPath().substring(1)+ "batches";         
+         //String sDirectorio = "src\\main\\resources\\batches";
          File f = new File(sDirectorio);
          String read = "-read";
          
@@ -105,13 +106,14 @@ public class BatchAccount implements Job {
     	         //Get the file name without extension
     	         String basename = FilenameUtils.getBaseName(ficheros[x].getName());
     	          	         
-    	         File file = new File("src\\main\\resources\\batches\\" + ficheros[x].getName()); 
+    	         //File file = new File("src\\main\\resources\\batches\\" + ficheros[x].getName()); 
+    	         File file = new File(sDirectorio + "\\" + ficheros[x].getName()); 
 
     	         //Rename the file to avoid reading again
-                 file.renameTo(new File("src\\main\\resources\\batches\\" + basename + "-read.json"));
+                 //file.renameTo(new File("src\\main\\resources\\batches\\" + basename + "-read.json"));
+    	         file.renameTo(new File(sDirectorio + "\\" + basename + "-read.json"));
 
     	           	         
-
     	         //Precalcular indicadores si no existen y actualizarlos si ya existen
     	
     	 		int current_year = Calendar.getInstance().get(Calendar.YEAR);

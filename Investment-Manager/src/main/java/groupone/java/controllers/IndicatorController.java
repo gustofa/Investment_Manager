@@ -112,12 +112,16 @@ public class IndicatorController {
 		LoginController.ensureUserIsLoggedIn(request, response);
 		String indicatorName = request.queryParams("ind");	
 		String username = request.session().attribute("currentUser");
+		Boolean addFailure = Boolean.parseBoolean(request.queryParams("failure"));
+		String errorMessage = request.queryParams("message");
 		IndicatorService indicatorService = IndicatorService.getInstance();
 		
 		Indicator indicatorToEdit = indicatorService.getIndicator(indicatorName);
 	
 		Map<String, Object> model = new HashMap<String, Object>();
 		
+		model.put("addFailure", addFailure);
+		model.put("errorMessage", errorMessage);
 		model.put("indicatorName", indicatorName);
 		model.put("template", "Views/Indicator/edit-indicator.vtl");
 		model.put("indicatorToEdit", indicatorToEdit);
@@ -136,14 +140,11 @@ public class IndicatorController {
 		try {
 	    	indicatorService.editIndicator(indicatorToEdit, expression);
 		} catch (IndicatorSyntaxException e) {
-			// TODO: handle exception
-			response.redirect("./indicator?failure=true&message=" + e.getMessage());
+			response.redirect("./edit-indicator?ind="+indicatorName+"&failure=true&message=" + e.getMessage());
 		}
 
 		response.redirect("./indicators?editConfirmed=true");
 		return null;
-		
-    	//agregar logica al VTL
 	};
 	
 }

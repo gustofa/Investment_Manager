@@ -1,0 +1,48 @@
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Indicadores - Administraci&oacute;n</h3>
+              </div>
+            </div>
+            #if($addConfirmed)
+            <div class="alert alert-success fade in">
+    			<a href="#" class="close" data-dismiss="alert">&times;</a>
+    			<strong>Success!</strong> Indicador creado correctamente.
+			</div>
+			#end
+			#if($editConfirmed)
+            <div class="alert alert-success fade in">
+    			<a href="#" class="close" data-dismiss="alert">&times;</a>
+    			<strong>Success!</strong> Indicador editado correctamente.
+			</div>
+			#end
+            <div class="clearfix"></div>
+			<div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Cargar Indicator </h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                  <br/>                         
+                  <table class="col-md-12 col-sm-12 col-xs-12 table">
+					  <tr>
+					  	<th>Nombre</th>
+					    <th>Expresion</th>
+					  </tr>
+					  #foreach ($indicator in $indicators)
+					  <tr>
+					    <td>${indicator.getName()}</td>
+					    <td>${indicator.getExpression()}</td>
+					    <td><button type="submit" class="btn btn-success"><a href="edit-indicator?ind=${indicator.getName()}">Editar</a></button></td>
+					  </tr>
+                      #end
+  				 </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>

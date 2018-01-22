@@ -1,0 +1,56 @@
+<hibernate-mapping> 
+
+	<class name="Account" table="account">
+		<id name="id_account" type="int" column="id">
+			<generator  class = "increment"></generator>
+		</id>
+		<property name="name_account" type="string" column="name"/>
+		<property name="value_account" type="int" column="value"/>
+		<property name="year_account" type="int" column="year"/>
+		<property name="id_company" type="int" column="company_id"/>
+	</class>
+
+	<class name="Company" table="company">
+		<id name="id_company" type="int" column="id">
+			<generator  class = "increment"></generator>
+		</id>
+		<property name="name_company" type="string" column="name"/>
+	</class>
+
+	<class name="Metodology" table="metodology">
+		<id name="id_metodology" type="int" column="id">
+			<generator  class = "increment"></generator>
+		</id>
+		<property name="name_metodology" type="string" column="name"/>
+		<property name="expression_metodology" type="string" column="expression"/>
+		<property name="id_user" type="int" column="user_id"/>
+	</class>
+
+	<class name="User" table="user">
+		<id name="id_user" type="int" column="id">
+			<generator  class = "increment"></generator>
+		</id>
+		<property name="name_user" type="string" column="name"/>
+		<property name="password" type="string" column="password"/>
+	</class>
+
+	<class name="Indicator" table="indicator">
+		<id name="id_indicator" type="int" column="id">
+			<generator  class = "increment"></generator>
+		</id>
+		<property name="expression_indicator" type="string" column="expression"/>
+		<property name="id_user" type="int" column="user_id"/>
+	</class>
+
+	<class name="PrecalculatedIndicator" table="precalculatedindicator">
+		<id name="id" type="int" column="id">
+			<generator  class = "increment"></generator>
+		</id>
+		<property name="name_precalculatedindicator" type="string" column="name"/>
+		<property name="id_company" type="int" column="company_id"/>
+		<property name="id_indicator" type="int" column="indicator_id"/>
+		<property name="value_precalculatedindicator" type="int" column="valu"/>
+		<property name="year_precalculatedindicator" type="int" column="year"/>
+	</class>
+
+</hibernate-mapping>

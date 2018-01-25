@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Facebook",
+        "accountList": [
+						    {
+						        "name": "EBITDA",
+						        "year": "2016",
+						        "value": 14870
+							},
+							{
+						        "name": "EBITDA",
+						        "year": "2015",
+						        "value": 8162
+						    }
+						]
+	},
+	{
+        "name": "Google",
+        "accountList": [
+    
+						    {
+						        "name": "FreeCashFlow",
+						        "year": "2016",
+						        "value": 12000
+							},
+						    {
+						        "name": "FDS",
+						        "year": "2016",
+						        "value": 5000
+							}
+						]
+	}	
+]

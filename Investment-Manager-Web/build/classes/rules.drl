@@ -1,0 +1,9 @@
+import groupone.java.investment.Item;
+import groupone.java.investment.Item.Category;
+
+rule "Classify Item - Low Range"
+	when
+		$i: Item(cost < 200);
+	then
+		$i.setCategory(Category.LOW_RANGE);
+end

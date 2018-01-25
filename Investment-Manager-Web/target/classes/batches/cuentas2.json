@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Intagram",
+        "accountList": [
+						    {
+						        "name": "EBITDA",
+						        "year": "2016",
+						        "value": 4286
+							},
+							{
+						        "name": "EBITDA",
+						        "year": "2015",
+						        "value": 3695
+						    }
+						]
+	},
+	{
+        "name": "Linkedin",
+        "accountList": [
+    
+						    {
+						        "name": "FreeCashFlow",
+						        "year": "2016",
+						        "value": 50000
+							},
+						    {
+						        "name": "FDS",
+						        "year": "2016",
+						        "value": 7500
+							}
+						]
+	}	
+]

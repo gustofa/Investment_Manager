@@ -1,0 +1,41 @@
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Metodolog&iacute;as - Administraci&oacute;n</h3>
+              </div>
+            </div>
+            #if($addConfirmed)
+            <div class="alert alert-success fade in">
+    			<a href="#" class="close" data-dismiss="alert">&times;</a>
+    			<strong>Success!</strong> Metodolog&iacute;a creada correctamente.
+			</div>
+			#end
+            <div class="clearfix"></div>
+			<div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Cargar Metodolog&iacute;a </h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                  <br/>                         
+                  <table class="col-md-12 col-sm-12 col-xs-12 table">
+					  <tr>
+					  	<th>Nombre</th>
+					    <th>Expresion</th>
+					  </tr>
+					  #foreach ($metodology in $metodologies)
+					  <tr>
+					    <td>${metodology.getName()}</td>
+					    <td>${metodology.getExpression()}</td>
+					  </tr>
+                      #end
+  				 </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>

@@ -36,7 +36,7 @@ public class App implements SparkApplication{
 
 	       //staticFiles.externalLocation("/batches");
 		 	
-		 	//página base que contendrá a todas las demás
+		 	//pagina base que contendra a todas las demas
 		    String layout = "index.vtl";
 		    
 		    get("/", LoginController.serveLoginPage, new VelocityTemplateEngine());

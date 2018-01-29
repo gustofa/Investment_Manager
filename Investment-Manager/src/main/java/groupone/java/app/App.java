@@ -10,21 +10,15 @@ import spark.servlet.SparkApplication;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 import spark.utils.IOUtils;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.annotation.MultipartConfig;
 
 @MultipartConfig
 public class App implements SparkApplication{
 	private static final String PERSISTENCE_UNIT_NAME = "DDS";
 
-//	public App(){
-//	    CronJob job = new CronJob();
-//	    try {
-//			job.run();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-	
 	public static void main( String[] args ) {
 		new App().init();
 	}
@@ -34,9 +28,11 @@ public class App implements SparkApplication{
 		 	Spark.staticFileLocation("/public");	
 		 	Spark.port(9090);
 
+		 	//Probando crear un solo EntityManagerFactory
+		 	//EntityManagerFactory emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+		 	
 	       //staticFiles.externalLocation("/batches");
 		 	
-		 	//página base que contendrá a todas las demás
 		    String layout = "index.vtl";
 		    
 		    get("/", LoginController.serveLoginPage, new VelocityTemplateEngine());

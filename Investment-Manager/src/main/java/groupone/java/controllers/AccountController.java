@@ -90,37 +90,23 @@ public class AccountController {
     };   
     
     public static TemplateViewRoute handleUploadBatch = (request, response) -> {
-    	//logInfo("aca empezando el handleUploadBatch");
-    	String location = AccountController.class.getClassLoader().getResource("/").getPath().substring(1)+ "batches";  // the directory location where files will be stored
-    	long maxFileSize = 100000000;  // the maximum size allowed for uploaded files
-    	long maxRequestSize = 100000000;  // the maximum size allowed for multipart/form-data requests
-    	int fileSizeThreshold = 1024;  // the size threshold after which files will be written to disk
-    	MultipartConfigElement multipartConfigElement = new MultipartConfigElement(location, maxFileSize, maxRequestSize, fileSizeThreshold);
-    	request.raw().setAttribute("org.eclipse.jetty.multipartConfig", multipartConfigElement);
-    	
-    	Collection<Part> parts = request.raw().getParts();
-    	for(Part part : parts) {
-    		logInfo("Name: "+part.getName());
-    		logInfo("Size: "+String.valueOf(part.getSize()));
-    		logInfo("Filename: "+part.getSubmittedFileName());
-    	}
-    	
-    	String fName = request.raw().getPart("myfile").getSubmittedFileName();
-    	
-    	Part uploadedFile = request.raw().getPart("myfile");
-    	Path out = Paths.get(location+"/"+fName);
-    	try (final InputStream in = uploadedFile.getInputStream()) {
-    		Files.copy(in, out);
-    		logFileInfo(request, out);
-    		uploadedFile.delete();
-    	}
-    	// cleanup
-    	multipartConfigElement = null;
-    	parts = null;
-    	uploadedFile = null;   	
-    	
-        response.redirect("./batch_account?confirmed=true");
-        return null;
+    	Path currentRelativePath = Paths.get("");
+    	String s = currentRelativePath.toAbsolutePath().toString();
+    	System.out.println("Current relative path is: " + s);
+    	 System.out.println("1");
+    	request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/../batches"));
+    	 System.out.println("2");
+    	Part filePart = request.raw().getPart("myfile");
+    	 System.out.println("3");
+    	 System.out.println("Uploaded file '" + request.raw().getPart("myfile") + "' saved as '" );
+          try (InputStream inputStream = filePart.getInputStream()) {
+              OutputStream outputStream = new FileOutputStream(filePart.getSubmittedFileName());
+              IOUtils.copy(inputStream, outputStream);
+              outputStream.close();
+          }
+          System.out.println("4");
+          response.redirect("/batch_account?confirmed=true");
+          return null;    
     };   
     
     

@@ -3,6 +3,8 @@ package groupone.java.quartz;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -42,7 +44,6 @@ public class BatchAccount implements Job {
     public void execute(JobExecutionContext context)
         throws JobExecutionException , HibernateException{
 
-               
         emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
  		repository = new Repository(emFactory.createEntityManager());
          
@@ -52,11 +53,13 @@ public class BatchAccount implements Job {
  		 List<Company> companies = companyService.getCompanies();		
 	 	 List<Indicator> indicators = indicatorService.getAllIndicators();
 
-	 	 String sDirectorio = BatchAccount.class.getClassLoader().getResource("/").getPath().substring(1)+ "batches";         
+	 	 Path currentRelativePath = Paths.get("");
+	 	 String sDirectorio = currentRelativePath.toAbsolutePath().toString();
+	 	 //BatchAccount.class.getClassLoader().getResource("/").getPath().substring(1)+ "batches";         
          //String sDirectorio = "src\\main\\resources\\batches";
          File f = new File(sDirectorio);
          String read = "-read";
-         
+         System.out.println("PATH DONDE BUSCA BACHTACCOUNT: "+sDirectorio);
          if (f.exists()){  
         	 File[] ficheros = f.listFiles(new FilenameFilter() {
         		    public boolean accept(File dir, String name) {

@@ -23,7 +23,7 @@
             <name>Trigger</name>
             <job-name>Job</job-name>
             <job-group>Jobs</job-group>
-            <cron-expression>* 0/10 * * * ?</cron-expression>
+            <cron-expression>* 0/4 * * * ?</cron-expression>
         </cron>
     </trigger>
 </schedule>

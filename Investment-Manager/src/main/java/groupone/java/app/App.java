@@ -9,11 +9,19 @@ import spark.Spark;
 import spark.servlet.SparkApplication;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
+
+import java.util.logging.Logger;
+
 import spark.utils.IOUtils;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.servlet.annotation.MultipartConfig;
+
+import org.jboss.logging.Logger.Level;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.impl.StdSchedulerFactory;
 
 @MultipartConfig
 public class App implements SparkApplication{
@@ -27,10 +35,20 @@ public class App implements SparkApplication{
 	public void init(){
 		 	Spark.staticFileLocation("/public");	
 		 	Spark.port(9090);
-
-		 	//Probando crear un solo EntityManagerFactory
-		 	//EntityManagerFactory emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 		 	
+		 	//Logger.getLogger("org.hibernate").setLevel();
+		 	
+		    /** Creates a new instance of Quartz Scheduler and starts it. */
+/*		    Scheduler scheduler = null;
+		    try {
+		      scheduler = StdSchedulerFactory.getDefaultScheduler();
+
+		      scheduler.start();
+
+		    } catch (SchedulerException se) {
+		      System.out.println("Unable to start scheduler service");
+		    }
+*/
 	       //staticFiles.externalLocation("/batches");
 		 	
 		    String layout = "index.vtl";
@@ -64,5 +82,16 @@ public class App implements SparkApplication{
 	            return null; 
 	        }, new JSONTransformer());
 	 
+	        
+	        
+	        CronJob example = new CronJob();
+	        try {
+				example.run();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        
+	        
 	    }
 }

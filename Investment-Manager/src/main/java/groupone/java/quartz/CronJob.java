@@ -42,7 +42,7 @@ public class CronJob {
     
     CronTrigger trigger = newTrigger()
     	    .withIdentity("trigger1", "group1")
-    	    .withSchedule(CronScheduleBuilder.cronSchedule("0 36 20 * * ? *"))//seg min hora
+    	    .withSchedule(CronScheduleBuilder.cronSchedule("* 0/4 * * * ?"))//seg min hora  //una hora en particular    "0 36 20 * * ? *"
     	    .build();
 
     // Tell quartz to schedule the job using our trigger

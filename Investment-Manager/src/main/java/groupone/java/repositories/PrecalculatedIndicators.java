@@ -1,5 +1,6 @@
 package groupone.java.repositories;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -36,12 +37,18 @@ public class PrecalculatedIndicators extends Repository {
 	
 	public PrecalculatedIndicator getPrecalculatedIndicator(long ind_id, String year, long comp_id) { 
 		PrecalculatedIndicator precalculatedIndicator = null;
-		precalculatedIndicator = (PrecalculatedIndicator) em.createQuery("SELECT a FROM PrecalculatedIndicator a WHERE indicator_id=:indicator_id and year=:year and company_id=:company_id")
+		List<PrecalculatedIndicator> precalculatedIndicators = new ArrayList<PrecalculatedIndicator>();
+		precalculatedIndicators = em.createQuery("SELECT a FROM PrecalculatedIndicator a WHERE indicator_id=:indicator_id and year=:year and company_id=:company_id")
 				.setParameter("indicator_id", ind_id)
 				.setParameter("year", year)
 				.setParameter("company_id", comp_id)
-				.getSingleResult();
-		return precalculatedIndicator;
+				.getResultList();
+				if (precalculatedIndicators.size()>0) {
+					return precalculatedIndicators.get(0);
+				} else {
+					return precalculatedIndicator;
+				}
+		
 		}
 	
 	public void updatePrecalculatedIndicator(PrecalculatedIndicator precalculatedIndicator) throws HibernateException{	

@@ -1,6 +1,7 @@
 package groupone.java.bean;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import org.antlr.v4.runtime.tree.ParseTree;
 
@@ -8,8 +9,9 @@ import org.antlr.v4.runtime.tree.ParseTree;
 @Table(name = "PrecalculatedIndicator")
 public class PrecalculatedIndicator extends Persistible {
 	private static final long serialVersionUID = 1L;
-	
+	@JoinColumn(name = "indicator_id", referencedColumnName = "id")
 	private long indicator_id;
+	@JoinColumn(name = "company_id", referencedColumnName = "id")
 	private long company_id;
 	private String year;
 	private double value;

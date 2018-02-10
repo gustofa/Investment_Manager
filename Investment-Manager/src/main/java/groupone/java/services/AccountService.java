@@ -69,7 +69,13 @@ public class AccountService {
 				AccountList.accountList.add(a);
 			}
 		}
+	}
+	
+	public List<Company> loadCompaniesFromJson(String pathArchivo) throws IOException {
+		JsonReader reader = new JsonReader(new FileReader(pathArchivo));
+		Type companyListType = new TypeToken<List<Company>>() {}.getType();
 		
+		return new Gson().fromJson(reader, companyListType);						
 	}
 
 	public Account createAccount(String name, String year, Double value, Company company){

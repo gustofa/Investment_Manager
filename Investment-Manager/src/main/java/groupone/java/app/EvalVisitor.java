@@ -108,7 +108,7 @@ public class EvalVisitor extends IndicatorGrammarBaseVisitor<Double> {
 		case IndicatorGrammarParser.MULT:
 			return left * right;
 		case IndicatorGrammarParser.DIV:
-			return left / right;
+			return right != 0.0 ? left / right : 0.0;
 		case IndicatorGrammarParser.MOD:
 			return left % right;
 		default:

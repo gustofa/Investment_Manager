@@ -5,11 +5,14 @@ import static org.quartz.JobBuilder.newJob;
 import static org.quartz.TriggerBuilder.newTrigger;
 
 import org.quartz.CronScheduleBuilder;
+import static org.quartz.SimpleScheduleBuilder.*;
 import org.quartz.CronTrigger;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerFactory;
+import org.quartz.SimpleTrigger;
 import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +33,7 @@ public class CronJob {
     log.info("------- Initialization Complete -----------");
 
     // computer a time that is on the next round minute
-    Date runTime = evenMinuteDate(new Date());
+    //Date runTime = evenMinuteDate(new Date());
 
     log.info("------- Scheduling Job  -------------------");
 
@@ -40,14 +43,20 @@ public class CronJob {
     // Trigger the job to run on the next round minute
     // Trigger trigger = newTrigger().withIdentity("trigger1", "group1").startAt(runTime).build();
     
-    CronTrigger trigger = newTrigger()
+    //CronTrigger trigger = newTrigger()
+    SimpleTrigger trigger = TriggerBuilder.newTrigger()
     	    .withIdentity("trigger1", "group1")
-    	    .withSchedule(CronScheduleBuilder.cronSchedule("* 0/4 * * * ?"))//seg min hora  //una hora en particular    "0 36 20 * * ? *"
+    	    .withSchedule(
+    	    		simpleSchedule()
+    	    		.withIntervalInSeconds(180)
+    	    		.repeatForever()
+    	    		)
+    	    //.withSchedule(CronScheduleBuilder.cronSchedule("0 */4 * ? * *"))//seg min hora  //una hora en particular    "0 36 20 * * ? *"
     	    .build();
 
     // Tell quartz to schedule the job using our trigger
     sched.scheduleJob(job, trigger);
-    log.info(job.getKey() + " will run at: " + runTime);
+    //log.info(job.getKey() + " will run at: " + runTime);
 
     // Start up the scheduler (nothing can actually run until the
     // scheduler has been started)
@@ -57,19 +66,19 @@ public class CronJob {
 
     // wait long enough so that the scheduler as an opportunity to
     // run the job!
-    log.info("------- Waiting 65 seconds... -------------");
-    try {
+    //log.info("------- Waiting 65 seconds... -------------");
+//    try {
       // wait 65 seconds to show job
-      Thread.sleep(300L * 1000L);
+      //Thread.sleep(300L * 1000L);
       // executing...
-    } catch (Exception e) {
+//    } catch (Exception e) {
       //
-    }
+//    }
 
     // shut down the scheduler
-    log.info("------- Shutting Down ---------------------");
-    sched.shutdown(true);
-    log.info("------- Shutdown Complete -----------------");
+//    log.info("------- Shutting Down ---------------------");
+//    sched.shutdown(true);
+//    log.info("------- Shutdown Complete -----------------");
   }
 
  /* public static void main(String[] args) throws Exception {

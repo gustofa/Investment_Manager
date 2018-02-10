@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
@@ -71,22 +72,44 @@ public class BatchAccount implements Job {
 
         		//If the file name contains the string "-read" then the batch is not charged on database
         		 if ( !(ficheros[x].getName().toLowerCase().indexOf(read.toLowerCase()) != -1) ) {
-        		 try {
-        			 	accountService.loadAccounts2(ficheros[x].getPath());
-        				//accountService.loadAccounts2(indicatorService.getClass().getClassLoader().getResource(ficheros[x].getName()).getFile());
-    			} catch (IOException e) {
-    				// TODO Auto-generated catch block
+        			List<Company> jsonCompanies = null;
+        			 try {
+        			 	jsonCompanies = accountService.loadCompaniesFromJson(ficheros[x].getPath());
+        			} catch (IOException e) {
     				e.printStackTrace();
-    			}
+        			}
+        		 
+        		 for(Company jsonCompany : jsonCompanies){
+        			 Company persistedCompany = repository.companies().getCompanyByName(jsonCompany.getName());
+        			 if(persistedCompany == null){
+        				 // INSERT
+        				 repository.companies().persist(jsonCompany);
+        			 }
+        			 
+        			 Company company = persistedCompany == null ? jsonCompany : persistedCompany;
+        			 
+        			 for (Account account : company.getAccounts()) {
+        				Account persistedAccount = repository.accounts().getAccountByName(account.getName(), account.getYear(), company.getId());
+  	      	  			if(persistedAccount == null){
+  	      	  				account.setCompany(company);
+	     	      	  		repository.accounts().persist(account);     		
+		       	        } else {
+		       	        		//account.setCompany(acc.getCompany());
+		       	        	persistedAccount.setValor(account.getValue());
+		       	        	repository.accounts().updateAccount(persistedAccount);
+		       	        }				 
+					 }
+        		 }
+        		/*
     	         for (Company company1 : CompanyList.companyList) {
     	        	 
     	        	 Company comp = repository.companies().getCompanyByName(company1.getName());
     	        	 if(comp == null){
     	        		 repository.companies().persist(company1);
     	        		 
-    	        		 for (Account account : company1.getAccounts()) {
-    	      	  			repository.accounts().persist(account);
-    	      	 		}
+    	        	//    	        		 for (Account account : company1.getAccounts()) {
+    	      	  	//		repository.accounts().persist(account);
+    	      	 	//	}
     	        	 } else {
     	        		 
     	        		 for (Account account : company1.getAccounts()) {
@@ -94,17 +117,17 @@ public class BatchAccount implements Job {
      	      	  			Account acc = repository.accounts().getAccountByName(account.getName(), account.getYear(), comp.getId());
      	      	  			
      	      	  			if(acc == null){
-	     	      	  			repository.accounts().persist(account);
-		       	        		 		       	        		
+     	      	  				account.setCompany(comp);
+	     	      	  			repository.accounts().persist(account);     		
 		       	        	 } else {
-		       	        		account.setCompany(comp);
-		       	        		repository.accounts().updateAccount(account);
+		       	        		//account.setCompany(acc.getCompany());
+		       	        		acc.setValor(account.getValue());
+		       	        		repository.accounts().updateAccount(acc);
 		       	        	 }
      	      	 		}
-    	        		    	        		 
     	        	 }
-    	 		}
-   	             	  
+    	 		}*/
+   	            	  
         		 
     	         //Get the file name without extension
     	         String basename = FilenameUtils.getBaseName(ficheros[x].getName());
@@ -121,30 +144,38 @@ public class BatchAccount implements Job {
     	
     	 		int current_year = Calendar.getInstance().get(Calendar.YEAR);
     	 		
+    	 		companies = companyService.getCompanies();
     	 		for (int i=0; i<indicators.size(); i++){    	 			
-    	 			for (int j=0; j<companies.size(); j++){		
+    	 			//for (int j=0; j<companies.size(); j++){	
+    	 			for(Company jsonCompany : jsonCompanies){
+    	 				Company persistedCompany = repository.companies().getCompanyByName(jsonCompany.getName());
     	 				
     	 				for (int y=2014; y<=current_year; y++){
     	 					String year = Integer.toString(y);
     	
-    	 					PrecalculatedIndicator precalculatedIndicatorToPersist = new PrecalculatedIndicator();
-
-    	 					try {   	 				       
-    	 						PrecalculatedIndicator precalc = repository.precalculatedIndicators().getPrecalculatedIndicator((indicators.get(i)).getId(), year, (companies.get(j)).getId());					 
-    	 						precalc.setValue(indicatorService.apply(companies.get(j), year, indicators.get(i)));
-    	 						repository.precalculatedIndicators().updatePrecalculatedIndicator(precalculatedIndicatorToPersist);
-    	 						}
-    	 				      catch (NoResultException e) { 
+    	 					PrecalculatedIndicator precalculatedIndicator = repository.precalculatedIndicators().getPrecalculatedIndicator((indicators.get(i)).getId(), year, persistedCompany.getId());
+    	 					
+    	 					if(precalculatedIndicator != null){
+    	 						precalculatedIndicator.setValue(indicatorService.apply(persistedCompany, year, indicators.get(i)));
+    	 						
+    	 						repository.precalculatedIndicators().updatePrecalculatedIndicator(precalculatedIndicator);
+    	 					} else {
+    	 				    	System.out.println("-----------------------------------------hola 1--------------------------------------------");
     	 				         /* This block will only execute if any NoResultException
     	 				          * occurs in try block
     	 				          */
-    	 				         
-    	 				         precalculatedIndicatorToPersist.setYear(year);
-    	 							precalculatedIndicatorToPersist.setCompanyId((companies.get(j)).getId());
-    	 							precalculatedIndicatorToPersist.setIndicatorId((indicators.get(i)).getId());
-    	 							precalculatedIndicatorToPersist.setName((indicators.get(i)).getName());
-    	 							precalculatedIndicatorToPersist.setValue(indicatorService.apply(companies.get(j), year, indicators.get(i)));
-    	 							repository.precalculatedIndicators().persist(precalculatedIndicatorToPersist);
+    	 				    	
+    	 				    	 double value = indicatorService.apply(persistedCompany, year, indicators.get(i));
+    	 				    	 
+    	 				    	 PrecalculatedIndicator precalculatedIndicatorToPersist = new PrecalculatedIndicator(indicators.get(i).getId(),persistedCompany.getId(),year,value); 
+    	 				         /*precalculatedIndicatorToPersist.setYear(year);
+    	 						 precalculatedIndicatorToPersist.setCompanyId((companies.get(j)).getId());
+    	 						 precalculatedIndicatorToPersist.setIndicatorId((indicators.get(i)).getId());
+    	 						 precalculatedIndicatorToPersist.setName((indicators.get(i)).getName());
+    	 						 precalculatedIndicatorToPersist.setValue(indicatorService.apply(companies.get(j), year, indicators.get(i)));*/
+        	 					 precalculatedIndicatorToPersist.setName((indicators.get(i)).getName());
+        	 					 repository.precalculatedIndicators().persist(precalculatedIndicatorToPersist);
+    	 						 
     	 				      }   	 					
 	 					}
  					}

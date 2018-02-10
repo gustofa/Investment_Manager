@@ -1,5 +1,6 @@
 package groupone.java.repositories;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -50,12 +51,17 @@ public class Accounts extends Repository {
 	
 	public Account getAccountByName(String name, String year, long co_id) {
 		Account account = null;
-		account = (Account) em.createQuery("SELECT a FROM Account a WHERE name=:name and year=:year and company_id=:company_id")
+		List<Account> accounts = new ArrayList<Account>();
+		accounts = em.createQuery("SELECT a FROM Account a WHERE name=:name and year=:year and company_id=:company_id")
 				.setParameter("name", name)
 				.setParameter("year", year)
 				.setParameter("company_id", co_id)
-				.getSingleResult();
-		return account;
+				.getResultList();
+				if (accounts.size()>0) {
+					return accounts.get(0);
+				} else {
+					return account;
+				}
 		}
 	
 	public void updateAccount(Account account) throws HibernateException{	

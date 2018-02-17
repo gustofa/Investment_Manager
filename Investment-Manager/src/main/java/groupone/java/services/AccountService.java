@@ -75,7 +75,9 @@ public class AccountService {
 		JsonReader reader = new JsonReader(new FileReader(pathArchivo));
 		Type companyListType = new TypeToken<List<Company>>() {}.getType();
 		
-		return new Gson().fromJson(reader, companyListType);						
+		List<Company> companies = new Gson().fromJson(reader, companyListType);
+		reader.close();
+		return companies;						
 	}
 
 	public Account createAccount(String name, String year, Double value, Company company){

@@ -35,22 +35,7 @@ public class App implements SparkApplication{
 	public void init(){
 		 	Spark.staticFileLocation("/public");	
 		 	Spark.port(9090);
-		 	
-		 	//Logger.getLogger("org.hibernate").setLevel();
-		 	
-		    /** Creates a new instance of Quartz Scheduler and starts it. */
-/*		    Scheduler scheduler = null;
-		    try {
-		      scheduler = StdSchedulerFactory.getDefaultScheduler();
-
-		      scheduler.start();
-
-		    } catch (SchedulerException se) {
-		      System.out.println("Unable to start scheduler service");
-		    }
-*/
-	       //staticFiles.externalLocation("/batches");
-		 	
+		 		 	
 		    String layout = "index.vtl";
 		    
 		    get("/", LoginController.serveLoginPage, new VelocityTemplateEngine());
@@ -84,11 +69,10 @@ public class App implements SparkApplication{
 	 
 	        
 	        
-	        CronJob example = new CronJob();
+	        CronJob processBatch = new CronJob();
 	        try {
-				example.run();
+	        	processBatch.run();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	        

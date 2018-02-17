@@ -3,6 +3,7 @@ package groupone.java.quartz;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Calendar;
@@ -67,6 +68,7 @@ public class BatchAccount implements Job {
         		        return  name.endsWith(".json");
         		    }
         		});
+        	 
         	 for (int x=0;x<ficheros.length;x++){
         		 System.out.println(ficheros[x].getName());
 
@@ -94,52 +96,19 @@ public class BatchAccount implements Job {
   	      	  				account.setCompany(company);
 	     	      	  		repository.accounts().persist(account);     		
 		       	        } else {
-		       	        		//account.setCompany(acc.getCompany());
 		       	        	persistedAccount.setValor(account.getValue());
 		       	        	repository.accounts().updateAccount(persistedAccount);
 		       	        }				 
 					 }
         		 }
-        		/*
-    	         for (Company company1 : CompanyList.companyList) {
-    	        	 
-    	        	 Company comp = repository.companies().getCompanyByName(company1.getName());
-    	        	 if(comp == null){
-    	        		 repository.companies().persist(company1);
-    	        		 
-    	        	//    	        		 for (Account account : company1.getAccounts()) {
-    	      	  	//		repository.accounts().persist(account);
-    	      	 	//	}
-    	        	 } else {
-    	        		 
-    	        		 for (Account account : company1.getAccounts()) {
-     	      	  			
-     	      	  			Account acc = repository.accounts().getAccountByName(account.getName(), account.getYear(), comp.getId());
-     	      	  			
-     	      	  			if(acc == null){
-     	      	  				account.setCompany(comp);
-	     	      	  			repository.accounts().persist(account);     		
-		       	        	 } else {
-		       	        		//account.setCompany(acc.getCompany());
-		       	        		acc.setValor(account.getValue());
-		       	        		repository.accounts().updateAccount(acc);
-		       	        	 }
-     	      	 		}
-    	        	 }
-    	 		}*/
-   	            	  
+
+        		 try {
+					Files.delete(ficheros[x].toPath());
+				} catch (IOException e) {
+					 System.out.println("Archivo eliminado");
+					e.printStackTrace();
+				}  
         		 
-    	         //Get the file name without extension
-    	         String basename = FilenameUtils.getBaseName(ficheros[x].getName());
-    	          	         
-    	         //File file = new File("src\\main\\resources\\batches\\" + ficheros[x].getName()); 
-    	         File file = new File(sDirectorio + "\\" + ficheros[x].getName()); 
-
-    	         //Rename the file to avoid reading again
-                 //file.renameTo(new File("src\\main\\resources\\batches\\" + basename + "-read.json"));
-    	         file.renameTo(new File(sDirectorio + "\\" + basename + "-read.json"));
-
-    	           	         
     	         //Precalcular indicadores si no existen y actualizarlos si ya existen
     	
     	 		int current_year = Calendar.getInstance().get(Calendar.YEAR);
@@ -160,19 +129,10 @@ public class BatchAccount implements Job {
     	 						
     	 						repository.precalculatedIndicators().updatePrecalculatedIndicator(precalculatedIndicator);
     	 					} else {
-    	 				    	System.out.println("-----------------------------------------hola 1--------------------------------------------");
-    	 				         /* This block will only execute if any NoResultException
-    	 				          * occurs in try block
-    	 				          */
-    	 				    	
+    	 	
     	 				    	 double value = indicatorService.apply(persistedCompany, year, indicators.get(i));
     	 				    	 
     	 				    	 PrecalculatedIndicator precalculatedIndicatorToPersist = new PrecalculatedIndicator(indicators.get(i).getId(),persistedCompany.getId(),year,value); 
-    	 				         /*precalculatedIndicatorToPersist.setYear(year);
-    	 						 precalculatedIndicatorToPersist.setCompanyId((companies.get(j)).getId());
-    	 						 precalculatedIndicatorToPersist.setIndicatorId((indicators.get(i)).getId());
-    	 						 precalculatedIndicatorToPersist.setName((indicators.get(i)).getName());
-    	 						 precalculatedIndicatorToPersist.setValue(indicatorService.apply(companies.get(j), year, indicators.get(i)));*/
         	 					 precalculatedIndicatorToPersist.setName((indicators.get(i)).getName());
         	 					 repository.precalculatedIndicators().persist(precalculatedIndicatorToPersist);
     	 						 
@@ -180,6 +140,7 @@ public class BatchAccount implements Job {
 	 					}
  					}
 	 			}
+
     	 		
     	        } else {
 

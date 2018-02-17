@@ -93,18 +93,14 @@ public class AccountController {
     	Path currentRelativePath = Paths.get("");
     	String s = currentRelativePath.toAbsolutePath().toString();
     	System.out.println("Current relative path is: " + s);
-    	 System.out.println("1");
     	request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/../batches"));
-    	 System.out.println("2");
     	Part filePart = request.raw().getPart("myfile");
-    	 System.out.println("3");
     	 System.out.println("Uploaded file '" + request.raw().getPart("myfile") + "' saved as '" );
           try (InputStream inputStream = filePart.getInputStream()) {
               OutputStream outputStream = new FileOutputStream(filePart.getSubmittedFileName());
               IOUtils.copy(inputStream, outputStream);
               outputStream.close();
           }
-          System.out.println("4");
           response.redirect("/batch_account?confirmed=true");
           return null;    
     };   
